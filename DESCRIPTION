@@ -1,0 +1,20 @@
+Package: baseph
+Title: Tout ce qu'ol faut pour commencer un projet simple
+Version: 0.0.0.9
+Authors@R: 
+    person(given = "Philippe",
+           family = "MICHEL",
+           role = c("aut", "cre"),
+           email = "philippe@docteur-michel.fr",
+           comment = c(ORCID = "https://orcid.org/0000-0003-2392-7186"))
+Description: tables for a clinical project: descriptif, comparitive simple, regression. randomisation. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    boot,
+    kableExtra,
+    knitr,
+    stats
