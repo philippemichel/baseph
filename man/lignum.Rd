@@ -2,7 +2,7 @@
 % Please edit documentation in R/lignum.R
 \name{lignum}
 \alias{lignum}
-\title{Ligne numerique}
+\title{Ligne numerique tableau descriptif}
 \usage{
 lignum(x, nn)
 }
@@ -15,7 +15,7 @@ lignum(x, nn)
 
 }
 \description{
-Ligne numerique
+Ligne numerique tableau descriptif
 }
 \examples{
 lignum (iris$Sepal.Length, "largeur petales")

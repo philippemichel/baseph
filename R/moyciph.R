@@ -1,5 +1,4 @@
-#' Title Intervalle de Confiance par Bootstrap pour une moyenne
-#'Calcul des  IC par bootstrap pour une variable numérique
+#' Intervalle de Confiance par Bootstrap pour une moyenne
 #'
 #' @param varx la variable à étudier
 #' @param ci Intervalle de confiance en % (95 par défaut)

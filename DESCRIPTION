@@ -15,6 +15,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
     boot,
+    dplyr,
+    ggplot2,
     kableExtra,
     knitr,
-    stats
+    rlang,
+    stats,
+    tidyr

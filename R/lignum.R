@@ -1,4 +1,4 @@
-#' Ligne numerique
+#' Ligne numerique tableau descriptif
 #'
 #' @param x vecteur de donnees
 #' @param nn nom du vecteur

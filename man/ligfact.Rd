@@ -2,7 +2,7 @@
 % Please edit documentation in R/ligfact.R
 \name{ligfact}
 \alias{ligfact}
-\title{Ligne facteurs}
+\title{Ligne facteurs tableau descriptif}
 \usage{
 ligfact(x, nn)
 }
@@ -15,7 +15,7 @@ ligfact(x, nn)
 
 }
 \description{
-Ligne facteurs
+Ligne facteurs tableau descriptif
 }
 \examples{
 ligfact (iris$Species, "Especes")

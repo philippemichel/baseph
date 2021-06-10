@@ -2,8 +2,7 @@
 % Please edit documentation in R/moyciph.R
 \name{moyciph}
 \alias{moyciph}
-\title{Title Intervalle de Confiance par Bootstrap pour une moyenne
-Calcul des  IC par bootstrap pour une variable numérique}
+\title{Intervalle de Confiance par Bootstrap pour une moyenne}
 \usage{
 moyciph(varx, ci = 95)
 }
@@ -16,8 +15,7 @@ moyciph(varx, ci = 95)
 bornes inf & sup de l'IC
 }
 \description{
-Title Intervalle de Confiance par Bootstrap pour une moyenne
-Calcul des  IC par bootstrap pour une variable numérique
+Intervalle de Confiance par Bootstrap pour une moyenne
 }
 \examples{
 moyciph(iris$Sepal.Width, ci = 95)
