@@ -35,6 +35,7 @@ tab1ph <- function(dfx, titre = "Tableau descriptif", label = "tabd"){
     tabp,
     row.names = FALSE,
     col.names = c("", "moy \u00b1 et  N/total (%)", "IC 95 %"),
+    caption = titre,
     escape = FALSE
   ) %>%
     kableExtra::kable_styling(
