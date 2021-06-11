@@ -43,3 +43,11 @@ tabmmph(ll =  mydata,titre = "Analyse multivariée", lab = "tabmulti", export = 
 
 ```
 
+## Table de randomisation
+Plusieurs centres, blocs de taille variable. 
+
+```{r rand}
+listrandph(nbcent  = 2, nbtrait = 2, nbcas = 30)
+```
+
+
