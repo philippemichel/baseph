@@ -17,7 +17,7 @@ ligfact <- function(x,nn){
   nl <- length(levels(x))
   for(l in 1:nl){
     nom <- names(zz)[l]
-    nz <- zz[[1]]
+    nz <- zz[[l]]
     pc <- signif(100 * nz/tot,3)
     #
     cf <- transangph(nz, tot)

@@ -1,0 +1,45 @@
+---
+title: "BasePh"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{BasePh}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE
+)
+```
+
+```{r setup}
+library(baseph)
+data(esoph)
+```
+
+# packages principaux
+
+## Tableau simple
+
+```{r tabd}
+tab1ph(esoph)
+```
+
+## Tableau comparatif
+
+```{r tabc}
+tabcph(esoph,tobgp)
+
+```
+
+## Tableau de résultat d'une régression logistique
+
+```{r rlog}
+mydata <- lm(carb~wt + am, data= mtcars)
+tabmmph(ll =  mydata,titre = "Analyse multivariée", lab = "tabmulti", export = FALSE)
+
+```
+
