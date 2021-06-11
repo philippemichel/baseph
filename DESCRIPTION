@@ -16,12 +16,14 @@ RoxygenNote: 7.1.1
 Imports: 
     boot,
     dplyr,
+    epiDisplay,
     ggplot2,
     kableExtra,
     knitr,
+    qpdf,
     rlang,
+    rmarkdown,
     stats,
-    tidyr
+    tidyr,
+    utils
 VignetteBuilder: knitr
-Suggests: 
-    rmarkdown

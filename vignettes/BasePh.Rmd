@@ -35,3 +35,11 @@ tabcph(esoph,tobgp)
 
 ```
 
+## Tableau de résultat d'une régression logistique
+
+```{r rlog}
+mydata <- lm(carb~wt + am, data= mtcars)
+tabmmph(ll =  mydata,titre = "Analyse multivariée", lab = "tabmulti", export = FALSE)
+
+```
+
