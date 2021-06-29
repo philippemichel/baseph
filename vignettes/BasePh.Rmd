@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(baseph)
+library(blockrand)
 data(esoph)
 ```
 
@@ -47,7 +48,7 @@ tabmmph(ll =  mydata,titre = "Analyse multivariée", lab = "tabmulti", export = 
 Plusieurs centres, blocs de taille variable. 
 
 ```{r rand}
-listrandph(nbcent  = 2, nbtrait = 2, nbcas = 30)
+# listrandph(nbcent  = 2, nbtrait = 2, nbcas = 30)
 ```
 
 
