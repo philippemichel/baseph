@@ -24,6 +24,7 @@ Imports:
     janitor,
     kableExtra,
     knitr,
+    lifecycle,
     qpdf,
     readr,
     rlang,
