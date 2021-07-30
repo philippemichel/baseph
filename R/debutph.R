@@ -6,14 +6,17 @@
 #' @import utils
 #' @import stats
 #' @import janitor
+#' @import readr
 #' @return data.frame
 #'
-#' @example print("pas d'exemple possible")
-#'
+#' @example debutph("https://github.com/tidyverse/readr/raw/master/inst/extdata/mtcars.csv")
 #' @export
 debutph <- function(fich){
-  df <- read.csv(fich, header = TRUE, na.strings = c("NA",""), dec = ",", as.is=FALSE) %>%
-     janitor::clean_names()
-  df <- as_tibble(df)
+  df <- read_csv(fich,
+                 col_names = TRUE,
+                 na = c("", "NA"),
+                 lazy = FALSE
+                 ) %>%
+    janitor::clean_names()
   return(df)
 }
