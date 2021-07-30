@@ -10,9 +10,9 @@
 #' @import kableExtra
 #' @import rlang
 #' @import dplyr
-#' 
+#'
 #' @return
-#' @export 
+#' @export
 #'
 #' @examples tabcph(iris, Species)
 tabcph <- function(dfx,
@@ -44,6 +44,9 @@ tabcph <- function(dfx,
         nlig <- nlig + 1
       } else {
         # Variables factorielles
+        if(is.factor(varx)==FALSE){
+          varx <- as.factor(varx)
+        }
         lig <- ligfc(nom, varx, triz)
         tabx <- rbind(tabx, lig)
         llx <- length(levels(varx))

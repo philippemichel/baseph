@@ -12,7 +12,7 @@
 #'
 lignum <- function(x,nn){
   bornes <- moyciph(x, ci = 95)
-  tbf <- paste0("[", bornes[1], " ; ", bornes[2], "]")
+  tbf <- paste0("[", signif(bornes[1],3), " ; ", signif(bornes[2],3), "]")
   ll <- c(nn,paste0(signif(mean(x),3), " \u00b1 " ,signif(sd(x),3)), tbf)
   return(ll)
 }

@@ -20,10 +20,13 @@ tab1ph <- function(dfx, titre = "Tableau descriptif", label = "tabd"){
     nom <- paste0("<b>",names(dfx)[i],"</b>")
     varx <- na.omit(dfx[,i])
     varx <- varx[[1]]
-    if(is.numeric(varx)){
+    if(is.numeric(varx)){ # Variables numeriques
       ll <- lignum(varx, nom)
       nlig <- nlig + 1
-    }else{
+    }else{ # variables non numeriques
+      if(is.factor(varx)==FALSE){
+        varx <- as.factor(varx)
+      }
       llx <- ligfact(varx, nom)
       ll <- llx$ttz
       nlig <- nlig + llx$nl + 1
@@ -31,6 +34,7 @@ tab1ph <- function(dfx, titre = "Tableau descriptif", label = "tabd"){
     }
     tabp <- rbind(tabp,ll)
   }
+  # Ecriture du tableau
   kable(
     tabp,
     row.names = FALSE,
