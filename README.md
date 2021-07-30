@@ -6,14 +6,14 @@
   
 Les fonctions de base pour un projet clinique simple en R. 
 
-Plusieurs tableaux : 
+# Plusieurs tableaux : 
 - Descriptif simple (**tab1ph**)
 - Comparaison simple (**tabcph**)
 - Résultats d'une régression (**tabmmph**) pas satisfaisant.
 
-Autres aides : 
+# Autres aides : 
 - Importation d'un csv avec normalisation des noms de variables, colonnes *caractère* converties en *facteur* (**debutph**)
 - listes de randomisation (**listrandph**) milticentre, blocs varaibles.
 
-Graphiques
+# Graphiques
  - Barplot avec barres d'erreur pour une variable numérique (**barconfph**)
