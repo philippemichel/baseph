@@ -2,7 +2,7 @@
 % Please edit documentation in R/moys.R
 \name{moys}
 \alias{moys}
-\title{Présentatioj moyenne  ecart-type}
+\title{Présentation moyenne  ecart-type}
 \usage{
 moys(x)
 }
@@ -13,7 +13,7 @@ moys(x)
 moyenne +/- ecart-type
 }
 \description{
-Présentatioj moyenne  ecart-type
+Présentation moyenne  ecart-type
 }
 \examples{
 moys(iris$Sepal.Length)

@@ -1,5 +1,5 @@
 #' Barplot avec barres d'erreur
-#' Trace un barplot avec les intervalles de confiance pour un tableau de deux variables numeriques
+#' Trace un barplot avec les intervalles de confiance pour une variable numerique et une variable factorielle de classification
 #'
 #' @param varx cas a représenter
 #' @param testx Variable de tri

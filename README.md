@@ -7,13 +7,14 @@
 Les fonctions de base pour un projet clinique simple en R. 
 
 # Plusieurs tableaux : 
-- Descriptif simple (**tab1ph**)
-- Comparaison simple (**tabcph**)
-- Résultats d'une régression (**tabmmph**) pas satisfaisant.
+- **tab1ph** Descriptif simple
+- **tabcph** Comparaison simple
+- **tabmmph** Résultats d'une régression. Pas satisfaisant. Utiliser *finalfit* ?
 
 # Autres aides : 
-- Importation d'un csv avec normalisation des noms de variables, colonnes *caractère* converties en *facteur* (**debutph**)
-- listes de randomisation (**listrandph**) milticentre, blocs varaibles.
+- **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur* 
+- **listrandph** listes de randomisation multicentre, blocs variables.
+-  **beaup** Ecrire un *p = 0,05* esthétique avec *p< 0,001* si nécessaire. 
 
 # Graphiques
- - Barplot avec barres d'erreur pour une variable numérique (**barconfph**)
+ - **barconfph** Graphique en barres avec intervalle de confiance pour une variable numérique & une variable factorielle de tri.

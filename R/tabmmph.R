@@ -16,7 +16,7 @@
 #' @import dplyr
 #'
 #' @examples mydata <- lm(carb~wt + am, data= mtcars)
-#' tabmmph(ll =  mydata,titre = "Analyse multivariée", lab = "tabmulti", export = FALSE)
+#' tabmmph(ll =  mydata,titre = "Analyse multivari\u00e9e", lab = "tabmulti", export = FALSE)
 #'
 #' @export
 tabmmph <-

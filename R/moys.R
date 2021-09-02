@@ -1,4 +1,4 @@
-#' Présentatioj moyenne  ecart-type
+#' Présentation moyenne  ecart-type
 #'
 #' @param x variable numerique
 #'
