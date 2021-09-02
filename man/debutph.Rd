@@ -14,5 +14,5 @@ data.frame
 }
 \description{
 Lit un csv, simplifie & normalise les titres des variables. Le csv a ete cree par libreOffice avec les reglages by default.
-Toutes les variables caractere sont transformees en facteur.
+Toutes les variables "caractere" sont transformees en facteur.
 }
