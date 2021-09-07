@@ -14,7 +14,9 @@ Les fonctions de base pour un projet clinique simple en R.
 # Autres aides : 
 - **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur* 
 - **listrandph** listes de randomisation multicentre, blocs variables.
--  **beaup** Ecrire un *p = 0,05* esthétique avec *p< 0,001* si nécessaire. 
+- **beaup** Écrire un *p = 0,05* esthétique avec *p< 0,001* si nécessaire.
+- **bmiph** Couper en facteurs un BMI numérique, version fraçaise & anglasie.
 
 # Graphiques
  - **barconfph** Graphique en barres avec intervalle de confiance pour une variable numérique & une variable factorielle de tri.
+- **barsimpleph** Graphique en barre exprimé en % pour une variable factorielle.
