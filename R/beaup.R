@@ -9,12 +9,12 @@
 #' beaup(pp$p.value)
 #'
 #' @export
-beaup <- function(varp){
-  if (varp < 0.001){
+beaup <- function(varp) {
+  if (varp < 0.001) {
     beaup <- "p < 0,001"
   }
   else {
-    beaup <-round(varp,3)
+    beaup <- paste0("p = ", round(varp, 3))
   }
-  return (beaup)
+  return(beaup)
 }
