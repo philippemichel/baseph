@@ -1,5 +1,5 @@
-#' Barplot simple en %
-#' Trace un barplot d'une variable factorielle, axe des y en %
+#' Barplot decroissant en %
+#' Trace un barplot d'une variable factorielle, axe des y en %, classement des items en décroissant
 #' @param varx variable a traiter (factorielle)
 #' @param titre Titre du graphique
 #'
@@ -10,14 +10,15 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples barsimpleph(iris$Species, "Espece")
-barsimpleph <- function(varx, titre) {
+#' @examples bardecph(iris$Species, "Espece")
+bardecph <- function(varx, titre) {
   aa <- prop.table(table(varx)) * 100
   aa <- as.data.frame(aa)
   names(aa)[1] <- "cause"
   aa %>%
+    mutate(name = fct_reorder(cause, desc(Freq))) %>%
     ggplot() +
-    aes(x = cause, y = Freq, fill = cause) +
+    aes(x = name, y = Freq, fill = name) +
     geom_bar(stat = "identity") +
     geom_text(
       aes(label = paste0(round(Freq, 0), " %")),

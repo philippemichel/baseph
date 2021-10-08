@@ -4,12 +4,21 @@
 \alias{tabcph}
 \title{Tableau comparatif (univarie)}
 \usage{
-tabcph(dfx, tri, titre = "Tableau comparatif", lab = "tabcomp", export = FALSE)
+tabcph(
+  dfx,
+  tri,
+  nomv,
+  titre = "Tableau comparatif",
+  lab = "tabcomp",
+  export = FALSE
+)
 }
 \arguments{
 \item{dfx}{table a esplorer}
 
 \item{tri}{variable expliquee}
+
+\item{nomv}{liste des vrais noms des variables}
 
 \item{titre}{titre du tableau}
 

@@ -2,6 +2,7 @@
 #'
 #' @param dfx table a esplorer
 #' @param tri variable expliquee
+#' @param nomv liste des vrais noms des variables
 #' @param titre titre du tableau
 #' @param lab label
 #' @param export si TRUE, export en CSV
@@ -17,6 +18,7 @@
 #' @examples tabcph(iris, Species)
 tabcph <- function(dfx,
                    tri,
+                   nomv,
                    titre = "Tableau comparatif",
                    lab = "tabcomp",
                    export = FALSE) {
@@ -36,7 +38,7 @@ tabcph <- function(dfx,
     varx <- dfx[, ll]
     varx <- varx[[1]]
     if (names(dfx)[ll] != vv) {
-      nom <- paste0("<b>", names(dfx)[ll], "</b>")
+      nom <- paste0("<b>", nomv[ll], "</b>")
       if (is.numeric(varx)) {
         # Variables numériques
         lig <- lignumc(nom, varx, triz)
