@@ -9,7 +9,9 @@ Les fonctions de base pour un projet clinique simple en R.
 # Plusieurs tableaux : 
 - **tab1ph** Descriptif simple
 - **tabcph** Comparaison simple
+- 
 Pour ces deux tableaux, possibilité d'avoir les intitulés vrais des variables & non les codes.
+
 - **tabmmph** Résultats d'une régression. Pas satisfaisant. Utiliser *finalfit* ?
 
 # Autres aides : 
