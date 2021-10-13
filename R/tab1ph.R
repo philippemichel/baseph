@@ -1,23 +1,25 @@
 #' Tableau descriptif
-#'
+#' Averc les intitules des variables en clair
 #' @param dfx Data.frame to explore
+#' @param nom vecteur avec les vrais noms des variables
 #' @param titre title of the table
 #' @param label label of the table for RMarkdown or LaTeX
 #'
 #' @import stats
+#' @import dplyr
 #' @import kableExtra
 #' @import knitr
 #'
 #' @return
 #' @export
 #'
-#' @examples tab1ph(iris, "Table 1")
-tab1ph <- function(dfx, titre = "Tableau descriptif", label = "tabd"){
+#' @examples tab1bph(iris,nom =names(iris),titre = "Table 1", label = "tabiiris")
+tab1ph <- function(dfx,nomv, titre = "Tableau descriptif", label = "tabd"){
   tabp <- NULL
   ligd <- NULL
   nlig <- 0
-  for(i in 1:ncol(dfx)){
-    nom <- paste0("<b>",names(dfx)[i],"</b>")
+  for (i in 1:ncol(dfx)){
+    nom <- paste0("<b>",nomv[i],"</b>")
     varx <- na.omit(dfx[,i])
     varx <- varx[[1]]
     if(is.numeric(varx)){ # Variables numeriques

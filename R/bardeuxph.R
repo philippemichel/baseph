@@ -1,6 +1,8 @@
-#' Barplot simple en %
-#' Trace un barplot d'une variable factorielle, axe des y en %
-#' @param varx variable a traiter (factorielle)
+#' Barplot 2 variables factorielles
+#' une variable de tri, une variable en % par modalité de tri
+#'
+#' @param vart variable factorielle de tri (axe des x)
+#' @param varp variable a exprimer en % (factorielle)
 #' @param titre Titre du graphique
 #'
 #' @import ggplot2
@@ -10,21 +12,15 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples barsimpleph(iris$Species, "Espece")
-barsimpleph <- function(varx, titre) {
-  aa <- prop.table(table(varx)) * 100
-  aa <- as.data.frame(aa)
-  names(aa)[1] <- "cause"
-  aa %>%
+#' @examples
+bardeuxph <- function(varp, vart, titre = ""){
+  zz <- table(varp, vart)
+  zz <- prop.table(zz, 2) * 100
+  zz <- as.data.frame(zz)
+  zz %>%
     ggplot() +
-    aes(x = cause, y = Freq, fill = cause) +
-    geom_bar(stat = "identity") +
-    geom_text(
-      aes(label = paste0(round(Freq, 0), " %")),
-      vjust = 1.6,
-      color = "white",
-      size = 6
-    ) +
+    aes(x = vart, y = Freq, fill = varp) +
+    geom_bar(stat = "Identity") +
     labs(title = titre,
          y = "%") +
     theme_light() +
@@ -41,6 +37,6 @@ barsimpleph <- function(varx, titre) {
         hjust = 1
       ),
       axis.text.y = element_text(size = 12),
-      legend.position = "none"
+      legend.position = "right"
     )
 }

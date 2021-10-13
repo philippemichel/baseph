@@ -2,9 +2,10 @@
 % Please edit documentation in R/tab1ph.R
 \name{tab1ph}
 \alias{tab1ph}
-\title{Tableau descriptif}
+\title{Tableau descriptif
+Averc les intitules des variables en clair}
 \usage{
-tab1ph(dfx, titre = "Tableau descriptif", label = "tabd")
+tab1ph(dfx, nomv, titre = "Tableau descriptif", label = "tabd")
 }
 \arguments{
 \item{dfx}{Data.frame to explore}
@@ -12,13 +13,16 @@ tab1ph(dfx, titre = "Tableau descriptif", label = "tabd")
 \item{titre}{title of the table}
 
 \item{label}{label of the table for RMarkdown or LaTeX}
+
+\item{nom}{vecteur avec les vrais noms des variables}
 }
 \value{
 
 }
 \description{
 Tableau descriptif
+Averc les intitules des variables en clair
 }
 \examples{
-tab1ph(iris, "Table 1")
+tab1bph(iris,nom =names(iris),titre = "Table 1", label = "tabiiris")
 }

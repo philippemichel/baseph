@@ -5,7 +5,7 @@
 \title{Barplot decroissant en \%
 Trace un barplot d'une variable factorielle, axe des y en \%, classement des items en décroissant}
 \usage{
-bardecph(varx, titre)
+bardecph(varx, titre = "")
 }
 \arguments{
 \item{varx}{variable a traiter (factorielle)}

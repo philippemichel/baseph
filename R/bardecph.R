@@ -6,14 +6,19 @@
 #' @import ggplot2
 #' @import see
 #' @import dplyr
+#' @import ggsci
 #'
 #' @return un graphique
 #' @export
 #'
 #' @examples bardecph(iris$Species, "Espece")
-bardecph <- function(varx, titre) {
+bardecph <- function(varx, titre = "") {
   aa <- prop.table(table(varx)) * 100
   aa <- as.data.frame(aa)
+  maxy <- floor(max(aa$Freq) / 10 + 2) * 10
+  if (maxy > 100) {
+    maxy = 100
+  }
   names(aa)[1] <- "cause"
   aa %>%
     mutate(name = fct_reorder(cause, desc(Freq))) %>%
@@ -22,16 +27,17 @@ bardecph <- function(varx, titre) {
     geom_bar(stat = "identity") +
     geom_text(
       aes(label = paste0(round(Freq, 0), " %")),
-      vjust = 1.6,
-      color = "white",
+      vjust = -0.8,
+      color = "black",
       size = 6
     ) +
     labs(title = titre,
          y = "%") +
+    scale_y_continuous(limits = c(0, maxy)) +
     theme_light() +
-    scale_fill_material() +
+    scale_color_material() +
     theme(
-      plot.title = element_text(size = 18, face = "bold"),
+      plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),
       axis.title.x = element_blank(),
       legend.title = element_blank(),
