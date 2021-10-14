@@ -12,7 +12,10 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples
+#' @examples aa <- c("a","a","b","c")
+#'           bb <- c("1","2","3","3")
+#'          bardeuxph(aa,bb,"essai")
+#'
 bardeuxph <- function(varp, vart, titre = ""){
   zz <- table(varp, vart)
   zz <- prop.table(zz, 2) * 100

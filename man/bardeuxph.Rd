@@ -21,3 +21,9 @@ un graphique
 Barplot 2 variables factorielles
 une variable de tri, une variable en \% par modalité de tri
 }
+\examples{
+aa <- c("a","a","b","c")
+          bb <- c("1","2","3","3")
+         bardeuxph(aa,bb,"essai")
+
+}
