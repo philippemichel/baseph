@@ -77,6 +77,8 @@ tabf <-   kable(
       full_width = FALSE,
       position = "center"
     )
+
   if (!is.null(ligd)) {add_indent(tabf, ligd)}
-tabf
+tabf %>%
+  scroll_box(width = "100%", height = "850px")
 }

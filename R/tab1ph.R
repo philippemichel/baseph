@@ -52,4 +52,5 @@ tab1ph <- function(dfx,nomv, titre = "Tableau descriptif", label = "tabd"){
       fixed_thead = TRUE
     ) %>%
     add_indent(ligd)
-}
+} %>%
+  scroll_box(width = "100%", height = "850px")

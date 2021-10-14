@@ -10,6 +10,7 @@
 #' @import ggplot2
 #' @import see
 #' @import dplyr
+#' @import binom
 #
 #'
 #' @return un graphique
@@ -25,22 +26,22 @@ barouiph <- function(varp,
                      titre = "",
                      oui = "oui",
                      angle = 0) {
-  varp <- as.factor(varp)
-  vart <- as.factor(vart)
   if (oui %in% levels(varp) == FALSE)
   {
     print(paste0("*", oui, "* n'est pas dans la variable \u00e9tudi\u00e9e"))
     return()
   }
+  if (angle == 0) {hj = 0.5} else {hj = 1}
   nlev <- which(oui == levels(varp))
   zz <- table(varp, vart)
   zz <- binom.confint(zz[nlev, ], colSums(zz), method = "exact")
   zz <- as_tibble(zz)
   ymax <- max(zz$upper) * 100 + 10
-  if (ymax > 100) {
+  if (ymax > 90) {
     ymax = 100
   }
-  zz$tri <- levels(vart)
+  zz$tri <- as.factor(levels(vart))
+  levels(zz$tri) <- levels(vart)
   zz %>%
     ggplot() +
     aes(x = tri, y = mean * 100, fill = tri) +
@@ -67,10 +68,10 @@ barouiph <- function(varp,
       axis.text.x = element_text(
         size = 12 ,
         angle = angle,
-        hjust = 1
+        hjust = hj
       ),
       axis.text.y = element_text(size = 12),
       legend.position = "none"
     ) +
-    scale_y_continuous(limits = c(0, ymax))
+   scale_y_continuous(limits = c(0, ymax))
 }
