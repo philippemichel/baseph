@@ -25,3 +25,4 @@ Pour ces deux tableaux, possibilité d'avoir les intitulés vrais des variables 
 - **barsimpleph** Graphique en barre exprimé en % pour une variable factorielle.
 - **bardecph**  Graphique en barre exprimé en % pour une variable factorielle, en ordre décroissant des %
 - **bardeuxph** Graphique en barre. Une variable exprimée en % pour chaque modalité de l'autre.
+- **barouiph** Graphique en barre. Une variable binaire (oui/non) exprimée en % d'une modalité (oui par ex.) pour chaque modalité de l'autre.
