@@ -33,5 +33,5 @@ tabcph(
 Tableau comparatif (univarie)
 }
 \examples{
-tabcph(iris, Species)
+tabcph(iris, Species, levels(iris$Species))
 }

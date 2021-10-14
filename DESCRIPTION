@@ -19,6 +19,7 @@ Imports:
     boot,
     dplyr,
     epiDisplay,
+    forcats,
     ggplot2,
     ggsci,
     janitor,

@@ -24,5 +24,5 @@ Tableau descriptif
 Averc les intitules des variables en clair
 }
 \examples{
-tab1bph(iris,nom =names(iris),titre = "Table 1", label = "tabiiris")
+tab1ph(iris,nom =names(iris),titre = "Table 1", label = "tabiiris")
 }

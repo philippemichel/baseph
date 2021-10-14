@@ -7,6 +7,7 @@
 #' @import see
 #' @import dplyr
 #' @import ggsci
+#' @import forcats
 #'
 #' @return un graphique
 #' @export
@@ -21,7 +22,7 @@ bardecph <- function(varx, titre = "") {
   }
   names(aa)[1] <- "cause"
   aa %>%
-    mutate(name = fct_reorder(cause, desc(Freq))) %>%
+    mutate(name = forcats::fct_reorder(cause, desc(Freq))) %>%
     ggplot() +
     aes(x = name, y = Freq, fill = name) +
     geom_bar(stat = "identity") +

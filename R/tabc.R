@@ -15,7 +15,7 @@
 #' @return
 #' @export
 #'
-#' @examples tabcph(iris, Species)
+#' @examples tabcph(iris, Species, levels(iris$Species))
 tabcph <- function(dfx,
                    tri,
                    nomv,
