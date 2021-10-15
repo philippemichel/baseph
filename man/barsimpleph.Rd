@@ -5,12 +5,20 @@
 \title{Barplot simple en \%
 Trace un barplot d'une variable factorielle, axe des y en \%}
 \usage{
-barsimpleph(varx, titre)
+barsimpleph(varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 }
 \arguments{
 \item{varx}{variable a traiter (factorielle)}
 
 \item{titre}{Titre du graphique}
+
+\item{stitre}{Soustitre du graphique}
+
+\item{capt}{légende du graphique}
+
+\item{angle}{angle affichage des valeurs de vart sur l'axe des x (0 par defaut)}
+
+\item{lb}{label du graphique}
 }
 \value{
 un graphique

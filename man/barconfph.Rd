@@ -5,7 +5,16 @@
 \title{Barplot avec barres d'erreur
 Trace un barplot avec les intervalles de confiance pour une variable numerique et une variable factorielle de classification}
 \usage{
-barconfph(varx, testx, valx = "oui", tit = "titre", subtit = "", ang = 0)
+barconfph(
+  varx,
+  testx,
+  valx = "oui",
+  titre = "",
+  stitre = "",
+  capt = "",
+  lab = "",
+  angle = 0
+)
 }
 \arguments{
 \item{varx}{cas a représenter}
@@ -14,11 +23,15 @@ barconfph(varx, testx, valx = "oui", tit = "titre", subtit = "", ang = 0)
 
 \item{valx}{valeur de testx a presenter}
 
-\item{tit}{titre du graphique}
+\item{titre}{Titre du graphique}
 
-\item{subtit}{sous titre}
+\item{stitre}{Soustitre du graphique}
 
-\item{ang}{Angle d'ecriture des légendes de l'axe x.}
+\item{capt}{légende du graphique}
+
+\item{angle}{angle affichage des valeurs de vart sur l'axe des x (0 par defaut)}
+
+\item{lb}{label du graphique}
 }
 \value{
 graphique
@@ -30,6 +43,6 @@ Trace un barplot avec les intervalles de confiance pour une variable numerique e
 \examples{
 xx <- factor(c("A","A","B","A","B","C","A","C"))
           yy <- factor(c(rep("oui",4),rep("non",4)))
-         barconfph(varx=xx, testx= yy, valx = "non", tit = "essai", subtit = "", ang = 0)
+         barconfph(varx=xx, testx= yy, valx = "non", tit = "essai", stitre = "", ang = 0)
 
 }

@@ -4,7 +4,10 @@
 #' @param varp variable a traiter (factorielle) le plus souvent binaire
 #' @param vart variable de tri (afficher sur l'axe des x)
 #' @param titre Titre du graphique
+#' @param stitre Soustitre du graphique
 #' @param oui oui la valeur à afficher dans la variable varp
+#' @param capt  légende du graphique
+#' @param lb label du graphique
 #' @param angle angle affichage des valeurs de vart sur l'axe des x (0 par defaut)
 #'
 #' @import ggplot2
@@ -18,17 +21,23 @@
 #'
 #' @examples aa <- c("a","a","b","c")
 #'           bb <- c("oui","non","oui","oui")
-#'          barouiph(bb,aa, titre = "essai", oui = "oui", angle = 0)
+#'          barouiph(aa,bb, titre = "essai", oui = "oui", angle = 0)
 #'
 #'
 barouiph <- function(varp,
                      vart,
-                     titre = "",
                      oui = "oui",
+                     titre = "",
+                     stitre = "",
+                     capt = "",
+                     lab = "",
                      angle = 0) {
+  if (is.factor(varp) == FALSE){varp <- as.factor(varp)}
+  if (is.factor(vart) == FALSE){vart <- as.factor(vart)}
   if (oui %in% levels(varp) == FALSE)
   {
     print(paste0("*", oui, "* n'est pas dans la variable \u00e9tudi\u00e9e"))
+    print(levels(varp))
     return()
   }
   if (angle == 0) {hj = 0.5} else {hj = 1}
@@ -52,7 +61,10 @@ barouiph <- function(varp,
       width = 0.6
     ) +
     labs(title = titre,
-         y = "%") +
+         subtitle = stitre,
+         y = "%",
+         caption = capt,
+         label = lab) +
     theme_light() +
     scale_fill_material() +
     theme(
