@@ -5,7 +5,7 @@
 \title{Barplot 2 variables factorielles
 une variable de tri, une variable en \% par modalité de tri}
 \usage{
-bardeuxph(varp, vart, titre = "", stitre = "", capt = "", lab = "", angle = 0)
+bardeuxph(varp, vart, titre = "", capt = "", lab = "", angle = 0)
 }
 \arguments{
 \item{varp}{variable a exprimer en \% (factorielle)}
@@ -13,8 +13,6 @@ bardeuxph(varp, vart, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 \item{vart}{variable factorielle de tri (axe des x)}
 
 \item{titre}{Titre du graphique}
-
-\item{stitre}{Soustitre du graphique}
 
 \item{capt}{légende du graphique}
 

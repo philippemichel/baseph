@@ -23,7 +23,7 @@ moyciph <- function(varx,ci=95){
   else{
     set.seed(1234)
     b1 <- boot::boot(varx, statistic = moy, R = 1000)
-    bb <- boot::boot.ci(b1, conf = ci)
+    bb <- boot::boot.ci(b1, conf = ci, type = "perc")
     binf <- bb$percent[4]
     bsup <- bb$percent[5]
     bbr <- c(binf = binf, bsup = bsup)

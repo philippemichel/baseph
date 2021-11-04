@@ -4,7 +4,6 @@
 #' @param vart variable factorielle de tri (axe des x)
 #' @param varp variable a exprimer en % (factorielle)
 #' @param titre Titre du graphique
-#' @param stitre Soustitre du graphique
 #' @param capt  légende du graphique
 #' @param lb label du graphique
 #' @param angle angle affichage des valeurs de vart sur l'axe des x (0 par defaut)
@@ -23,7 +22,6 @@
 bardeuxph <- function(varp,
                       vart,
                       titre = "",
-                      stitre = "",
                       capt = "",
                       lab = "",
                       angle = 0){
@@ -31,12 +29,14 @@ bardeuxph <- function(varp,
   zz <- table(varp, vart)
   zz <- prop.table(zz, 2) * 100
   zz <- as.data.frame(zz)
+  ccs <- chisq.test(varp,vart)
+  stit <- beaup(ccs[[3]])
   zz %>%
     ggplot() +
     aes(x = vart, y = Freq, fill = varp) +
     geom_bar(stat = "Identity") +
     labs(title = titre,
-         subtitle = stitre,
+         subtitle = stit,
          y = "%",
          caption = capt,
          label = lab) +

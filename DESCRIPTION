@@ -27,6 +27,7 @@ Imports:
     knitr,
     lifecycle,
     qpdf,
+    questionr,
     readr,
     rlang,
     rmarkdown,
