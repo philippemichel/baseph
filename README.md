@@ -4,13 +4,13 @@
   [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
   <!-- badges: end -->
   
-Les fonctions de base pour un projet clinique simple en R. 
+Les fonctions de base pour un projet simple de recherche clinique en R, particuièrement adapté pour une thèse ou un mémoire de DES. 
 
 # Plusieurs tableaux : 
 - **tab1ph** Descriptif simple
 - **tabcph** Comparaison simple
 
-Pour ces deux tableaux, possibilité d'avoir les intitulés vrais des variables & non les codes.
+Pour ces deux tableaux, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des "beaux intitulés" en csv qui sera importée. 
 
 - **tabmmph** Résultats d'une régression. Pas satisfaisant. Utiliser *finalfit* ?
 
