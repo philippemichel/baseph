@@ -1,7 +1,6 @@
 #' Tableau descriptif
 #' Averc les intitules des variables en clair
 #' @param dfx Data.frame to explore
-#' @param nom vecteur avec les vrais noms des variables
 #' @param titre title of the table
 #' @param label label of the table for RMarkdown or LaTeX
 #' @nomv liste des vrais noms des variables
@@ -14,7 +13,7 @@
 #' @return
 #' @export
 #'
-#' @examples tab1ph(iris,nom =names(iris),titre = "Table 1", label = "tabiiris")
+#' @examples tab1ph(iris,nomv =names(iris),titre = "Table 1", label = "tabiiris")
 tab1ph <- function(dfx,nomv, titre = "Tableau descriptif", label = "tabd"){
   tabp <- NULL
   ligd <- NULL

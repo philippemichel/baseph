@@ -7,7 +7,7 @@
 #' @param stitre Soustitre du graphique
 #' @param oui oui la valeur à afficher dans la variable varp
 #' @param capt  légende du graphique
-#' @param lb label du graphique
+#' @param lab label du graphique
 #' @param angle angle affichage des valeurs de vart sur l'axe des x (0 par defaut)
 #'
 #' @import ggplot2

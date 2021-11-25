@@ -16,9 +16,9 @@ bardeuxph(varp, vart, titre = "", capt = "", lab = "", angle = 0)
 
 \item{capt}{légende du graphique}
 
-\item{angle}{angle affichage des valeurs de vart sur l'axe des x (0 par defaut)}
+\item{lab}{label du graphique}
 
-\item{lb}{label du graphique}
+\item{angle}{angle affichage des valeurs de vart sur l'axe des x (0 par defaut)}
 }
 \value{
 un graphique

@@ -13,8 +13,6 @@ tab1ph(dfx, nomv, titre = "Tableau descriptif", label = "tabd")
 \item{titre}{title of the table}
 
 \item{label}{label of the table for RMarkdown or LaTeX}
-
-\item{nom}{vecteur avec les vrais noms des variables}
 }
 \value{
 
@@ -24,5 +22,5 @@ Tableau descriptif
 Averc les intitules des variables en clair
 }
 \examples{
-tab1ph(iris,nom =names(iris),titre = "Table 1", label = "tabiiris")
+tab1ph(iris,nomv =names(iris),titre = "Table 1", label = "tabiiris")
 }

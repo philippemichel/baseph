@@ -2,33 +2,32 @@
 % Please edit documentation in R/glmph.R
 \name{glmph}
 \alias{glmph}
-\title{Regression logistique, sortie en un tableau.}
+\title{Tableau de regresion logistique}
 \usage{
-glmph(dfx, vart, vars, titre = "", lab = "")
+glmph(dfx, vart, vars, bnom, titre = "", lab = "")
 }
 \arguments{
-\item{dfx}{Data-frame (chaine de caracteres)}
+\item{dfx}{nom du data-frame}
 
-\item{vart}{Variable de tri (chaine de caracteres)}
+\item{vart}{nom de la variable dependante}
 
-\item{vars}{Variables a explorer (un vecteur)}
+\item{vars}{vecteur des variables explicatives}
 
-\item{titre}{Titre du tableau}
+\item{bnom}{liste des intitules corrects des variables}
 
-\item{lab}{Label du tableau}
+\item{titre}{titre du tableau}
+
+\item{lab}{label}
 }
 \value{
 tableau
 }
 \description{
-Regression logistique, sortie en un tableau.
+Trace le tableau d'une regression logistique avec les intitules vrais des variables.
 }
 \examples{
-counts <- c(18,17,15,20,10,20,25,13,12)
-          outcome <- gl(3,1,9)
-treatment <- as.factor(c(rep("o",4),rep("n",5)))
-dff <- data.frame(treatment, outcome, counts)
-glmph(dfx = "dff", vart =  "treatment", vars = c("counts", "outcome" ), titre = "test", lab = "tabtest")
-
+irisz <- iris
+          irisz$zz <- as.factor(rep(c("a","b"),75))
+          glmph(dfx = "irisz",vart = "zz",vars = c("Species","Sepal.Width"),bnom = names(iris))
 
 }

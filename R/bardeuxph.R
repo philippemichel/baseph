@@ -5,7 +5,7 @@
 #' @param varp variable a exprimer en % (factorielle)
 #' @param titre Titre du graphique
 #' @param capt  légende du graphique
-#' @param lb label du graphique
+#' @param lab label du graphique
 #' @param angle angle affichage des valeurs de vart sur l'axe des x (0 par defaut)
 #'
 #' @import ggplot2
