@@ -36,3 +36,4 @@ Imports:
     tidyr,
     utils
 VignetteBuilder: knitr
+Language: fr

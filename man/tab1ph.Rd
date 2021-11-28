@@ -10,6 +10,8 @@ tab1ph(dfx, nomv, titre = "Tableau descriptif", label = "tabd")
 \arguments{
 \item{dfx}{Data.frame to explore}
 
+\item{nomv}{liste des vrais noms des variables}
+
 \item{titre}{title of the table}
 
 \item{label}{label of the table for RMarkdown or LaTeX}

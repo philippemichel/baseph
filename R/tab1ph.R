@@ -3,7 +3,7 @@
 #' @param dfx Data.frame to explore
 #' @param titre title of the table
 #' @param label label of the table for RMarkdown or LaTeX
-#' @nomv liste des vrais noms des variables
+#' @param nomv liste des vrais noms des variables
 #'
 #' @import stats
 #' @import dplyr

@@ -12,7 +12,7 @@ lignum(x, nn)
 \item{nn}{nom du vecteur}
 }
 \value{
-
+une ligne
 }
 \description{
 Ligne numerique tableau descriptif

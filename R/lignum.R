@@ -5,7 +5,7 @@
 #'
 #' @import stats
 #'
-#' @return
+#' @return une ligne
 #' @export
 #'
 #' @examples lignum (iris$Sepal.Length, "largeur petales")
