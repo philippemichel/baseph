@@ -11,7 +11,7 @@ Les fonctions de base pour un projet simple de recherche clinique en R, particui
 - **tabcph** Comparaison simple
 - **glmph** Régression logistique
 
-Pour ces deux tableaux, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des "beaux intitulés" en csv qui doit être importé dans un data-frame.
+Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des "beaux intitulés" en csv qui doit être importé dans un data-frame.
 
 # Autres aides : 
 - **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur* 
