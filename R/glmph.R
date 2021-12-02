@@ -5,7 +5,7 @@
 #' @param dfx nom du data-frame
 #' @param vart nom de la variable dependante
 #' @param vars vecteur des variables explicatives
-#' @param bnom liste des intitules corrects des variables
+#' @param bnom vecteur contenant les intitules corrects des variables (l'extraction des valeurs utiles est automatique)
 #' @param titre titre du tableau
 #' @param lab label
 #'
@@ -19,12 +19,12 @@
 #'
 #' @examples irisz <- iris
 #'           irisz$zz <- as.factor(rep(c("a","b"),75))
-#'           glmph(dfx = "irisz",vart = "zz",vars = c("Species","Sepal.Width"),bnom = names(iris))
+#'           glmph(dfx = "irisz",vart = "zz",vars = c("Species","Sepal.Width"),bnom = names(irisz))
 #'
 glmph <- function(dfx,
                   vart,
                   vars,
-                  bnom ,
+                  bnom = "names(dfx)",
                   titre = "",
                   lab = "") {
   qq <- names(eval(parse(text = dfx)))
