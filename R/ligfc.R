@@ -12,7 +12,7 @@
 #' @examples ligfc("petale",iris$Species,iris$Species)
 ligfc <- function(nom, varp, trip) {
   tabp <- table(varp, trip)
-  chip <- chisq.test(tabp, correct = T)[[3]]
+  chip <- chisq.test(tabp, correct = TRUE)[[3]]
   chip <- chisq.test(tabp, correct = FALSE)
   if (min(chip$expected)<5){chip <- chisq.test(tabp, correct = TRUE)}
   chip <- chip[[3]]

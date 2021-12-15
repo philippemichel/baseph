@@ -37,3 +37,4 @@ Imports:
     utils
 VignetteBuilder: knitr
 Language: fr
+URL: https://github.com/philippemichel/baseph

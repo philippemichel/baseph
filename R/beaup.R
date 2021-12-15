@@ -1,6 +1,7 @@
 #' Petit p bien presente
 #'
 #' @param varp resultat du p
+#' @param affp si 1 renvoie "p = 0,005" sinon "0,005"
 #'
 #' @return beaup , chaine de caractère
 #'
@@ -9,12 +10,20 @@
 #' beaup(pp$p.value)
 #'
 #' @export
-beaup <- function(varp) {
+beaup <- function(varp, affp = 1) {
   if (varp < 0.001) {
-    beaup <- "p < 0,001"
+    if (affp == 1) {
+      beaup <- "p < 0,001"
+    }
+    else {
+      beaup <- "< 0,001"
+    }
   }
   else {
-    beaup <- paste0("p = ", round(varp, 3))
+    beaup <- round(varp, 3)
+    if (affp == 1) {
+      beaup <- paste0("p = ", beaup)
+    }
   }
   return(beaup)
 }

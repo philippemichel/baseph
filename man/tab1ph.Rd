@@ -5,7 +5,7 @@
 \title{Tableau descriptif
 Averc les intitules des variables en clair}
 \usage{
-tab1ph(dfx, nomv, titre = "Tableau descriptif", label = "tabd")
+tab1ph(dfx, nomv, titre = "Tableau descriptif", label = "tabd", export = FALSE)
 }
 \arguments{
 \item{dfx}{Data.frame to explore}
@@ -15,6 +15,8 @@ tab1ph(dfx, nomv, titre = "Tableau descriptif", label = "tabd")
 \item{titre}{title of the table}
 
 \item{label}{label of the table for RMarkdown or LaTeX}
+
+\item{export}{si TRUE, export en CSV}
 }
 \value{
 

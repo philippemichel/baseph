@@ -4,10 +4,12 @@
 \alias{beaup}
 \title{Petit p bien presente}
 \usage{
-beaup(varp)
+beaup(varp, affp = 1)
 }
 \arguments{
 \item{varp}{resultat du p}
+
+\item{affp}{si 1 renvoie "p = 0,005" sinon "0,005"}
 }
 \value{
 beaup , chaine de caractère

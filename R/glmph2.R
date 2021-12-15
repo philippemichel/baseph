@@ -1,6 +1,7 @@
 #' Tableau de regresion logistique
 #'
-#' Trace le tableau d'une regression logistique avec les intitules vrais des variables.
+#' Trace le tableau d'une regression logistique avec les intitules vrais des variables
+#' Affiche les tests bruts & ajustes
 #'
 #' @param dfx nom du data-frame
 #' @param vart nom de la variable dependante
@@ -25,13 +26,27 @@ glmph <-
   function(dfx,
            vart,
            vars,
-           bnom ,
+           bnom,
            titre = "Analyse multivari\u00e9e",
            lab = "") {
     qq <- names(eval(parse(text = dfx)))
     znom <- which(qq %in% vars)
     bnom <- bnom[znom]
     print(znom)
+    # Comparaison simple
+    colp <- NULL
+    tri <- eval(parse(text = paste(dfx,"$",vart)))
+    for (l in znom){
+      varx <- eval(parse(text = paste(dfx,"[,",l,"]")))
+      if (is.numeric(varx)){
+        qq <- t.test(varx~tri,var.equal = TRUE)
+      }
+      else{
+        qq <- chisq.test(tri,varx,correct = FALSE)
+      }
+      colp <- c(colp,beaup(qq$p.value, affp = 0))
+    }
+    #Régression
     zz <- paste(vars, collapse = "+")
     aaf <-
       parse(text = paste("glm(", vart, " ~ ", zz, ", data = ", dfx, ", family = binomial)"))

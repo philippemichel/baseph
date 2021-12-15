@@ -3,7 +3,8 @@
 \name{bardecph}
 \alias{bardecph}
 \title{Barplot decroissant en \%
-Trace un barplot d'une variable factorielle, axe des y en \%, classement des items en décroissant}
+Trace un barplot d'une variable factorielle, axe des y en \%,
+classement des items en décroissant.}
 \usage{
 bardecph(varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 }
@@ -25,7 +26,8 @@ un graphique
 }
 \description{
 Barplot decroissant en \%
-Trace un barplot d'une variable factorielle, axe des y en \%, classement des items en décroissant
+Trace un barplot d'une variable factorielle, axe des y en \%,
+classement des items en décroissant.
 }
 \examples{
 bardecph(iris$Species, "Espece")

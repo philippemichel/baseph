@@ -25,7 +25,7 @@ bardeuxph <- function(varp,
                       capt = "",
                       lab = "",
                       angle = 0){
-  if (angle == 0) {hj = 0.5} else {hj = 1}
+  if (angle == 0) {hj <-  0.5} else {hj <-  1}
   zz <- table(varp, vart)
   zz <- prop.table(zz, 2) * 100
   zz <- as.data.frame(zz)

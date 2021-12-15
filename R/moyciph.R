@@ -1,3 +1,4 @@
+
 #' Intervalle de Confiance par Bootstrap pour une moyenne
 #'
 #' @param varx la variable à étudier
@@ -12,12 +13,12 @@
 #'
 #' @export
 moyciph <- function(varx,ci=95){
-  ci = ci/100
+  ci <-  ci/100
   moy <- function(data, ind){
     deb <- data[ind]
     moye <- mean(deb, na.rm = TRUE)
   }
-  if (min(varx,na.rm=T)==max(varx,na.rm=T)){
+  if (min(varx,na.rm=TRUE)==max(varx,na.rm=TRUE)){
     bbr <- c(binf = NA, bsup = NA)
   }
   else{

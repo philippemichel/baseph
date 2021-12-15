@@ -4,6 +4,7 @@
 #' @param titre title of the table
 #' @param label label of the table for RMarkdown or LaTeX
 #' @param nomv liste des vrais noms des variables
+#' @param export si TRUE, export en CSV
 #'
 #' @import stats
 #' @import dplyr
@@ -14,7 +15,7 @@
 #' @export
 #'
 #' @examples tab1ph(iris,nomv =names(iris),titre = "Table 1", label = "tabiiris")
-tab1ph <- function(dfx,nomv, titre = "Tableau descriptif", label = "tabd"){
+tab1ph <- function(dfx,nomv, titre = "Tableau descriptif", label = "tabd", export = FALSE){
   tabp <- NULL
   ligd <- NULL
   nlig <- 0
@@ -35,6 +36,11 @@ tab1ph <- function(dfx,nomv, titre = "Tableau descriptif", label = "tabd"){
       ligd <- c(ligd, seq(nlig-llx$nl+1,nlig))
     }
     tabp <- rbind(tabp,ll)
+  }
+  # Export
+  if (export == TRUE) {
+    nomcsv <- paste0(titre, "_export_table1.csv")
+    write.csv(tabp, nomcsv)
   }
   # Ecriture du tableau
   kable(

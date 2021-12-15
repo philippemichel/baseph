@@ -24,7 +24,7 @@ bmiph <- function(bmi, lang = "fr") {
   }
   else{
     limf <- c(0, 18.5, 25, 30, 100)
-    labf = c("Underweight", "Normal weight", "Overweight", "Obese")
+    labf <-  c("Underweight", "Normal weight", "Overweight", "Obese")
 }
   bmif <-
     cut(

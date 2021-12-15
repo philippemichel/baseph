@@ -34,7 +34,7 @@ tabcph <- function(dfx,
   vv <- quo_name(trix)
   triz <- dfx[vv]
   triz <- triz[[1]]
-  for (ll in 1:length(dfx)) {
+  for (ll in seq_len(length(dfx))) {
     varx <- dfx[, ll]
     varx <- varx[[1]]
     if (names(dfx)[ll] != vv) {

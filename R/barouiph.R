@@ -40,14 +40,14 @@ barouiph <- function(varp,
     print(levels(varp))
     return()
   }
-  if (angle == 0) {hj = 0.5} else {hj = 1}
+  if (angle == 0) {hj <-  0.5} else {hj <-  1}
   nlev <- which(oui == levels(varp))
   zz <- table(varp, vart)
   zz <- binom.confint(zz[nlev, ], colSums(zz), method = "exact")
   zz <- as_tibble(zz)
   ymax <- max(zz$upper) * 100 + 10
   if (ymax > 90) {
-    ymax = 100
+    ymax <-  100
   }
   zz$tri <- as.factor(levels(vart))
   levels(zz$tri) <- levels(vart)

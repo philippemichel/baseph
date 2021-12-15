@@ -1,5 +1,6 @@
 #' Barplot decroissant en %
-#' Trace un barplot d'une variable factorielle, axe des y en %, classement des items en décroissant
+#' Trace un barplot d'une variable factorielle, axe des y en %,
+#' classement des items en décroissant.
 #'
 #' @param varx variable a traiter (factorielle)
 #' @param titre Titre du graphique
@@ -24,13 +25,13 @@ bardecph <- function(varx,
                      capt = "",
                      lab = "",
                      angle = 0){
-  if (angle == 0) {hj = 0.5} else {hj = 1}
+  if (angle == 0) {hj <-  0.5} else {hj <-  1}
     aa <- prop.table(table(varx)) * 100
     aa <- as.data.frame(aa)
     maxy <- floor(max(aa$Freq) / 10 + 2) * 10
     if (maxy > 100) {
 
-    maxy = 100
+    maxy <-  100
   }
   names(aa)[1] <- "cause"
   aa %>%

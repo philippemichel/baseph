@@ -3,7 +3,8 @@
 \name{barconfph}
 \alias{barconfph}
 \title{Barplot avec barres d'erreur
-Trace un barplot avec les intervalles de confiance pour une variable numerique et une variable factorielle de classification}
+Trace un barplot avec les intervalles de confiance pour une variable numerique
+et une variable factorielle de classification}
 \usage{
 barconfph(
   varx,
@@ -38,11 +39,17 @@ graphique
 }
 \description{
 Barplot avec barres d'erreur
-Trace un barplot avec les intervalles de confiance pour une variable numerique et une variable factorielle de classification
+Trace un barplot avec les intervalles de confiance pour une variable numerique
+et une variable factorielle de classification
 }
 \examples{
 xx <- factor(c("A","A","B","A","B","C","A","C"))
           yy <- factor(c(rep("oui",4),rep("non",4)))
-         barconfph(varx=xx, testx= yy, valx = "non", tit = "essai", stitre = "", ang = 0)
+         barconfph(varx=xx,
+                   testx= yy,
+                   valx = "non",
+                   tit = "essai",
+                   stitre = "",
+                   ang = 0)
 
 }
