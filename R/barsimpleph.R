@@ -21,7 +21,7 @@ barsimpleph <- function(varx,
                         capt = "",
                         lab = "",
                         angle = 0){
-  if (angle == 0) {hj = 0.5} else {hj = 1}
+  if (angle == 0) {hj <-  0.5} else {hj <-  1}
     aa <- prop.table(table(varx)) * 100
     aa <- as.data.frame(aa)
     names(aa)[1] <- "cause"

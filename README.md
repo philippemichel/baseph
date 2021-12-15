@@ -25,3 +25,4 @@ Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non
 - **bardeuxph** Graphique en barre. Une variable exprimée en % pour chaque modalité de l'autre.
 - **bardecph**  Même graphique que bardeuxph mais les % sont en ordre décroissant
 - **barouiph** Graphique en barre avec barres d'erreur. Une variable binaire (oui/non) exprimée en % d'une modalité (oui par ex.) pour chaque modalité de l'autre.
+- **pyrph** Pyramide des âges
