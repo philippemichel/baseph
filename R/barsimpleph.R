@@ -1,6 +1,7 @@
 #' Barplot simple en %
 #' Trace un barplot d'une variable factorielle, axe des y en %
-#' @param varx variable a traiter (factorielle)
+#' @param dfx data.frame
+#' @param varx nom de la variable a traiter (factorielle)
 #' @param titre Titre du graphique
 #' @param stitre Soustitre du graphique
 #' @param capt  légende du graphique
@@ -14,32 +15,37 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples barsimpleph(iris$Species, "Espece")
-barsimpleph <- function(varx,
-                        titre = "",
-                        stitre = "",
-                        capt = "",
-                        lab = "",
-                        angle = 0){
+#' @examples barsimpleph(iris, Species, "Espece")
+barsimpleph <- function(dfx,
+                       varx,
+                       titre = "",
+                       stitre = "",
+                       capt = "",
+                       lab = "",
+                       angle = 0){
   if (angle == 0) {hj <-  0.5} else {hj <-  1}
-    aa <- prop.table(table(varx)) * 100
-    aa <- as.data.frame(aa)
-    names(aa)[1] <- "cause"
-    aa %>%
+  aa <- dfx %>%
+    group_by({{varx}}) %>%
+    count({{varx}})
+  names(aa) <- c("nomx","fqx")
+  aa <- na.omit(aa)
+  aa$fqx <- aa$fqx*100/sum(aa$fqx)
+  #
+  aa %>%
     ggplot() +
-    aes(x = cause, y = Freq, fill = cause) +
+    aes(x = nomx, y = fqx, fill = nomx) +
     geom_bar(stat = "identity") +
     geom_text(
-      aes(label = paste0(round(Freq, 0), " %")),
+      aes(label = paste0(round(fqx, 0), " %")),
       vjust = 1.6,
       color = "white",
       size = 6
     ) +
-      labs(title = titre,
-           subtitle = stitre,
-           y = "%",
-           caption = capt,
-           label = lab) +
+    labs(title = titre,
+         subtitle = stitre,
+         y = "%",
+         caption = capt,
+         label = lab) +
     theme_light() +
     scale_fill_material() +
     theme(

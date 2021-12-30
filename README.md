@@ -20,9 +20,9 @@ Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non
 - **bmiph** Couper en facteurs un BMI numérique, version française & anglaise.
 
 # Graphiques
- - **barconfph** Graphique en barres avec intervalle de confiance pour une variable numérique & une variable factorielle de tri.
-- **barsimpleph** Graphique en barre exprimé en % pour une variable factorielle.
-- **bardeuxph** Graphique en barre. Une variable exprimée en % pour chaque modalité de l'autre.
-- **bardecph**  Même graphique que bardeuxph mais les % sont en ordre décroissant
+ - **barconfph** Graphique en barres avec intervalle de confiance pour une variable numérique (y) & une variable factorielle de tri (x).
+- **barsimpleph** Graphique en barre exprimé en %  des modalités pour une variable factorielle (x) 
+- **bardecph**  Même graphique que **barsimpleph** mais les % sont en ordre décroissant
+- **bardeuxph** Graphique en barre. Une variable exprimée en % (y) pour chaque modalité (x) de l'autre.
 - **barouiph** Graphique en barre avec barres d'erreur. Une variable binaire (oui/non) exprimée en % d'une modalité (oui par ex.) pour chaque modalité de l'autre.
-- **pyrph** Pyramide des âges
+- **pyrph** Pyramide des âges. La fonction *epiDisplay::pyramid()* donne aussi un très bon rendu.

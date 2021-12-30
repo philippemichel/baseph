@@ -2,7 +2,8 @@
 #' Trace un barplot d'une variable factorielle, axe des y en %,
 #' classement des items en décroissant.
 #'
-#' @param varx variable a traiter (factorielle)
+#' @param dfx data.frame
+#' @param varx nom de la variable a traiter (factorielle)
 #' @param titre Titre du graphique
 #' @param stitre Soustitre du graphique
 #' @param capt  légende du graphique
@@ -18,29 +19,34 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples bardecph(iris$Species, "Espece")
-bardecph <- function(varx,
+#' @examples bardecph(iris, Species, "Espece")
+bardecph <- function(dfx,
+                     varx,
                      titre = "",
                      stitre = "",
                      capt = "",
                      lab = "",
                      angle = 0){
   if (angle == 0) {hj <-  0.5} else {hj <-  1}
-    aa <- prop.table(table(varx)) * 100
-    aa <- as.data.frame(aa)
-    maxy <- floor(max(aa$Freq) / 10 + 2) * 10
-    if (maxy > 100) {
+  #
+  aa <- dfx %>%
+    group_by({{varx}}) %>%
+    count({{varx}})
+  names(aa) <- c("nomx","fqx")
+  aa <- na.omit(aa)
+  aa$fqx <- aa$fqx*100/sum(aa$fqx)
+  maxy <- floor(max(aa$fqx) / 10 + 2) * 10
+  if (maxy > 100) {
 
     maxy <-  100
   }
-  names(aa)[1] <- "cause"
+  #
   aa %>%
-    mutate(name = forcats::fct_reorder(cause, desc(Freq))) %>%
     ggplot() +
-    aes(x = name, y = Freq, fill = name) +
+    aes(x = fct_reorder(nomx,fqx, .desc = TRUE), nomx, y = fqx, fill = fct_reorder(nomx,fqx, .desc = TRUE)) +
     geom_bar(stat = "identity") +
     geom_text(
-      aes(label = paste0(round(Freq, 0), " %")),
+      aes(label = paste0(round(fqx, 0), " %")),
       vjust = -0.8,
       color = "black",
       size = 6
