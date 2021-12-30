@@ -2,11 +2,13 @@
 % Please edit documentation in R/barconfph.R
 \name{barconfph}
 \alias{barconfph}
-\title{Barplot avec barres d'erreur
-Trace un barplot avec les intervalles de confiance pour une variable numerique
-et une variable factorielle de classification}
+\title{Barplot avec barres d'erreur d'une valeur
+Trace un barplot avec les intervalles de confiance pour une valeur donnee
+d'une variable factorielle
+selon les ^classes d'une variable factorielle de classification}
 \usage{
 barconfph(
+  dfx,
   varx,
   testx,
   valx = "oui",
@@ -18,6 +20,8 @@ barconfph(
 )
 }
 \arguments{
+\item{dfx}{data.frame}
+
 \item{varx}{cas a représenter}
 
 \item{testx}{Variable de tri}
@@ -38,14 +42,17 @@ barconfph(
 graphique
 }
 \description{
-Barplot avec barres d'erreur
-Trace un barplot avec les intervalles de confiance pour une variable numerique
-et une variable factorielle de classification
+Barplot avec barres d'erreur d'une valeur
+Trace un barplot avec les intervalles de confiance pour une valeur donnee
+d'une variable factorielle
+selon les ^classes d'une variable factorielle de classification
 }
 \examples{
 xx <- factor(c("A","A","B","A","B","C","A","C"))
           yy <- factor(c(rep("oui",4),rep("non",4)))
-         barconfph(varx=xx,
+          dfe <- dplyr::tibble(xx,yy)
+         barconfph(dfx = dfe,
+                   varx=xx,
                    testx= yy,
                    valx = "non",
                    tit = "essai",

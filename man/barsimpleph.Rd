@@ -5,10 +5,12 @@
 \title{Barplot simple en \%
 Trace un barplot d'une variable factorielle, axe des y en \%}
 \usage{
-barsimpleph(varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
+barsimpleph(dfx, varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 }
 \arguments{
-\item{varx}{variable a traiter (factorielle)}
+\item{dfx}{data.frame}
+
+\item{varx}{nom de la variable a traiter (factorielle)}
 
 \item{titre}{Titre du graphique}
 
@@ -28,5 +30,5 @@ Barplot simple en \%
 Trace un barplot d'une variable factorielle, axe des y en \%
 }
 \examples{
-barsimpleph(iris$Species, "Espece")
+barsimpleph(iris, Species, "Espece")
 }

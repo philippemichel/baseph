@@ -19,4 +19,6 @@
 #'           df <- data.frame(aa,sx)
 #'           pyrph(dfx = df, age = aa, sexe = sx, ff = "F", mm = "M", titre = "Pyramide des âges")
 #'
-)
+pyrph <- function(dfx,age,sexe,ff,mm,titre) {
+  return(0)
+}

@@ -25,4 +25,4 @@ Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non
 - **bardecph**  Même graphique que **barsimpleph** mais les % sont en ordre décroissant
 - **bardeuxph** Graphique en barre. Une variable exprimée en % (y) pour chaque modalité (x) de l'autre.
 - **barouiph** Graphique en barre avec barres d'erreur. Une variable binaire (oui/non) exprimée en % d'une modalité (oui par ex.) pour chaque modalité de l'autre.
-- **pyrph** Pyramide des âges. La fonction *epiDisplay::pyramid()* donne aussi un très bon rendu.
+- **pyrph** Pyramide des âges. La fonction *epiDisplay::pyramid()* donne aussi un très bon rendu. (en travaux)

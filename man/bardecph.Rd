@@ -6,10 +6,12 @@
 Trace un barplot d'une variable factorielle, axe des y en \%,
 classement des items en décroissant.}
 \usage{
-bardecph(varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
+bardecph(dfx, varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 }
 \arguments{
-\item{varx}{variable a traiter (factorielle)}
+\item{dfx}{data.frame}
+
+\item{varx}{nom de la variable a traiter (factorielle)}
 
 \item{titre}{Titre du graphique}
 
@@ -30,5 +32,5 @@ Trace un barplot d'une variable factorielle, axe des y en \%,
 classement des items en décroissant.
 }
 \examples{
-bardecph(iris$Species, "Espece")
+bardecph(iris, Species, "Espece")
 }

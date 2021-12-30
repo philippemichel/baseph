@@ -5,14 +5,7 @@
 \title{Pyramide des ages
 Trace une pyramide des ages simple.}
 \usage{
-pyrph(
-  dfx,
-  age = age,
-  sexe = sexe,
-  ff = "F",
-  mm = "M",
-  titre = "Pyramide des âges"
-)
+pyrph(dfx, age, sexe, ff, mm, titre)
 }
 \arguments{
 \item{dfx}{data.frame contenant les valeurs}
