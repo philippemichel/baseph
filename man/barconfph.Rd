@@ -5,7 +5,7 @@
 \title{Barplot avec barres d'erreur d'une valeur
 Trace un barplot avec les intervalles de confiance pour une valeur donnee
 d'une variable factorielle
-selon les ^classes d'une variable factorielle de classification}
+selon les classes d'une variable factorielle de classification}
 \usage{
 barconfph(
   dfx,
@@ -22,9 +22,9 @@ barconfph(
 \arguments{
 \item{dfx}{data.frame}
 
-\item{varx}{cas a représenter}
+\item{varx}{variable a représenter (factoriel) y}
 
-\item{testx}{Variable de tri}
+\item{testx}{Variable de tri (factoriel) x}
 
 \item{valx}{valeur de testx a presenter}
 
@@ -45,7 +45,7 @@ graphique
 Barplot avec barres d'erreur d'une valeur
 Trace un barplot avec les intervalles de confiance pour une valeur donnee
 d'une variable factorielle
-selon les ^classes d'une variable factorielle de classification
+selon les classes d'une variable factorielle de classification
 }
 \examples{
 xx <- factor(c("A","A","B","A","B","C","A","C"))

@@ -8,6 +8,7 @@
 #' @param bnom vecteur contenant les intitules corrects des variables (l'extraction des valeurs utiles est automatique)
 #' @param titre titre du tableau
 #' @param lab label
+#' @param export si TRUE : exporte la table en csv?
 #'
 #' @import knitr
 #' @import dplyr
@@ -27,17 +28,17 @@ glmph <-
            vars,
            bnom ,
            titre = "Analyse multivari\u00e9e",
-           lab = "") {
+           lab = "",
+           export = FALSE) {
     qq <- names(eval(parse(text = dfx)))
     znom <- which(qq %in% vars)
     bnom <- bnom[znom]
-    print(znom)
     zz <- paste(vars, collapse = "+")
     aaf <-
       parse(text = paste("glm(", vart, " ~ ", zz, ", data = ", dfx, ", family = binomial)"))
     ll <- eval(aaf)
     lod <- odds.ratio(ll)
-    lod <- lod[-1, ]
+    lod <- lod[-1,]
     lodd <-
       paste0(signif(lod[, 1], 3), " [", signif(lod[, 2], 3), " : ", signif(lod[, 3], 3), "]")
     bpo <- sapply(lod[, 4], beaup)
@@ -64,7 +65,11 @@ glmph <-
         }
       }
     }
-    ltit <- c(" ", "Odd -Ratio [IC 95 %]", "p")
+    if (export == TRUE) {
+      nomcsv <- paste0(titre, ".csv")
+      write.csv(tabfin, nomcsv)
+    }
+    ltit <- c(" ", "Odd-Ratio [IC 95 %]", "p")
     kable(
       tabfin,
       row.names = FALSE,

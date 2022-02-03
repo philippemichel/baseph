@@ -12,13 +12,13 @@
 #' @examples moyciph(iris$Sepal.Width, ci = 95)
 #'
 #' @export
-moyciph <- function(varx,ci=95){
-  ci <-  ci/100
-  moy <- function(data, ind){
+moyciph <- function(varx, ci = 95) {
+  ci <-  ci / 100
+  moy <- function(data, ind) {
     deb <- data[ind]
     moye <- mean(deb, na.rm = TRUE)
   }
-  if (min(varx,na.rm=TRUE)==max(varx,na.rm=TRUE)){
+  if (min(varx, na.rm = TRUE) == max(varx, na.rm = TRUE)) {
     bbr <- c(binf = NA, bsup = NA)
   }
   else{

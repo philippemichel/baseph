@@ -19,45 +19,43 @@
 #'           bb <- c("1","2","3","3")
 #'          bardeuxph(aa,bb,"essai")
 #'
-bardeuxph <- function(varp,
+bardeuxph <- function(dfx,
+                      varp,
                       vart,
                       titre = "",
                       capt = "",
                       lab = "",
                       angle = 0){
-  if (angle == 0) {hj <-  0.5} else {hj <-  1}
-  zz <- table(varp, vart)
-  zz <- prop.table(zz, 2) * 100
-  zz <- as.data.frame(zz)
-  ccs <- chisq.test(varp,vart)
-  stit <- beaup(ccs[[3]])
-  zz %>%
-    ggplot() +
-    aes(x = vart, y = Freq, fill = varp) +
-    geom_bar(stat = "Identity") +
-    labs(title = titre,
-         subtitle = stit,
-         y = "%",
-         caption = capt,
-         label = lab) +
-    theme_light() +
-    scale_fill_material() +
-    theme(
-      plot.title = element_text(size = 16, face = "bold"),
-      plot.subtitle = element_text(size = 12),
-      axis.title.x = element_blank(),
-      legend.title = element_blank(),
-      axis.title.y = element_text(
-        size = 12,
-        angle = 0,
-        vjust = .5
-      ),
-      axis.text.x = element_text(
-        size = 12 ,
-        angle = angle,
-        hjust = hj
-      ),
-      axis.text.y = element_text(size = 12),
-      legend.position = "right"
-    )
-}
+                      if (angle == 0) {hj <-  0.5} else {hj <-  1}
+                      dfx %>%
+                        ggplot() +
+                        aes(x = {{vart}}, fill = {{varp}}) +
+                        aes(x = age, fill = genre) +
+                        geom_bar(stat = "count", position = "fill") +
+                        labs(title = titre,
+                             subtitle = "stit",
+                             y = "%",
+                             caption = capt,
+                             label = lab) +
+                        theme_light() +
+                        scale_fill_material() +
+                        scale_y_continuous("%", breaks = seq(0,1,0.2),labels = seq(0,100,20)) +
+                        theme(
+                          plot.title = element_text(size = 16, face = "bold"),
+                          plot.subtitle = element_text(size = 12),
+                          axis.title.x = element_blank(),
+                          legend.title = element_blank(),
+                          axis.title.y = element_text(
+                            size = 12,
+                            angle = 0,
+                            vjust = .5
+                          ),
+                          axis.text.x = element_text(
+                            size = 12 ,
+                            angle = angle,
+                            hjust = hj
+                          ),
+                          axis.text.y = element_text(size = 12),
+                          legend.position = "right"
+                        )
+                      }
