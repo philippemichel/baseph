@@ -20,7 +20,9 @@ debutph <- function(fich) {
     show_col_types = FALSE
   ) %>%
     mutate_if(is.character, as.factor) %>%
-    janitor::clean_names()
+    janitor::clean_names() |>
+    janitor::remove_constant() |>
+    janitor::remove_empty()
   names(df) <- str_replace_all(names(df), "_", ".")
   return(df)
 }

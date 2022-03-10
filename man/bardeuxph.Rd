@@ -8,6 +8,8 @@ une variable de tri, une variable en \% par modalité de tri}
 bardeuxph(dfx, varp, vart, titre = "", capt = "", lab = "", angle = 0)
 }
 \arguments{
+\item{dfx}{data.frame}
+
 \item{varp}{variable a exprimer en \% (factorielle)}
 
 \item{vart}{variable factorielle de tri (axe des x)}
@@ -28,8 +30,9 @@ Barplot 2 variables factorielles
 une variable de tri, une variable en \% par modalité de tri
 }
 \examples{
-aa <- c("a","a","b","c")
-          bb <- c("1","2","3","3")
-         bardeuxph(aa,bb,"essai")
+aa <- c("a","a","b","b","c")
+          bb <- c("1","2","2","3","3")
+          dfx <- data.frame(aa,bb)
+         bardeuxph(dfx,aa,bb,"essai")
 
 }

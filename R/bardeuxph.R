@@ -1,6 +1,7 @@
 #' Barplot 2 variables factorielles
 #' une variable de tri, une variable en % par modalité de tri
 #'
+#' @param dfx data.frame
 #' @param vart variable factorielle de tri (axe des x)
 #' @param varp variable a exprimer en % (factorielle)
 #' @param titre Titre du graphique
@@ -15,9 +16,10 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples aa <- c("a","a","b","c")
-#'           bb <- c("1","2","3","3")
-#'          bardeuxph(aa,bb,"essai")
+#' @examples aa <- c("a","a","b","b","c")
+#'           bb <- c("1","2","2","3","3")
+#'           dfx <- data.frame(aa,bb)
+#'          bardeuxph(dfx,aa,bb,"essai")
 #'
 bardeuxph <- function(dfx,
                       varp,
@@ -30,10 +32,9 @@ bardeuxph <- function(dfx,
                       dfx %>%
                         ggplot() +
                         aes(x = {{vart}}, fill = {{varp}}) +
-                        aes(x = age, fill = genre) +
                         geom_bar(stat = "count", position = "fill") +
                         labs(title = titre,
-                             subtitle = "stit",
+                             subtitle = "",
                              y = "%",
                              caption = capt,
                              label = lab) +

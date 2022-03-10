@@ -3,14 +3,20 @@
 \name{tab1ph}
 \alias{tab1ph}
 \title{Tableau descriptif
-Averc les intitules des variables en clair}
+Avec les intitules des variables en clair}
 \usage{
-tab1ph(dfx, nomv, titre = "Tableau descriptif", label = "tabd", export = FALSE)
+tab1ph(
+  dfx,
+  nomv = "**",
+  titre = "Tableau descriptif",
+  label = "tabd",
+  export = FALSE
+)
 }
 \arguments{
 \item{dfx}{Data.frame to explore}
 
-\item{nomv}{liste des vrais noms des variables}
+\item{nomv}{liste des vrais noms des variables (names(dfx by default))}
 
 \item{titre}{title of the table}
 
@@ -23,8 +29,8 @@ tab1ph(dfx, nomv, titre = "Tableau descriptif", label = "tabd", export = FALSE)
 }
 \description{
 Tableau descriptif
-Averc les intitules des variables en clair
+Avec les intitules des variables en clair
 }
 \examples{
-tab1ph(iris,nomv =names(iris),titre = "Table 1", label = "tabiiris")
+tab1ph(iris, nomv = names(iris), titre = "Table 1", label = "tabiiris")
 }
