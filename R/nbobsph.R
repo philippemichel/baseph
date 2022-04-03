@@ -1,11 +1,11 @@
-#' TNb de sujets pour un sondage
+#' Nb de sujets pour un sondage
 #' Calcul du nombre de cas necessaires pour une enquète obsevationelle
-#' simple snas aucun test.
-#' Si il y aplusiuers questions prendre px = 0.5
+#' simple sans aucun test.
+#' Si il y a plusieurs questions prendre px = 0.5
 #'
-#' @param px Proportion estimé des réponses (0.5)
-#' @param ex Marge d'erreur considere comme acceptable (0.1)
-#' @param np Taile de la population totale (1e5)
+#' @param px Proportion estimée des réponses (0.5)
+#' @param ex Marge d'erreur consideree comme acceptable (0.1)
+#' @param np Taille de la population totale (1e5)
 #'
 #' @return
 #' @export
