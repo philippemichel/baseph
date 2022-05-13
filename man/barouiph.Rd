@@ -41,8 +41,8 @@ Barplot uniquement les "oui" en \%
 Trace un barplot d'une variable factorielle en oui/non, uniquement les "oui" selon les modalités de la variable de tri
 }
 \examples{
-aa <- c("a","a","b","c")
-          bb <- c("oui","non","oui","oui")
+aa <- c("a","a","b","c","a")
+          bb <- c("oui","non","oui","oui","oui")
          barouiph(aa,bb, titre = "essai", oui = "oui", angle = 0)
 
 

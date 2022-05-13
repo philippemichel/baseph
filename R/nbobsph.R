@@ -1,4 +1,5 @@
 #' Nb de sujets pour un sondage
+#'
 #' Calcul du nombre de cas necessaires pour une enquète obsevationelle
 #' simple sans aucun test.
 #' Si il y a plusieurs questions prendre px = 0.5

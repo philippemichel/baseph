@@ -33,12 +33,12 @@ tabcph <- function(dfx,
   trix <- enquo(tri)
   vv <- quo_name(trix)
   triz <- dfx[vv]
-  triz <- triz[[1]]
+  triz <- as.factor(triz[[1]])
   for (ll in seq_len(length(dfx))) {
     varx <- dfx[, ll]
     varx <- varx[[1]]
     if (names(dfx)[ll] != vv) {
-      nom <- paste0("<b>", nomv[ll], "</b>")
+      nom <- paste(text_spec(nomv[ll],bold = TRUE))
       if (is.numeric(varx)) {
         # Variables numériques
         lig <- lignumc(nom, varx, triz)
@@ -70,12 +70,16 @@ tabf <-   kable(
     col.names = ltit,
     caption = titre,
     label = lab,
-    escape = FALSE
+    escape = FALSE,
+    booktabs = TRUE,
+    longtable = TRUE
   ) %>%
     kable_styling(
+      latex_options = c("striped","repeat_header"),
       bootstrap_options = "striped",
       full_width = FALSE,
-      position = "center"
+      position = "center",
+      fixed_thead = TRUE
     )
 
   if (!is.null(ligd)) {add_indent(tabf, ligd)}

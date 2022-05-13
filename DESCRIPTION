@@ -1,6 +1,6 @@
 Package: baseph
-Title: Tout ce qu'ol faut pour commencer un projet simple
-Version: 0.0.0.9
+Title: Tout ce qu'il faut pour commencer un projet simple
+Version: 0.0.1
 Authors@R: 
     person(given = "Philippe",
            family = "MICHEL",
@@ -34,7 +34,8 @@ Imports:
     see,
     stats,
     tidyr,
-    utils
+    utils,
+    viridis
 VignetteBuilder: knitr
 Language: fr
 URL: https://github.com/philippemichel/baseph

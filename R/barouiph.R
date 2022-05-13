@@ -19,8 +19,8 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples aa <- c("a","a","b","c")
-#'           bb <- c("oui","non","oui","oui")
+#' @examples aa <- c("a","a","b","c","a")
+#'           bb <- c("oui","non","oui","oui","oui")
 #'          barouiph(aa,bb, titre = "essai", oui = "oui", angle = 0)
 #'
 #'

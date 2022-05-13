@@ -30,7 +30,7 @@ ligfc <- function(nom, varp, trip) {
     for (cas in 1:ltri) {
       casx <- tabp[lig, cas]
       casp <- round(100*casx/ss[cas],1)
-      cast <- paste0(casx,"/",ss[cas]," (",casp," %)" )
+      cast <- paste0(casx,"/",ss[cas]," (",casp," \\%)" )
       ligt <- c(ligt,cast)
     }
     ligt <- c(ligt, " ")

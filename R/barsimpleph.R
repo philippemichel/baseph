@@ -40,7 +40,7 @@ barsimpleph <- function(dfx,
       aes(label = paste0(round(fqx, 0), " %")),
       vjust = 1.6,
       color = "white",
-      size = 6
+      size = 4
     ) +
     labs(title = titre,
          subtitle = stitre,
