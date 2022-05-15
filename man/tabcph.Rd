@@ -10,6 +10,7 @@ tabcph(
   nomv,
   titre = "Tableau comparatif",
   lab = "tabcomp",
+  fnote = "",
   export = FALSE
 )
 }
@@ -24,6 +25,8 @@ tabcph(
 
 \item{lab}{label}
 
+\item{fnote}{note en bas de tableau}
+
 \item{export}{si TRUE, export en CSV}
 }
 \value{
@@ -33,5 +36,5 @@ tabcph(
 Tableau comparatif (univarie)
 }
 \examples{
-tabcph(iris, Species, levels(iris$Species))
+tabcph(iris, Species, levels(iris$Species), fnote = "demonstration")
 }

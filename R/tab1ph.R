@@ -83,11 +83,12 @@ tab1ph <-
       longtable = TRUE
     ) %>%
       kableExtra::kable_styling(
-        latex_options = c("striped","repeat_header"),
+        latex_options = c("striped","repeat_header", "hold_position"),
         bootstrap_options = "striped",
         full_width = FALSE,
         position = "center",
         fixed_thead = TRUE
       ) %>%
-      add_indent(ligd)
+      add_indent(ligd) |>
+      scroll_box(width = "100%", height = "850px")
   }

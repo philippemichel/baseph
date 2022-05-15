@@ -6,6 +6,7 @@
 #' @param titre titre du tableau
 #' @param lab label
 #' @param export si TRUE, export en CSV
+#' @param fnote note en bas de tableau
 #'
 #' @import knitr
 #' @import kableExtra
@@ -15,12 +16,13 @@
 #' @return
 #' @export
 #'
-#' @examples tabcph(iris, Species, levels(iris$Species))
+#' @examples tabcph(iris, Species, levels(iris$Species), fnote = "demonstration")
 tabcph <- function(dfx,
                    tri,
                    nomv,
                    titre = "Tableau comparatif",
                    lab = "tabcomp",
+                   fnote = "",
                    export = FALSE) {
   # On supprime les données manquantes dans la variable de tri
   dfx <- as_tibble(dfx)
@@ -64,7 +66,8 @@ tabcph <- function(dfx,
   }
   # Création tableaux
   ltit <- c(" ", levels(triz), "p")
-tabf <-   kable(
+ # cs_dt$mpg = cell_spec(cs_dt$mpg, color = ifelse(cs_dt$mpg > 20, "red", "blue"))
+kable(
     tabx,
     row.names = FALSE,
     col.names = ltit,
@@ -75,14 +78,13 @@ tabf <-   kable(
     longtable = TRUE
   ) %>%
     kable_styling(
-      latex_options = c("striped","repeat_header"),
+      latex_options = c("striped","repeat_header", "hold_position"),
       bootstrap_options = "striped",
       full_width = FALSE,
       position = "center",
       fixed_thead = TRUE
-    )
-
-  if (!is.null(ligd)) {add_indent(tabf, ligd)}
-tabf %>%
+    ) %>%
+  footnote(general = fnote) |>
+ add_indent(ligd) |>
   scroll_box(width = "100%", height = "850px")
 }
