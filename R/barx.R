@@ -1,43 +1,8 @@
-#' Barplot uniquement les "oui" en %
-#' Trace un barplot d'une variable factorielle en oui/non, uniquement les "oui" selon les modalités de la variable de tri
-#
-#' @param varp variable a traiter (factorielle) le plus souvent binaire
-#' @param vart variable de tri (afficher sur l'axe des x)
-#' @param oui oui la valeur à afficher dans la variable varp
-#' @param titre Titre du graphique
-#' @param stitre Soustitre du graphique
-#' @param ytitre Titre de l'axe y (%)
-#' @param capt  légende du graphique
-#' @param lab label du graphique
-#' @param angle angle affichage des valeurs de vart sur l'axe des x (0 par defaut)
-#'
-#' @import ggplot2
-#' @import ggsci
-#' @import dplyr
-#' @import binom
-#
-#'
-#' @return un graphique
-#' @export
-#'
-#' @examples aa <- c("a","a","b","c","a")
-#'           bb <- c("oui","non","oui","oui","oui")
-#'           barouiph(varp = bb,
-#'                    vart = aa,
-#'                    titre = "essai",
-#'                    stitre = "beau graphique",
-#'                    ytitre = "%",
-#'                    oui = "oui",
-#'                    capt = "",
-#'                    lab = "",
-#'                    angle = 0)
-#'
-barouiph <- function(varp,
+barx <- function(varp,
                      vart,
                      oui = "oui",
                      titre = "",
                      stitre = "",
-                     ytitre = "%",
                      capt = "",
                      lab = "",
                      angle = 0) {
@@ -67,16 +32,15 @@ barouiph <- function(varp,
     geom_errorbar(
       ymin = zz$lower * 100,
       ymax = zz$upper * 100,
-      width = 0.6,
-      size = 0.8
+      width = 0.6
     ) +
     labs(title = titre,
          subtitle = stitre,
-         y = ytitre,
+         y = "%",
          caption = capt,
          label = lab) +
     theme_light() +
-    scale_fill_lancet() +
+    scale_fill_material() +
     theme(
       plot.title = element_text(size = 18, face = "bold"),
       plot.subtitle = element_text(size = 12),
@@ -84,7 +48,7 @@ barouiph <- function(varp,
       legend.title = element_blank(),
       axis.title.y = element_text(
         size = 12,
-        angle = 90,
+        angle = 0,
         vjust = .5
       ),
       axis.text.x = element_text(
@@ -95,5 +59,5 @@ barouiph <- function(varp,
       axis.text.y = element_text(size = 12),
       legend.position = "none"
     ) +
-   scale_y_continuous(limits = c(0, ymax))
+    scale_y_continuous(limits = c(0, ymax))
 }

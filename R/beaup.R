@@ -13,14 +13,14 @@
 beaup <- function(varp, affp = 1) {
   if (varp < 0.001) {
     if (affp == 1) {
-      beaup <- "p < 0,001"
+      beaup <- "**p < 0,001**"
     }
     else {
       beaup <- "< 0,001"
     }
   }
   else {
-    beaup <- round(varp, 3)
+    beaup <- round(varp, 2)
     if (affp == 1) {
       beaup <- paste0("p = ", beaup)
     }

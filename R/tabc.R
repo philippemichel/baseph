@@ -1,12 +1,14 @@
 #' Tableau comparatif (univarie)
 #'
-#' @param dfx table a esplorer
+#' @param dfx table a explorer
 #' @param tri variable expliquee
 #' @param nomv liste des vrais noms des variables
 #' @param titre titre du tableau
+#' @param nomvar nom de la variable de tri (nom des variables par defaut)
 #' @param lab label
 #' @param export si TRUE, export en CSV
 #' @param fnote note en bas de tableau
+#' @param test parametrique "moy" ou non "med"
 #'
 #' @import knitr
 #' @import kableExtra
@@ -16,22 +18,33 @@
 #' @return
 #' @export
 #'
-#' @examples tabcph(iris, Species, levels(iris$Species), fnote = "demonstration")
+#' @examples library(gtsummary)
+#'           tabcph(dfx = trial, tri = trt, nomv= names(trial), test = "moy")
 tabcph <- function(dfx,
                    tri,
-                   nomv,
+                   nomv = "",
                    titre = "Tableau comparatif",
+                   nomvar = "Traitement",
                    lab = "tabcomp",
                    fnote = "",
+                   test = "moy",
                    export = FALSE) {
   # On supprime les données manquantes dans la variable de tri
   dfx <- as_tibble(dfx)
   dfx <- dfx %>%
     dplyr::filter(!is.na({{tri}}))
   #
+  if (length(nomv) == 0){nomv = names(dfx)}
+  #
+  if (test == "moy"){
+    fnote <- paste0 ( "moyenne \u00b1 ecart-type - nb/total (%) ", fnote)
+  } else {
+    fnote <- paste0 ( "m\u00E9diane (quartiles) - nb/total (%) ", fnote)
+  }
+  #
   tabx <- NULL
   nlig <- 0
-  ligd <- NULL
+  ligd <- c()
   trix <- enquo(tri)
   vv <- quo_name(trix)
   triz <- dfx[vv]
@@ -40,15 +53,19 @@ tabcph <- function(dfx,
     varx <- dfx[, ll]
     varx <- varx[[1]]
     if (names(dfx)[ll] != vv) {
-      nom <- paste(text_spec(nomv[ll],bold = TRUE))
+      nom <- paste(text_spec(nomv[ll], bold = TRUE))
       if (is.numeric(varx)) {
         # Variables numériques
+        if (test == "moy"){
         lig <- lignumc(nom, varx, triz)
+        } else {
+          lig <- ligmedc(nom, varx, triz)
+        }
         tabx <- rbind(tabx, lig)
         nlig <- nlig + 1
       } else {
         # Variables factorielles
-        if(is.factor(varx)==FALSE){
+        if (is.factor(varx) == FALSE) {
           varx <- as.factor(varx)
         }
         lig <- ligfc(nom, varx, triz)
@@ -64,10 +81,13 @@ tabcph <- function(dfx,
     nomcsv <- paste0(titre, "_export_comparatif.csv")
     write.csv(tabx, nomcsv)
   }
-  # Création tableaux
+
+# Création tableaux
   ltit <- c(" ", levels(triz), "p")
- # cs_dt$mpg = cell_spec(cs_dt$mpg, color = ifelse(cs_dt$mpg > 20, "red", "blue"))
-kable(
+  aa <- c("",length(levels(triz)), "")
+  names(aa) <- c("", nomvar, "")
+  ntabx <- 1:nrow(tabx)
+kbl(
     tabx,
     row.names = FALSE,
     col.names = ltit,
@@ -75,16 +95,19 @@ kable(
     label = lab,
     escape = FALSE,
     booktabs = TRUE,
-    longtable = TRUE
-  ) %>%
+    longtable = TRUE,
+    linesep = ""
+  ) |>
+  add_header_above(aa) %>%
     kable_styling(
-      latex_options = c("striped","repeat_header", "hold_position"),
-      bootstrap_options = "striped",
+      latex_options = c("repeat_header", "hold_position", "striped"),
+     stripe_index = ntabx[!(ntabx %in% ligd)],
       full_width = FALSE,
       position = "center",
       fixed_thead = TRUE
     ) %>%
   footnote(general = fnote) |>
- add_indent(ligd) |>
+  add_indent(ligd) |>
+
   scroll_box(width = "100%", height = "850px")
 }
