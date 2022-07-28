@@ -4,7 +4,7 @@
   [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
   <!-- badges: end -->
   
-Les fonctions de base pour un projet simple de recherche clinique en R, particuièrement adapté pour une thèse ou un mémoire de DES. 
+Les fonctions de base pour un projet simple de recherche clinique en R, particulièrement adapté pour une thèse ou un mémoire de DES. 
 
 # Plusieurs tableaux : 
 - **tab1ph** Descriptif simple
@@ -12,6 +12,13 @@ Les fonctions de base pour un projet simple de recherche clinique en R, particui
 - **glmph** Régression logistique
 
 Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des "beaux intitulés" en csv qui doit être importé dans un data-frame.
+
+On aura donc un premeir chunk qui ressemblera à :
+
+`
+df <- debutph("data/mesdonnees.csv")
+noms <- debutph("data/beuxnoms.csv")
+`
 
 # Autres aides : 
 - **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur* 
