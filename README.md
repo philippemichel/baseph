@@ -15,8 +15,8 @@ Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non
 
 On aura donc un premeir chunk qui ressemblera à :
 
-`
-df <- debutph("data/mesdonnees.csv")
+`df <- debutph("data/mesdonnees.csv")
+
 noms <- debutph("data/beuxnoms.csv")
 `
 
