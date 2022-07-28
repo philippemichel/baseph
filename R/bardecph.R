@@ -11,7 +11,6 @@
 #' @param angle angle affichage des valeurs de vart sur l'axe des x (0 par defaut)
 #'
 #' @import ggplot2
-#' @import see
 #' @import dplyr
 #' @import ggsci
 #' @import forcats
@@ -58,7 +57,7 @@ bardecph <- function(dfx,
          label = lab)+
     scale_y_continuous(limits = c(0, maxy)) +
     theme_light() +
-    scale_color_material() +
+    scale_fill_lancet() +
     theme(
       plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),

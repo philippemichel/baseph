@@ -13,10 +13,11 @@ Les fonctions de base pour un projet simple de recherche clinique en R, particul
 
 Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des "beaux intitulés" en csv qui doit être importé dans un data-frame.
 
-On aura donc un premeir chunk qui ressemblera à :
+On aura donc un premier chunk qui ressemblera à :
 
 `df <- debutph("data/mesdonnees.csv")`
-`noms <- debutph("data/beuxnoms.csv")`
+
+`noms <- debutph("data/beauxnoms.csv")`
 
 
 # Autres aides : 
