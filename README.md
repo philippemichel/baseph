@@ -15,10 +15,9 @@ Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non
 
 On aura donc un premeir chunk qui ressemblera à :
 
-`df <- debutph("data/mesdonnees.csv")
+`df <- debutph("data/mesdonnees.csv")`
+`noms <- debutph("data/beuxnoms.csv")`
 
-noms <- debutph("data/beuxnoms.csv")
-`
 
 # Autres aides : 
 - **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur* 
