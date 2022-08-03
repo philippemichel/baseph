@@ -7,15 +7,17 @@
 tabcph(
   dfx,
   tri,
-  nomv,
+  nomv = "",
   titre = "Tableau comparatif",
+  nomvar = "Traitement",
   lab = "tabcomp",
   fnote = "",
+  test = "moy",
   export = FALSE
 )
 }
 \arguments{
-\item{dfx}{table a esplorer}
+\item{dfx}{table a explorer}
 
 \item{tri}{variable expliquee}
 
@@ -23,18 +25,20 @@ tabcph(
 
 \item{titre}{titre du tableau}
 
+\item{nomvar}{nom de la variable de tri (nom des variables par defaut)}
+
 \item{lab}{label}
 
 \item{fnote}{note en bas de tableau}
 
-\item{export}{si TRUE, export en CSV}
-}
-\value{
+\item{test}{parametrique "moy" ou non "med"}
 
+\item{export}{si TRUE, export en CSV}
 }
 \description{
 Tableau comparatif (univarie)
 }
 \examples{
-tabcph(iris, Species, levels(iris$Species), fnote = "demonstration")
+library(gtsummary)
+          tabcph(dfx = trial, tri = trt, nomv= names(trial), test = "moy")
 }

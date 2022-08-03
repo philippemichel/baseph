@@ -11,9 +11,6 @@ ligfact(x, nn)
 
 \item{nn}{nom du vecteur}
 }
-\value{
-
-}
 \description{
 Ligne facteurs tableau descriptif
 }

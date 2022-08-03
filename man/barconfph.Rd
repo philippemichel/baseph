@@ -30,7 +30,7 @@ barconfph(
 
 \item{titre}{Titre du graphique}
 
-\item{stitre}{Soustitre du graphique}
+\item{stitre}{Sous-titre du graphique}
 
 \item{capt}{légende du graphique}
 
@@ -48,15 +48,11 @@ d'une variable factorielle
 selon les classes d'une variable factorielle de classification
 }
 \examples{
-xx <- factor(c("A","A","B","A","B","C","A","C"))
-          yy <- factor(c(rep("oui",4),rep("non",4)))
-          dfe <- dplyr::tibble(xx,yy)
-         barconfph(dfx = dfe,
-                   varx=xx,
-                   testx= yy,
-                   valx = "non",
-                   tit = "essai",
-                   stitre = "",
-                   ang = 0)
+library(gtsummary)
+barconfph(trial,trt, stage, valx= "Drug A",
+  titre = "essai",
+  stitre = "",
+  ang = 0
+)
 
 }

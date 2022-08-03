@@ -5,7 +5,17 @@
 \title{Barplot 2 variables factorielles
 une variable de tri, une variable en \% par modalité de tri}
 \usage{
-bardeuxph(dfx, varp, vart, titre = "", capt = "", lab = "", angle = 0)
+bardeuxph(
+  dfx,
+  varp,
+  vart,
+  titre = "",
+  stitre = "",
+  ltitre = "",
+  capt = "",
+  lab = "",
+  angle = 0
+)
 }
 \arguments{
 \item{dfx}{data.frame}
@@ -15,6 +25,10 @@ bardeuxph(dfx, varp, vart, titre = "", capt = "", lab = "", angle = 0)
 \item{vart}{variable factorielle de tri (axe des x)}
 
 \item{titre}{Titre du graphique}
+
+\item{stitre}{Sous titre}
+
+\item{ltitre}{titre de la légende}
 
 \item{capt}{légende du graphique}
 
@@ -32,7 +46,9 @@ une variable de tri, une variable en \% par modalité de tri
 \examples{
 aa <- c("a","a","b","b","c")
           bb <- c("1","2","2","3","3")
-          dfx <- data.frame(aa,bb)
-         bardeuxph(dfx,aa,bb,"essai")
+          df <- data.frame(aa,bb)
+          bardeuxph(dfx = df, varp = bb, vart = aa,
+          titre = "essai", stitre = "bel essais", ltitre = "categories",
+          capt = "petit texte", lab = "cc", angle = 0)
 
 }

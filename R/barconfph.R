@@ -21,15 +21,9 @@
 #' @return graphique
 #' @export
 #'
-#' @examples xx <- factor(c("A", "A", "B", "A", "B", "C", "A", "C"))
-#' yy <- factor(c(rep("oui", 4), rep("non", 4)))
-#' dfe <- dplyr::tibble(xx, yy)
-#' barconfph(
-#'   dfx = dfe,
-#'   varx = xx,
-#'   testx = yy,
-#'   valx = "non",
-#'   tit = "essai",
+#' @examples library(gtsummary)
+#' barconfph(trial,trt, stage, valx= "Drug A",
+#'   titre = "essai",
 #'   stitre = "",
 #'   ang = 0
 #' )
@@ -48,14 +42,15 @@ barconfph <- function(dfx,
   } else {
     hj <- 1
   }
-  ll <- dfx %>%
-    summarise(which(valx == levels({{ testx }})))
+  aa <- dfx |>
+    transmute(xx = as.factor({{varx}}), yy = as.factor({{testx}}))
+  ll <- aa %>%
+    summarise(which(valx == levels(xx)))
   ll <- ll[[1]]
-  zz <- dfx %>%
-    summarise(table(
-      {{ testx }},
-      {{ varx }}
-    ))
+  if (length(ll) == 0)
+    return("Modalit\u00E9 absente")
+  zz <- aa %>%
+    summarise(table(xx,yy))
   tzz <- colSums(zz)
   szz <- zz[ll, ][[1]]
   aa <- binom::binom.confint(szz, tzz, method = "exact")
@@ -68,7 +63,7 @@ barconfph <- function(dfx,
     geom_bar(stat = "identity") +
     geom_errorbar(
       aes(ymin = lower * 100, ymax = upper * 100),
-      width = .2,
+      width = .3,
       size = 0.8,
       position = position_dodge(.9)
     ) +

@@ -18,7 +18,7 @@ listrandph <- function(nbcent  = 1, nbtrait = 2, nbcas){
 for (l in 1:nbcent){
   strat <- paste0("centre ",l)
   nn <- paste0("table_random_centre",l,".csv")
-  listp <- blockrand(
+  listp <- blockrand::blockrand(
   n = nbcas,
     stratum = strat,
   num.levels = nbtrait,

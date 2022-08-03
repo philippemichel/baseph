@@ -20,9 +20,6 @@ pyrph(dfx, age, sexe, ff, mm, titre)
 
 \item{titre}{Titre du graphique}
 }
-\value{
-
-}
 \description{
 Pyramide des ages
 Trace une pyramide des ages simple.

@@ -4,7 +4,7 @@
 \alias{beaup}
 \title{Petit p bien presente}
 \usage{
-beaup(varp, affp = 1)
+beaup(varp, affp = 0)
 }
 \arguments{
 \item{varp}{resultat du p}

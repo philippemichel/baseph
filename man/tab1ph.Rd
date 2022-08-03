@@ -24,9 +24,6 @@ tab1ph(
 
 \item{export}{si TRUE, export en CSV}
 }
-\value{
-
-}
 \description{
 Tableau descriptif
 Avec les intitules des variables en clair

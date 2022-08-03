@@ -41,7 +41,7 @@ glmph <-
     lod <- lod[-1,]
     lodd <-
       paste0(signif(lod[, 1], 3), " [", signif(lod[, 2], 3), " : ", signif(lod[, 3], 3), "]")
-    bpo <- sapply(lod[, 4], beaup)
+    bpo <- sapply(lod[, 4], beaup,affp = 0)
     #
     tabfin <- NULL
     lzz <- 1
@@ -79,8 +79,10 @@ glmph <-
       escape = FALSE
     ) %>%
       kable_styling(
-        bootstrap_options = "striped",
+        latex_options = c("repeat_header", "hold_position", "striped"),
         full_width = FALSE,
-        position = "center"
+        position = "center",
+        fixed_thead = TRUE,
+        bootstrap_options = "striped"
       )
   }

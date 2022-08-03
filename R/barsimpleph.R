@@ -48,7 +48,7 @@ barsimpleph <- function(dfx,
          caption = capt,
          label = lab) +
     theme_light() +
-    scale_fill_material() +
+    scale_fill_lancet() +
     theme(
       plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),

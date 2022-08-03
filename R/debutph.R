@@ -7,6 +7,7 @@
 #' @import stats
 #' @import janitor
 #' @import readr
+#' @import stringr
 #' @return data.frame
 #'
 #' @example debutph("https://github.com/tidyverse/readr/raw/master/inst/extdata/mtcars.csv")
@@ -23,6 +24,6 @@ debutph <- function(fich) {
     janitor::clean_names() |>
     janitor::remove_constant() |>
     janitor::remove_empty()
-  names(df) <- str_replace_all(names(df), "_", ".")
+  names(df) <- stringr::str_replace_all(names(df), "_", ".")
   return(df)
 }

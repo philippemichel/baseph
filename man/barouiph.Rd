@@ -3,31 +3,37 @@
 \name{barouiph}
 \alias{barouiph}
 \title{Barplot uniquement les "oui" en \%
-Trace un barplot d'une variable factorielle en oui/non, uniquement les "oui" selon les modalités de la variable de tri}
+Trace un barplot d'une variable factorielle en oui/non, uniquement les "oui" selon les modalitees de la variable de tri}
 \usage{
 barouiph(
-  varp,
-  vart,
+  df,
+  varx,
+  vartri,
   oui = "oui",
   titre = "",
   stitre = "",
+  ytitre = "\%",
   capt = "",
   lab = "",
   angle = 0
 )
 }
 \arguments{
-\item{varp}{variable a traiter (factorielle) le plus souvent binaire}
+\item{df}{data-frame}
 
-\item{vart}{variable de tri (afficher sur l'axe des x)}
+\item{varx}{variable a traiter (factorielle) le plus souvent binaire}
 
-\item{oui}{oui la valeur à afficher dans la variable varp}
+\item{vartri}{variable de tri (afficher sur l'axe des x)}
+
+\item{oui}{oui la valeur a afficher dans la variable varp}
 
 \item{titre}{Titre du graphique}
 
 \item{stitre}{Soustitre du graphique}
 
-\item{capt}{légende du graphique}
+\item{ytitre}{Titre de l'axe y (\%)}
+
+\item{capt}{legende du graphique}
 
 \item{lab}{label du graphique}
 
@@ -38,12 +44,15 @@ un graphique
 }
 \description{
 Barplot uniquement les "oui" en \%
-Trace un barplot d'une variable factorielle en oui/non, uniquement les "oui" selon les modalités de la variable de tri
+Trace un barplot d'une variable factorielle en oui/non, uniquement les "oui" selon les modalitees de la variable de tri
 }
 \examples{
+library(gtsummary)
+
 aa <- c("a","a","b","c","a")
           bb <- c("oui","non","oui","oui","oui")
-         barouiph(aa,bb, titre = "essai", oui = "oui", angle = 0)
-
+          barouiph(df = trial, varx = trt, vartri = grade,
+          titre = "essai", stitre = "beau graphique",
+          ytitre = "\%", oui = "Drug A", capt = "", lab = "", angle = 0)
 
 }

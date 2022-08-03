@@ -10,7 +10,7 @@
 #' beaup(pp$p.value)
 #'
 #' @export
-beaup <- function(varp, affp = 1) {
+beaup <- function(varp, affp = 0) {
   if (varp < 0.001) {
     if (affp == 1) {
       beaup <- "**p < 0,001**"
