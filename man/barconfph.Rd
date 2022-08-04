@@ -47,12 +47,3 @@ Trace un barplot avec les intervalles de confiance pour une valeur donnee
 d'une variable factorielle
 selon les classes d'une variable factorielle de classification
 }
-\examples{
-library(gtsummary)
-barconfph(trial,trt, stage, valx= "Drug A",
-  titre = "essai",
-  stitre = "",
-  ang = 0
-)
-
-}

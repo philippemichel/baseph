@@ -21,10 +21,9 @@
 #' @return graphique
 #' @export
 #'
-#' @examples library(gtsummary)
-#' barconfph(trial,trt, stage, valx= "Drug A",
-#'   titre = "essai",
-#'   stitre = "",
+#' @examples barconfph(esoph, agegp, alcgp,
+#'   valx= "25-34",
+#'   titre = "24 à 34 ans"",
 #'   ang = 0
 #' )
 #'
@@ -37,6 +36,8 @@ barconfph <- function(dfx,
                       capt = "",
                       lab = "",
                       angle = 0) {
+  xx <- yy <- mean.yy <- NULL
+  mean.Freq <- lower <- upper <- NULL
   if (angle == 0) {
     hj <- 0.5
   } else {
@@ -52,14 +53,13 @@ barconfph <- function(dfx,
   zz <- aa %>%
     summarise(table(xx,yy))
   tzz <- colSums(zz)
-  szz <- zz[ll, ][[1]]
+  szz <- zz[ll, ]
   aa <- binom::binom.confint(szz, tzz, method = "exact")
   aa <- dplyr::tibble(aa)[, 7:10]
-  names(aa) <- c("nom", "mean", "lower", "upper")
   #
   aa %>%
     ggplot() +
-    aes(x = nom, y = mean * 100, fill = nom) +
+    aes(x = mean.yy, y = mean.Freq * 100, fill = mean.yy) +
     geom_bar(stat = "identity") +
     geom_errorbar(
       aes(ymin = lower * 100, ymax = upper * 100),

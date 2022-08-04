@@ -21,13 +21,11 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples library(gtsummary)
-#'
-#' aa <- c("a","a","b","c","a")
-#'           bb <- c("oui","non","oui","oui","oui")
-#'           barouiph(df = trial, varx = trt, vartri = grade,
-#'           titre = "essai", stitre = "beau graphique",
-#'           ytitre = "%", oui = "Drug A", capt = "", lab = "", angle = 0)
+#' @examples barouiph(df = esoph, varx = alcgp, vartri = tobgp,
+#' oui = "0-39g/day", titre = "0-39g/day tt A",
+#' stitre =" selon dose B",
+#' ytitre ="%", capt ="0-39g/day tt A selon dose B",
+#' lab = "ab", angle = 0)
 #'
 barouiph <- function(df,
                      varx,
@@ -39,6 +37,7 @@ barouiph <- function(df,
                      capt = "",
                      lab = "",
                      angle = 0) {
+  tri <- NULL
   if (angle == 0) {hj <-  0.5} else {hj <-  1}
   #
   nv <- df |>

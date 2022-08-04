@@ -19,6 +19,7 @@
 #' @export
 #'
 #' @examples bardecph(iris, Species, "Espece")
+#'
 bardecph <- function(dfx,
                      varx,
                      titre = "",
@@ -26,6 +27,7 @@ bardecph <- function(dfx,
                      capt = "",
                      lab = "",
                      angle = 0){
+  nomx <- fqx <- NULL
   if (angle == 0) {hj <-  0.5} else {hj <-  1}
   #
   aa <- dfx %>%

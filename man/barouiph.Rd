@@ -47,12 +47,10 @@ Barplot uniquement les "oui" en \%
 Trace un barplot d'une variable factorielle en oui/non, uniquement les "oui" selon les modalitees de la variable de tri
 }
 \examples{
-library(gtsummary)
-
-aa <- c("a","a","b","c","a")
-          bb <- c("oui","non","oui","oui","oui")
-          barouiph(df = trial, varx = trt, vartri = grade,
-          titre = "essai", stitre = "beau graphique",
-          ytitre = "\%", oui = "Drug A", capt = "", lab = "", angle = 0)
+barouiph(df = esoph, varx = alcgp, vartri = tobgp,
+oui = "0-39g/day", titre = "0-39g/day tt A",
+stitre =" selon dose B",
+ytitre ="\%", capt ="0-39g/day tt A selon dose B",
+lab = "ab", angle = 0)
 
 }

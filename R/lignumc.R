@@ -36,8 +36,7 @@ lignumc <- function(nom, varp, trip) {
 #' @return ligne complète avec p
 #' @export
 #'
-#' @examples  library(gtsummary)
-#'            ligmedc("age",trial$age, trial$trt)
+#' @examples ligmedc("tt A", runif(88),c(rep("A",44),rep("B",44)))
  ligmedc <- function(nom, varp, trip) {
   dfp <- data.frame(varp, trip)
   tano <- wilcox.test(varp ~ trip)

@@ -20,6 +20,5 @@ ligne complète avec p
 ligne numerique  test non parametrique tableau comparatif
 }
 \examples{
- library(gtsummary)
-           ligmedc("age",trial$age, trial$trt)
+ligmedc("tt A", runif(88),c(rep("A",44),rep("B",44)))
 }

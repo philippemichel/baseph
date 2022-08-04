@@ -33,4 +33,5 @@ classement des items en décroissant.
 }
 \examples{
 bardecph(iris, Species, "Espece")
+
 }

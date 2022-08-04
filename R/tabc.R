@@ -18,8 +18,12 @@
 #' @return
 #' @export
 #'
-#' @examples library(gtsummary)
-#'           tabcph(dfx = trial, tri = trt, nomv= names(trial), test = "moy")
+#' @examples tabcph(dfx = esoph, tri = alcgp,
+#' nomv= names(esoph),titre = "Tableau comparatif",
+#' nomvar = "Traitement",
+#' lab = "tabcomp",
+#' fnote = "Résultats selon tt A", test = "moy", export = FALSE)
+#'
 tabcph <- function(dfx,
                    tri,
                    nomv = "",

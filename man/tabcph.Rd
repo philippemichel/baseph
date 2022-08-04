@@ -39,6 +39,10 @@ tabcph(
 Tableau comparatif (univarie)
 }
 \examples{
-library(gtsummary)
-          tabcph(dfx = trial, tri = trt, nomv= names(trial), test = "moy")
+tabcph(dfx = esoph, tri = alcgp,
+nomv= names(esoph),titre = "Tableau comparatif",
+nomvar = "Traitement",
+lab = "tabcomp",
+fnote = "Résultats selon tt A", test = "moy", export = FALSE)
+
 }
