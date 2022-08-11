@@ -32,6 +32,6 @@ Trace un barplot d'une variable factorielle, axe des y en \%,
 classement des items en décroissant.
 }
 \examples{
-bardecph(iris, Species, "Espece")
+bardecph(patients, admission, titre = "Mode d'admission",stitre = "\%", capt = "Mode d'admission", lab ="ma", angle = 0)
 
 }

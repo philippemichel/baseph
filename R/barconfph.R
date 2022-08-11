@@ -21,7 +21,7 @@
 #' @return graphique
 #' @export
 #'
-#' @examples barconfph(esoph, agegp, alcgp,
+#' @examples barconfph(patients,alite.7.j.av,admission, "oui",
 #'   valx= "25-34",
 #'   titre = "24 à 34 ans"",
 #'   ang = 0
@@ -53,7 +53,7 @@ barconfph <- function(dfx,
   zz <- aa %>%
     summarise(table(xx,yy))
   tzz <- colSums(zz)
-  szz <- zz[ll, ]
+  szz <- pull(zz[ll, ])
   aa <- binom::binom.confint(szz, tzz, method = "exact")
   aa <- dplyr::tibble(aa)[, 7:10]
   #

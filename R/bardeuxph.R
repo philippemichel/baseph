@@ -18,12 +18,10 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples aa <- c("a","a","b","b","c")
-#'           bb <- c("1","2","2","3","3")
-#'           df <- data.frame(aa,bb)
-#'           bardeuxph(dfx = df, varp = bb, vart = aa,
-#'           titre = "essai", stitre = "bel essais", ltitre = "categories",
-#'           capt = "petit texte", lab = "cc", angle = 0)
+#' @examples bardeuxph(patients,alite.7.j.av, admission ,
+#' titre = "Alitement & mode d'admission",
+#' stitre = "%", ltitre ="Alité avant",
+#' capt ="alité", lab = "aa", angle = 20)
 #'
 bardeuxph <- function(dfx,
                       varp,

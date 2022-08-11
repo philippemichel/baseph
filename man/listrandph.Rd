@@ -3,7 +3,8 @@
 \name{listrandph}
 \alias{listrandph}
 \title{Table de randomisation
-Plusieurs centres, blocs de taille variable}
+
+Cr\00e9ation de tables de randomisation pour une étude sur plusieurs centres en blocs de taille variable. Sortie (fichiers .csv) sur une table globale & une table par centre.}
 \usage{
 listrandph(nbcent = 1, nbtrait = 2, nbcas)
 }
@@ -19,7 +20,8 @@ un csv global  + un csv par centre
 }
 \description{
 Table de randomisation
-Plusieurs centres, blocs de taille variable
+
+Cr\00e9ation de tables de randomisation pour une étude sur plusieurs centres en blocs de taille variable. Sortie (fichiers .csv) sur une table globale & une table par centre.
 }
 \author{
 Philippe MICHEL

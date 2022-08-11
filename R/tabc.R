@@ -18,11 +18,13 @@
 #' @return
 #' @export
 #'
-#' @examples tabcph(dfx = esoph, tri = alcgp,
-#' nomv= names(esoph),titre = "Tableau comparatif",
-#' nomvar = "Traitement",
+#' @examples tabcph(dfx = patients, tri = alite.7.j.av,
+#' nomv= names(patients),
+#' titre = "Tableau comparatif",
+#' nomvar = "Alité avant",
 #' lab = "tabcomp",
-#' fnote = "Résultats selon tt A", test = "moy", export = FALSE)
+#' test = "moy",
+#' fnote = "Résultats selon tt A", export = FALSE)
 #'
 tabcph <- function(dfx,
                    tri,

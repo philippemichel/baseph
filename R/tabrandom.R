@@ -1,17 +1,19 @@
-##' @title Table de randomisation
-##' Plusieurs centres, blocs de taille variable
-##' @param nbcent nombre de centres (default : 1)
-##' @param nbtrait nombre de groupes (default : 2)
-##' @param nbcas  Nombre cas souhaites
-##' @return un csv global  + un csv par centre
-##' @author Philippe MICHEL
-##'
-##' @import stats
-##' @import utils
-##' @import blockrand
-##'
-##' @example listrandph(nbcent  = 2, nbtrait = 2, nbcas = 30)
-##'
+#' @title Table de randomisation
+#'
+#' Cr\00e9ation de tables de randomisation pour une étude sur plusieurs centres en blocs de taille variable. Sortie (fichiers .csv) sur une table globale & une table par centre.
+#'
+#' @param nbcent nombre de centres (default : 1)
+#' @param nbtrait nombre de groupes (default : 2)
+#' @param nbcas  Nombre cas souhaites
+#' @return un csv global  + un csv par centre
+#' @author Philippe MICHEL
+#'
+#' @import stats
+#' @import utils
+#' @import blockrand
+#'
+#' @example listrandph(nbcent  = 2, nbtrait = 2, nbcas = 30)
+#'
 listrandph <- function(nbcent  = 1, nbtrait = 2, nbcas){
     listr <- NULL
     tca <- ceiling(nbcas/nbtrait)

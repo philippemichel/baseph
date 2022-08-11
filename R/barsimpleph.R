@@ -16,7 +16,10 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples barsimpleph(iris, Species, "Espece")
+#' @examples barsimpleph(dfx = patients, varx= admission,
+#' titre = "Mode d'admission", stitre ="ICU",
+#' apt ="Admission", lab = "aa", angle = 10 )
+#'
 barsimpleph <- function(dfx,
                        varx,
                        titre = "",

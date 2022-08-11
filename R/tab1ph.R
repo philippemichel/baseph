@@ -14,7 +14,7 @@
 #' @return
 #' @export
 #'
-#' @examples tab1ph(iris, nomv = names(iris), titre = "Table 1", label = "tabiiris")
+#' @examples tab1ph(patients, nomv = names(patients), titre = "Table 1", label = "tab1")
 tab1ph <-
   function(dfx,
            nomv = "**",

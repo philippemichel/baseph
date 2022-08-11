@@ -18,7 +18,8 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples bardecph(iris, Species, "Espece")
+#' @examples bardecph(patients, admission, titre = "Mode d'admission",
+#' stitre = "%", capt = "Mode d'admission", lab ="ma", angle = 0)
 #'
 bardecph <- function(dfx,
                      varx,

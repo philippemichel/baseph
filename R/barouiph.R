@@ -21,10 +21,10 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples barouiph(df = esoph, varx = alcgp, vartri = tobgp,
-#' oui = "0-39g/day", titre = "0-39g/day tt A",
-#' stitre =" selon dose B",
-#' ytitre ="%", capt ="0-39g/day tt A selon dose B",
+#' @examples barouiph(barouiph(df = patients, varx = sexe, vartri = admission,
+#' titre = "Mode d'admission selon le sexe",
+#' stitre =" ou le genre",
+#' ytitre ="%", capt ="Mode d'admission selon le sexe",
 #' lab = "ab", angle = 0)
 #'
 barouiph <- function(df,
