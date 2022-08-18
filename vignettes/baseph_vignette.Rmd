@@ -1,0 +1,125 @@
+---
+title: "baseph_vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{baseph_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, warning = FALSE, message = FALSE
+)
+```
+
+```{r setup}
+library(baseph)
+```
+
+Pour tous les exemples suivant on utilise deux fichiers : 
+
+- **Patients** qui contient un petit jeu de données fictifs sur des patients. 
+- **nn** qui contient des intitulés plus clairs que les noms des variables avec majuscules, espaces, accents...
+
+```{r data}
+data("patients")
+data("nn")
+```
+# Avant l'analyse des données
+
+## Calcul du nombre de cas
+
+Quelques calculs du nombre de cas nécessaires pour des circonstances particulières.
+
+
+### Non infériorité & équivalence. 
+
+calcul du nombre de cas pour des études d'équivalence ou de non infériorité quand le test principal repose sur une variable binaire.
+
+```{r noninf, }
+nb.noninf.ph(po = 0.5,# proportion sur le groupe contrôle
+             dl = 0.1, # 	déviation jugée comme acceptable
+             zalpha = 0.05, # risque alpha
+             zbeta = 0.2) # risque beta
+```
+
+```{r}
+nb.equi.ph(po=0.5, dl = 0.1, zalpha = 0.05, zbeta = 0.2)
+```
+
+### Étude observationelle simple
+
+Cette méthode permet d'avoir une estimation du nombre de cas nécessaire dans une étude purement observationnelle, sans test donc pas de calcul précis possible. Il faut néanmoins définir la marge d'erreur admissible sur les résultats.
+
+## Randomisation
+
+
+Cette fonction, basée sur la fonction `blockrand` du package homonyme permet de créer les tables de randomisation (aléatoire) pour une étude sur plusieurs centres & pour deux classes (traitement 1 vs traitement B par ex.) ou plus. 
+
+```{r rand, eval = FALSE} 
+listrandph(nbcent = 1, # nombre de centres
+          nbtrait = 2, #Nombre de modalités
+          nbcas = 100 # nb de cas total voulu
+           )
+```
+La sortie consiste en un fichier global & un par centre (csv).
+
+# Import d'un fichier csv
+
+C'est souvent la première étape. Le fonction `debutpĥ` permet d'automatiser :
+
+-   L'import du fichier .csv vers un tibble. Cette fonction est prévue pour importer un csv créé par LibreOffice avec les réglages par défat, c'est à dire séparation des items par des virgules, nombres anglo-saxons.
+-   Les noms des variables sont nettoyés & réécris selon la norme *Petit serpent* soit *mon_beau_titre*.
+-   Les variables constantes ou vides sont éliminées.
+
+# Tableau 1
+
+Le premier tableau d'une étude est toujours un tableau simple, sans test (enfin presque toujours).
+
+```{r tab1}
+tab1ph(
+patients, # nom du tibble
+nomv = nn$nom, # Les intitulés corrects
+nlignes = c(2:8), # Les variables à afficher
+titre = "Table 1", 
+label = "tab1", # peut être utile pour un export LaTeX 
+export = FALSE # Si TRUE exporte le tableau en csv.
+)
+```
+
+# Tableaux comparatifs.
+
+## Analyse univariée
+
+Ce tableau sert à présenter les résultats de tests variable par variable.  On peut en particulier définir si on considère que les données numériques ont une distribution normale (présentation des résultats en moyenne ± écart-type, test de Student) ou non (présentation en médiane (quartiles), test de Wilcoxon).
+
+```{r tabc}
+tabcph(
+dfx = patients, # nom du tibble
+nomv = nn$nom, # Les intitulés corrects
+nlignes = c(2:8), # Les variables à afficher
+tri = alite.7.j.av,
+titre = "Tableau comparatif", 
+lab = "tabcomp", # peut être utile pour un export LaTeX 
+test = "med",
+export = FALSE # Si TRUE exporte le tableau en csv.
+)
+```
+
+## Analyse multivariée
+
+On peut compléter l'analyse par une étude en multivariée par régression logistique.
+
+```{r glm}
+glmph(dfx = "patients",
+      vart = "alite.7.j.av", 
+      vars = c("age", "igs", "sexe"),
+      bnom = nn$nom, 
+      titre = "Mes patients - analyse par régression logistique",
+      lab = "reg", export = FALSE
+)
+```
+
+# 
+
