@@ -12,7 +12,8 @@ Les fonctions de base pour un projet simple de recherche clinique en R, particul
 - **glmph** Régression logistique
 
 Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des "beaux intitulés" en csv qui doit être importé dans un data-frame.
-Dans les fichires d'exemple, les données (fictives) sont dans le fichier "patients" & les beaux noms dans le fichier "nn", variable "nom".
+Dans les fichiers d'exemple, les données (fictives) sont dans le fichier "patients" & les beaux noms dans le fichier "nn", variable "nom".
+
 On peut aussi sélectionner les variables à afficher dans les tableaux tab1ph & tabcph. 
 
 

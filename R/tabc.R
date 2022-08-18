@@ -61,6 +61,7 @@ tabcph <- function(dfx,
   vv <- quo_name(trix)
   triz <- dfx[vv]
   triz <- as.factor(triz[[1]])
+  #
   for (ll in seq_len(length(dfx))) {
     varx <- dfx[, ll]
     varx <- varx[[1]]
