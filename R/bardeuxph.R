@@ -2,7 +2,7 @@
 #' une variable de tri, une variable en % par modalité de tri
 #'
 #' @param dfx data.frame
-#' @param varp variable a exprimer en % (factorielle)
+#' @param varp variable à exprimer en % (factorielle)
 #' @param vart variable factorielle de tri (axe des x)
 #' @param titre Titre du graphique
 #' @param stitre Sous titre

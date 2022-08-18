@@ -2,12 +2,12 @@
 #' Trace un barplot d'une variable factorielle, axe des y en %
 #'
 #' @param dfx data.frame
-#' @param varx nom de la variable a traiter (factorielle)
+#' @param varx nom de la variable à traiter (factorielle)
 #' @param titre Titre du graphique
-#' @param stitre Soustitre du graphique
+#' @param stitre Sous-titre du graphique
 #' @param capt  légende du graphique
 #' @param lab label du graphique
-#' @param angle angle affichage des valeurs de vart sur l'axe des x (0 par defaut)
+#' @param angle angle d'affichage des valeurs de vart sur l'axe des x (0 par defaut)
 #'
 #' @import ggplot2
 #' @import see
@@ -18,7 +18,7 @@
 #'
 #' @examples barsimpleph(dfx = patients, varx= admission,
 #' titre = "Mode d'admission", stitre ="ICU",
-#' apt ="Admission", lab = "aa", angle = 10 )
+#' capt ="Admission", lab = "aa", angle = 10)
 #'
 barsimpleph <- function(dfx,
                        varx,

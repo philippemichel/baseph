@@ -1,6 +1,7 @@
 #' Tableau descriptif
 #' Avec les intitules des variables en clair
 #' @param dfx Data.frame to explore
+#' @param nlignes numéro des lignes a inclure dans le tableau
 #' @param titre title of the table
 #' @param label label of the table for RMarkdown or LaTeX
 #' @param nomv liste des vrais noms des variables (names(dfx by default))
@@ -14,22 +15,32 @@
 #' @return
 #' @export
 #'
-#' @examples tab1ph(patients, nomv = names(patients), titre = "Table 1", label = "tab1")
+#' @examples tab1ph(patients, nomv = names(patients), nlignes = c(2:8), titre = "Table 1", label = "tab1")
 tab1ph <-
   function(dfx,
-           nomv = "**",
+           nomv = NULL,
+           nlignes= NULL,
            titre = "Tableau descriptif",
            label = "tabd",
            export = FALSE) {
     tabp <- NULL
     ligd <- NULL
     nlig <- 0
-    if (length(nomv) == 1){nomv <- names(dfx)}
+    #
+    if (is.null(nlignes)){
+      nlignes <- 1:ncol(dfx)
+    }
+    dfx <- select(dfx,nlignes)
+    #
+    if (is.null(nomv)){nomv = names(dfx)}
+    else {nomv <- nomv[nlignes]}
+    #
     for (i in 1:ncol(dfx)) {
       #nom <- paste0("<b>", nomv[i], "</b>")
       nom <- (paste(text_spec(nomv[i],bold = TRUE)))
       varx <- select(dfx, i)
       varx <- na.omit(varx[[1]])
+      #
       # Variables numeriques
       if (is.numeric(varx)) {
         bornes <- moyciph(varx, ci = 95)
@@ -39,11 +50,13 @@ tab1ph <-
         ll <- c(nom, paste0(signif(mean(varx), 3), " \u00b1 ",
                             signif(sd(varx), 3)), tbf)
         nlig <- nlig + 1
+        #
         # variables non numeriques
       } else {
         if (is.factor(varx) == FALSE) {
           varx <- as.factor(varx)
         }
+        #
         # Calcul & ecriture de la ligne factorielle
         ll <- c(nom, " ", " ")
         zz <- table(varx)
@@ -66,11 +79,13 @@ tab1ph <-
       }
       tabp <- rbind(tabp, ll)
     }
+    #
     # Export
     if (export == TRUE) {
       nomcsv <- paste0(titre, "_table1.csv")
       write.csv(tabp, nomcsv)
     }
+    #
     # Ecriture du tableau
     kable(
       caption = titre,

@@ -7,7 +7,8 @@
 tabcph(
   dfx,
   tri,
-  nomv = "",
+  nlignes = NULL,
+  nomv = NULL,
   titre = "Tableau comparatif",
   nomvar = "Traitement",
   lab = "tabcomp",
@@ -17,21 +18,23 @@ tabcph(
 )
 }
 \arguments{
-\item{dfx}{table a explorer}
+\item{dfx}{table à explorer}
 
-\item{tri}{variable expliquee}
+\item{tri}{variable expliquée}
+
+\item{nlignes}{numéro des lignes à inclure dans le tableau}
 
 \item{nomv}{liste des vrais noms des variables}
 
 \item{titre}{titre du tableau}
 
-\item{nomvar}{nom de la variable de tri (nom des variables par defaut)}
+\item{nomvar}{nom de la variable de tri (nom des variables par défaut)}
 
 \item{lab}{label}
 
 \item{fnote}{note en bas de tableau}
 
-\item{test}{parametrique "moy" ou non "med"}
+\item{test}{paramétrique : test = "moy"; non "paramétrique : tet = "med"}
 
 \item{export}{si TRUE, export en CSV}
 }
@@ -39,10 +42,12 @@ tabcph(
 Tableau comparatif (univarie)
 }
 \examples{
-tabcph(dfx = esoph, tri = alcgp,
-nomv= names(esoph),titre = "Tableau comparatif",
-nomvar = "Traitement",
+tabcph(dfx = patients, tri = alite.7.j.av,
+nomv= nn$noms,
+titre = "Tableau comparatif", nlignes = c(2:8),
+nomvar = "Alité avant",
 lab = "tabcomp",
-fnote = "Résultats selon tt A", test = "moy", export = FALSE)
+test = "moy",
+fnote = "Résultats selon l'alitement avant", export = FALSE)
 
 }

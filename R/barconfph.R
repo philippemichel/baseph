@@ -1,10 +1,10 @@
 #' Barplot avec barres d'erreur d'une valeur
-#' Trace un barplot avec les intervalles de confiance pour une valeur donnee
+#' Trace un barplot avec les intervalles de confiance pour une valeur donnée
 #' d'une variable factorielle
 #' selon les classes d'une variable factorielle de classification
 #'
 #' @param dfx data.frame
-#' @param varx variable a représenter (factoriel) y
+#' @param varx variable à représenter (factoriel) y
 #' @param testx Variable de tri (factoriel) x
 #' @param valx valeur de testx a presenter
 #' @param titre Titre du graphique

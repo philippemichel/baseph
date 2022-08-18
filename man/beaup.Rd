@@ -2,12 +2,12 @@
 % Please edit documentation in R/beaup.R
 \name{beaup}
 \alias{beaup}
-\title{Petit p bien presente}
+\title{Petit p bien presenté}
 \usage{
 beaup(varp, affp = 0)
 }
 \arguments{
-\item{varp}{resultat du p}
+\item{varp}{résultat du p}
 
 \item{affp}{si 1 renvoie "p = 0,005" sinon "0,005"}
 }
@@ -15,7 +15,7 @@ beaup(varp, affp = 0)
 beaup , chaine de caractère
 }
 \description{
-Petit p bien presente
+Petit p bien presenté
 }
 \examples{
 pp <- cor.test(iris$Sepal.Length,iris$Sepal.Width)

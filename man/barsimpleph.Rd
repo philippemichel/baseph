@@ -10,17 +10,17 @@ barsimpleph(dfx, varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 \arguments{
 \item{dfx}{data.frame}
 
-\item{varx}{nom de la variable a traiter (factorielle)}
+\item{varx}{nom de la variable à traiter (factorielle)}
 
 \item{titre}{Titre du graphique}
 
-\item{stitre}{Soustitre du graphique}
+\item{stitre}{Sous-titre du graphique}
 
 \item{capt}{légende du graphique}
 
 \item{lab}{label du graphique}
 
-\item{angle}{angle affichage des valeurs de vart sur l'axe des x (0 par defaut)}
+\item{angle}{angle d'affichage des valeurs de vart sur l'axe des x (0 par defaut)}
 }
 \value{
 un graphique
@@ -30,5 +30,8 @@ Barplot simple en \%
 Trace un barplot d'une variable factorielle, axe des y en \%
 }
 \examples{
-barsimpleph(iris, Species, "Espece")
+barsimpleph(dfx = patients, varx= admission,
+titre = "Mode d'admission", stitre ="ICU",
+capt ="Admission", lab = "aa", angle = 10)
+
 }

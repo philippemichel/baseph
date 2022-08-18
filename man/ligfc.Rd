@@ -11,7 +11,7 @@ ligfc(nom, varp, trip)
 
 \item{varp}{variable explicative (facteur)}
 
-\item{trip}{variable expliquee (facteur)}
+\item{trip}{variable expliquèe (facteur)}
 }
 \value{
 ligne complète avec p

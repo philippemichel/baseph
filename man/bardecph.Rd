@@ -2,16 +2,16 @@
 % Please edit documentation in R/bardecph.R
 \name{bardecph}
 \alias{bardecph}
-\title{Barplot decroissant en \%
+\title{Barplot décroissant en \%
 Trace un barplot d'une variable factorielle, axe des y en \%,
 classement des items en décroissant.}
 \usage{
 bardecph(dfx, varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 }
 \arguments{
-\item{dfx}{data.frame}
+\item{dfx}{data.frame ou yibble}
 
-\item{varx}{nom de la variable a traiter (factorielle)}
+\item{varx}{nom de la variable à traiter (factorielle)}
 
 \item{titre}{Titre du graphique}
 
@@ -21,17 +21,18 @@ bardecph(dfx, varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 
 \item{lab}{label du graphique}
 
-\item{angle}{angle affichage des valeurs de vart sur l'axe des x (0 par defaut)}
+\item{angle}{angle d'affichage des valeurs de vart sur l'axe des x (0 par défaut)}
 }
 \value{
 un graphique
 }
 \description{
-Barplot decroissant en \%
+Barplot décroissant en \%
 Trace un barplot d'une variable factorielle, axe des y en \%,
 classement des items en décroissant.
 }
 \examples{
-bardecph(patients, admission, titre = "Mode d'admission",stitre = "\%", capt = "Mode d'admission", lab ="ma", angle = 0)
+bardecph(patients, admission, titre = "Mode d'admission",
+stitre = "\%", capt = "Mode d'admission", lab ="ma", angle = 0)
 
 }

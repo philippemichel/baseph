@@ -3,7 +3,7 @@
 \name{barconfph}
 \alias{barconfph}
 \title{Barplot avec barres d'erreur d'une valeur
-Trace un barplot avec les intervalles de confiance pour une valeur donnee
+Trace un barplot avec les intervalles de confiance pour une valeur donnée
 d'une variable factorielle
 selon les classes d'une variable factorielle de classification}
 \usage{
@@ -22,7 +22,7 @@ barconfph(
 \arguments{
 \item{dfx}{data.frame}
 
-\item{varx}{variable a représenter (factoriel) y}
+\item{varx}{variable à représenter (factoriel) y}
 
 \item{testx}{Variable de tri (factoriel) x}
 
@@ -43,7 +43,7 @@ graphique
 }
 \description{
 Barplot avec barres d'erreur d'une valeur
-Trace un barplot avec les intervalles de confiance pour une valeur donnee
+Trace un barplot avec les intervalles de confiance pour une valeur donnée
 d'une variable factorielle
 selon les classes d'une variable factorielle de classification
 }

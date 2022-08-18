@@ -1,7 +1,7 @@
-#' Debut du travail
+#' Début du travail
 #'
-#' Lit un csv, simplifie & normalise les titres des variables. Le csv a ete cree par libreOffice avec les reglages by default.
-#' Toutes les variables "caractere" sont transformees en facteur.
+#' Lit un csv, simplifie & normalise les titres des variables. Le csv a été créé par libreOffice avec les réglages par défaut.
+#' Toutes les variables "caractère" sont transforées en facteur.
 #' @param fich Fichier csv
 #' @import utils
 #' @import stats

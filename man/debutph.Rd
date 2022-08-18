@@ -2,7 +2,7 @@
 % Please edit documentation in R/debutph.R
 \name{debutph}
 \alias{debutph}
-\title{Debut du travail}
+\title{Début du travail}
 \usage{
 debutph(fich)
 }
@@ -13,6 +13,6 @@ debutph(fich)
 data.frame
 }
 \description{
-Lit un csv, simplifie & normalise les titres des variables. Le csv a ete cree par libreOffice avec les reglages by default.
-Toutes les variables "caractere" sont transformees en facteur.
+Lit un csv, simplifie & normalise les titres des variables. Le csv a été créé par libreOffice avec les réglages par défaut.
+Toutes les variables "caractère" sont transforées en facteur.
 }

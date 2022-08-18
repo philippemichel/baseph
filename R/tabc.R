@@ -1,14 +1,15 @@
 #' Tableau comparatif (univarie)
 #'
-#' @param dfx table a explorer
-#' @param tri variable expliquee
+#' @param dfx table à explorer
+#' @param tri variable expliquée
+#' @param nlignes numéro des lignes à inclure dans le tableau
 #' @param nomv liste des vrais noms des variables
 #' @param titre titre du tableau
-#' @param nomvar nom de la variable de tri (nom des variables par defaut)
+#' @param nomvar nom de la variable de tri (nom des variables par défaut)
 #' @param lab label
 #' @param export si TRUE, export en CSV
 #' @param fnote note en bas de tableau
-#' @param test parametrique "moy" ou non "med"
+#' @param test paramétrique : test = "moy"; non "paramétrique : tet = "med"
 #'
 #' @import knitr
 #' @import kableExtra
@@ -19,28 +20,33 @@
 #' @export
 #'
 #' @examples tabcph(dfx = patients, tri = alite.7.j.av,
-#' nomv= names(patients),
-#' titre = "Tableau comparatif",
+#' nomv= nn$noms,
+#' titre = "Tableau comparatif", nlignes = c(2:8),
 #' nomvar = "Alité avant",
 #' lab = "tabcomp",
 #' test = "moy",
-#' fnote = "Résultats selon tt A", export = FALSE)
+#' fnote = "Résultats selon l'alitement avant", export = FALSE)
 #'
 tabcph <- function(dfx,
                    tri,
-                   nomv = "",
+                   nlignes= NULL,
+                   nomv = NULL,
                    titre = "Tableau comparatif",
                    nomvar = "Traitement",
                    lab = "tabcomp",
                    fnote = "",
                    test = "moy",
                    export = FALSE) {
-  # On supprime les données manquantes dans la variable de tri
-  dfx <- as_tibble(dfx)
-  dfx <- dfx %>%
+ # Tableau restreint aux colonnes désirées, sans NA
+  if (is.null(nlignes)){
+    nlignes <- 1:ncol(dfx)
+  }
+  dfx <- dfx |>
+    select(nlignes) |>
     dplyr::filter(!is.na({{tri}}))
   #
-  if (length(nomv) == 0){nomv = names(dfx)}
+  if (is.null(nomv)){nomv = names(dfx)}
+  else {nomv <- nomv[nlignes]}
   #
   if (test == "moy"){
     fnote <- paste0 ( "moyenne \u00b1 ecart-type - nb/total (%) ", fnote)

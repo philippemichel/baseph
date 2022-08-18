@@ -3,7 +3,7 @@
 \name{barouiph}
 \alias{barouiph}
 \title{Barplot uniquement les "oui" en \%
-Trace un barplot d'une variable factorielle en oui/non, uniquement les "oui" selon les modalitees de la variable de tri}
+Trace un barplot d'une variable factorielle en oui/non, en affichant uniquement les "oui" selon les modalitées de la variable de tri}
 \usage{
 barouiph(
   df,
@@ -21,19 +21,19 @@ barouiph(
 \arguments{
 \item{df}{data-frame}
 
-\item{varx}{variable a traiter (factorielle) le plus souvent binaire}
+\item{varx}{variable _ traiter (factorielle) le plus souvent binaire}
 
 \item{vartri}{variable de tri (afficher sur l'axe des x)}
 
-\item{oui}{oui la valeur a afficher dans la variable varp}
+\item{oui}{oui la valeur _ afficher dans la variable varp}
 
 \item{titre}{Titre du graphique}
 
-\item{stitre}{Soustitre du graphique}
+\item{stitre}{Sous-titre du graphique}
 
 \item{ytitre}{Titre de l'axe y (\%)}
 
-\item{capt}{legende du graphique}
+\item{capt}{légende du graphique}
 
 \item{lab}{label du graphique}
 
@@ -44,13 +44,13 @@ un graphique
 }
 \description{
 Barplot uniquement les "oui" en \%
-Trace un barplot d'une variable factorielle en oui/non, uniquement les "oui" selon les modalitees de la variable de tri
+Trace un barplot d'une variable factorielle en oui/non, en affichant uniquement les "oui" selon les modalitées de la variable de tri
 }
 \examples{
-barouiph(df = esoph, varx = alcgp, vartri = tobgp,
-oui = "0-39g/day", titre = "0-39g/day tt A",
-stitre =" selon dose B",
-ytitre ="\%", capt ="0-39g/day tt A selon dose B",
+barouiph(df = patients, varx = sexe, vartri = admission,
+oui = "f", titre = "Mode d'admission",
+stitre =" Pour les dames",
+ytitre ="\%", capt ="Mode d'admission selon le sexe",
 lab = "ab", angle = 0)
 
 }

@@ -20,7 +20,7 @@ bardeuxph(
 \arguments{
 \item{dfx}{data.frame}
 
-\item{varp}{variable a exprimer en \% (factorielle)}
+\item{varp}{variable à exprimer en \% (factorielle)}
 
 \item{vart}{variable factorielle de tri (axe des x)}
 

@@ -1,14 +1,14 @@
 #' Barplot uniquement les "oui" en %
-#' Trace un barplot d'une variable factorielle en oui/non, uniquement les "oui" selon les modalitees de la variable de tri
+#' Trace un barplot d'une variable factorielle en oui/non, en affichant uniquement les "oui" selon les modalitées de la variable de tri
 #
 #' @param df data-frame
-#' @param varx variable a traiter (factorielle) le plus souvent binaire
+#' @param varx variable _ traiter (factorielle) le plus souvent binaire
 #' @param vartri variable de tri (afficher sur l'axe des x)
-#' @param oui oui la valeur a afficher dans la variable varp
+#' @param oui oui la valeur _ afficher dans la variable varp
 #' @param titre Titre du graphique
-#' @param stitre Soustitre du graphique
+#' @param stitre Sous-titre du graphique
 #' @param ytitre Titre de l'axe y (%)
-#' @param capt  legende du graphique
+#' @param capt  légende du graphique
 #' @param lab label du graphique
 #' @param angle angle affichage des valeurs de vart sur l'axe des x (0 par defaut)
 #'
@@ -21,9 +21,9 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples barouiph(barouiph(df = patients, varx = sexe, vartri = admission,
-#' titre = "Mode d'admission selon le sexe",
-#' stitre =" ou le genre",
+#' @examples barouiph(df = patients, varx = sexe, vartri = admission,
+#' oui = "f", titre = "Mode d'admission",
+#' stitre =" Pour les dames",
 #' ytitre ="%", capt ="Mode d'admission selon le sexe",
 #' lab = "ab", angle = 0)
 #'

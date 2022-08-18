@@ -1,6 +1,6 @@
-#' Petit p bien presente
+#' Petit p bien presenté
 #'
-#' @param varp resultat du p
+#' @param varp résultat du p
 #' @param affp si 1 renvoie "p = 0,005" sinon "0,005"
 #'
 #' @return beaup , chaine de caractère

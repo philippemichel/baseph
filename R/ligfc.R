@@ -2,7 +2,7 @@
 #'
 #' @param nom nom de la ligne
 #' @param varp variable explicative (facteur)
-#' @param trip variable expliquee (facteur)
+#' @param trip variable expliquèe (facteur)
 #'
 #' @import stats
 #'

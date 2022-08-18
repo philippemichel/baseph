@@ -1,6 +1,5 @@
-#' Donnees (fictives & partielles) sur les escarres en reanimation
+#' Donnees (fictives & partielles) sur les escarres en réanimation
 #'
-
 #'
 #' @format A data frame with 100 rows and 9 variables:
 #' \describe{

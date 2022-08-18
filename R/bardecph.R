@@ -1,14 +1,14 @@
-#' Barplot decroissant en %
+#' Barplot décroissant en %
 #' Trace un barplot d'une variable factorielle, axe des y en %,
 #' classement des items en décroissant.
 #'
-#' @param dfx data.frame
-#' @param varx nom de la variable a traiter (factorielle)
+#' @param dfx data.frame ou yibble
+#' @param varx nom de la variable à traiter (factorielle)
 #' @param titre Titre du graphique
 #' @param stitre Soustitre du graphique
 #' @param capt  légende du graphique
 #' @param lab label du graphique
-#' @param angle angle affichage des valeurs de vart sur l'axe des x (0 par defaut)
+#' @param angle angle d'affichage des valeurs de vart sur l'axe des x (0 par défaut)
 #'
 #' @import ggplot2
 #' @import dplyr

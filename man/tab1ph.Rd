@@ -7,7 +7,8 @@ Avec les intitules des variables en clair}
 \usage{
 tab1ph(
   dfx,
-  nomv = "**",
+  nomv = NULL,
+  nlignes = NULL,
   titre = "Tableau descriptif",
   label = "tabd",
   export = FALSE
@@ -17,6 +18,8 @@ tab1ph(
 \item{dfx}{Data.frame to explore}
 
 \item{nomv}{liste des vrais noms des variables (names(dfx by default))}
+
+\item{nlignes}{numéro des lignes a inclure dans le tableau}
 
 \item{titre}{title of the table}
 
@@ -29,5 +32,5 @@ Tableau descriptif
 Avec les intitules des variables en clair
 }
 \examples{
-tab1ph(iris, nomv = names(iris), titre = "Table 1", label = "tabiiris")
+tab1ph(patients, nomv = names(patients), nlignes = c(2:8), titre = "Table 1", label = "tab1")
 }
