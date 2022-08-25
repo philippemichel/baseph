@@ -16,6 +16,8 @@ Dans les fichiers d'exemple, les données (fictives) sont dans le fichier "patie
 
 On peut aussi sélectionner les variables à afficher dans les tableaux tab1ph & tabcph. 
 
+Les tests ou simplement l'affichage peuvent, pour les variables numériques, être présentés en moyenne ± écart-type ou en médiane (quartiles)
+
 
 
 # Autres aides : 

@@ -5,6 +5,7 @@
 #' @param titre title of the table
 #' @param label label of the table for RMarkdown or LaTeX
 #' @param nomv liste des vrais noms des variables (names(dfx by default))
+#' @param test présentation des résultats en moy/écart-type si ="moy", en médiane quartiles si = "med"
 #' @param export si TRUE, export en CSV
 #'
 #' @import stats
@@ -15,13 +16,16 @@
 #' @return
 #' @export
 #'
-#' @examples tab1ph(patients, nomv = names(patients), nlignes = c(2:8), titre = "Table 1", label = "tab1")
+#' @examples tab1ph(patients, nomv = names(patients), nlignes = c(2:8),
+#'  titre = "Table 1", label = "tab1", test = "moy")
+#'
 tab1ph <-
   function(dfx,
            nomv = NULL,
            nlignes= NULL,
            titre = "Tableau descriptif",
            label = "tabd",
+           test = "moy",
            export = FALSE) {
     tabp <- NULL
     ligd <- NULL
@@ -29,6 +33,7 @@ tab1ph <-
     #
     if (is.null(nlignes)){
       nlignes <- 1:ncol(dfx)
+
     }
     dfx <- select(dfx,nlignes)
     #
@@ -43,22 +48,23 @@ tab1ph <-
       #
       # Variables numeriques
       if (is.numeric(varx)) {
-        bornes <- moyciph(varx, ci = 95)
-        tbf <-
-          paste0("[", signif(bornes[1], 3), " ; ", signif(bornes[2],
-                                                          3), "]")
+        if (test == "moy"){
         ll <- c(nom, paste0(signif(mean(varx), 3), " \u00b1 ",
-                            signif(sd(varx), 3)), tbf)
+                            signif(sd(varx), 3)))}
+      else{
+        ll <- c(nom, paste0(signif(median(varx), 3), " (",quantile(varx)[2]," ; ",quantile(varx)[5],")"))
+      }
         nlig <- nlig + 1
+      }
         #
         # variables non numeriques
-      } else {
+       else {
         if (is.factor(varx) == FALSE) {
           varx <- as.factor(varx)
         }
         #
-        # Calcul & ecriture de la ligne factorielle
-        ll <- c(nom, " ", " ")
+        # Calcul & écriture de la ligne factorielle
+        ll <- c(nom, " ")
         zz <- table(varx)
         tot <- length(varx)
         nl <- length(levels(varx))
@@ -67,10 +73,8 @@ tab1ph <-
           nz <- zz[[l]]
           pc <- signif(100 * nz / tot, 3)
           #
-          cf <- transangph(nz, tot)
-          #
           llf <- c(nom, paste0(nz, "/", tot, " (", pc,
-                               " \\%)"), cf$nb)
+                               " \\%)"))
           ll <- rbind(ll, llf)
         }
         #
@@ -92,8 +96,7 @@ tab1ph <-
       escape = FALSE,
       tabp,
       row.names = FALSE,
-      # col.names = c("", "moy \u00b1 \u00E9cart-type  N/total (\\%)", "IC 95 \\%"),
-      col.names = linebreak(c("", "moy \u00b1 \u00E9cart-type \n N/total (\\%)", "IC 95 \\%")),
+      col.names = linebreak(c("", "moy \u00b1 \u00E9cart-type \n N/total (\\%)")),
       booktabs = TRUE,
       longtable = TRUE
     ) %>%

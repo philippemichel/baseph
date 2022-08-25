@@ -11,6 +11,7 @@ tab1ph(
   nlignes = NULL,
   titre = "Tableau descriptif",
   label = "tabd",
+  test = "moy",
   export = FALSE
 )
 }
@@ -25,6 +26,8 @@ tab1ph(
 
 \item{label}{label of the table for RMarkdown or LaTeX}
 
+\item{test}{présentation des résultats en moy/écart-type si ="moy", en médiane quartiles si = "med"}
+
 \item{export}{si TRUE, export en CSV}
 }
 \description{
@@ -32,5 +35,7 @@ Tableau descriptif
 Avec les intitules des variables en clair
 }
 \examples{
-tab1ph(patients, nomv = names(patients), nlignes = c(2:8), titre = "Table 1", label = "tab1")
+tab1ph(patients, nomv = names(patients), nlignes = c(2:8),
+ titre = "Table 1", label = "tab1", test = "moy")
+
 }

@@ -43,7 +43,7 @@ Tableau comparatif (univarie)
 }
 \examples{
 tabcph(dfx = patients, tri = alite.7.j.av,
-nomv= nn$noms,
+nomv= nn$noms,#####
 titre = "Tableau comparatif", nlignes = c(2:8),
 nomvar = "Alité avant",
 lab = "tabcomp",

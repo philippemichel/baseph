@@ -11,7 +11,7 @@
 #'
 #' @export
 beaup <- function(varp, affp = 0) {
-  if (varp < 0.001) {
+  if (varp < 0.0011) {
     if (affp == 1) {
       beaup <- "**p < 0,001**"
     }
@@ -20,7 +20,7 @@ beaup <- function(varp, affp = 0) {
     }
   }
   else {
-    beaup <- round(varp, 2)
+    beaup <- round(varp, 3)
     if (affp == 1) {
       beaup <- paste0("p = ", beaup)
     }

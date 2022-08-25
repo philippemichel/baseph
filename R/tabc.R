@@ -20,7 +20,7 @@
 #' @export
 #'
 #' @examples tabcph(dfx = patients, tri = alite.7.j.av,
-#' nomv= nn$noms,
+#' nomv= nn$noms,#####
 #' titre = "Tableau comparatif", nlignes = c(2:8),
 #' nomvar = "Alité avant",
 #' lab = "tabcomp",
@@ -94,7 +94,7 @@ tabcph <- function(dfx,
     nomcsv <- paste0(titre, "_export_comparatif.csv")
     write.csv(tabx, nomcsv)
   }
-
+if (is.null(ligd)){ligd=1}
 # Création tableaux
   ltit <- c(" ", levels(triz), "p")
   aa <- c("",length(levels(triz)), "")
