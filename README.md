@@ -31,7 +31,10 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
 - **barsimpleph** Graphique en barre exprimé en %  des modalités pour une variable factorielle (x) 
 - **bardecph**  Même graphique que **barsimpleph** mais les % sont en ordre décroissant
 - **bardeuxph** Graphique en barre. Une variable exprimée en % (y) pour chaque modalité (x) de l'autre.
-- **barouiph** Graphique en barre avec barres d'erreur. Une variable binaire (oui/non) exprimée en % d'une modalité (oui par ex.) pour chaque modalité de l'autre.
+- **barouiph** Graphique en barre avec barres d'erreur. Une variable
+  binaire (oui/non) exprimée en % d'une modalité (oui par ex.) pour
+  chaque modalité de l'autre.
+- **vioboxph** Graphique en violon avec un box -plot intégré.
 - **pyrph** Pyramide des âges. La fonction *epiDisplay::pyramid()* donne aussi un très bon rendu. (en travaux)
 
 # Calcul du nombre de sujets nécessaires
