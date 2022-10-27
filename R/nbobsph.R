@@ -8,10 +8,11 @@
 #' @param ex Marge d'erreur consideree comme acceptable (0.1)
 #' @param np Taille de la population totale (1e5)
 #'
-#' @return
+#' @return nombre
 #' @export
 #'
 #' @examples nb.obs.ph(px = 0.5, ex = 0.1, np = 1e5)
+#'
 nb.obs.ph <- function(px = 0.5, ex = 0.1, np = 1e5) {
   pp <- px * (1 - px)
   zz <- 1.96^2

@@ -21,4 +21,5 @@ Petit p bien presenté
 pp <- cor.test(iris$Sepal.Length,iris$Sepal.Width)
 beaup(pp$p.value)
 
+
 }

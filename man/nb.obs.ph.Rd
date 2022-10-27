@@ -13,6 +13,9 @@ nb.obs.ph(px = 0.5, ex = 0.1, np = 1e+05)
 
 \item{np}{Taille de la population totale (1e5)}
 }
+\value{
+nombre
+}
 \description{
 Calcul du nombre de cas necessaires pour une enquète obsevationelle
 simple sans aucun test.
@@ -20,4 +23,5 @@ Si il y a plusieurs questions prendre px = 0.5
 }
 \examples{
 nb.obs.ph(px = 0.5, ex = 0.1, np = 1e5)
+
 }

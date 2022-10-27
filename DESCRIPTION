@@ -1,6 +1,6 @@
 Package: baseph
-Title: Tout ce qu'il faut pour commencer un projet simple
-Version: 0.0.1
+Title: Tout ce qu'il faut pour commencer un projet simple en recherche clinique
+Version: 0.1.0
 Authors@R: 
     person(given = "Philippe",
            family = "MICHEL",

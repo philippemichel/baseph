@@ -17,6 +17,9 @@ nb.equi.ph(po, dl = 0.1, zalpha = 0.05, zbeta = 0.2)
 
 \item{zbeta}{risque beta (0.2)}
 }
+\value{
+nombre
+}
 \description{
 Nb de sujet  Test d'équivalence proportions
 Calcul du nb de sujet par groupe pour

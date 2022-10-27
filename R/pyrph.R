@@ -10,7 +10,7 @@
 #'
 #' @import ggplot2
 #'
-#' @return
+#' @return graphique
 #' @export
 #'
 #' @examples aa <- runif(100,0,100)

@@ -5,11 +5,14 @@
 #'
 #' @return beaup , chaine de caractère
 #'
+#' @export
+#'
 #' @examples
 #' pp <- cor.test(iris$Sepal.Length,iris$Sepal.Width)
 #' beaup(pp$p.value)
 #'
-#' @export
+
+#'
 beaup <- function(varp, affp = 0) {
   if (varp < 0.0011) {
     if (affp == 1) {

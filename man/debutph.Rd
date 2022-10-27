@@ -4,15 +4,20 @@
 \alias{debutph}
 \title{Début du travail}
 \usage{
-debutph(fich)
+debutph(fich, nom)
 }
 \arguments{
-\item{fich}{Fichier csv}
+\item{fich}{Fichier csv contenant les labels corrects des variables (colonne 'nom')}
 }
 \value{
 data.frame
 }
 \description{
-Lit un csv, simplifie & normalise les titres des variables. Le csv a été créé par libreOffice avec les réglages par défaut.
-Toutes les variables "caractère" sont transforées en facteur.
+Lit un csv contenant les données, simplifie & normalise les titres des variables.
+le vecteur \code{nom} contenant les beaux labels des variables pour les tableaux, graphiques etc. sera incorporé dans le tableau principal.
+}
+\details{
+Le csv doit avoir les réglages par défaut (UTF-8, séparateur de champs : ",") soit les réglages par défaut de LibreOffice
+.
+Toutes les variables "caractère" sont transformées en facteur.
 }

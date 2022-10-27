@@ -21,7 +21,7 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples barouiph(df = patients, varx = sexe, vartri = admission,
+#' @examples barouiph(df = patients, varx = sexea, vartri = admission,
 #' oui = "f", titre = "Mode d'admission",
 #' stitre =" Pour les dames",
 #' ytitre ="%", capt ="Mode d'admission selon le sexe",

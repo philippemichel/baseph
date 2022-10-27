@@ -18,10 +18,10 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples bardeuxph(patients,alite.7.j.av, admission ,
-#' titre = "Alitement & mode d'admission",
-#' stitre = "%", ltitre ="Alité avant",
-#' capt ="alité", lab = "aa", angle = 20)
+#' @examples bardeuxph(patients,escarre, admission ,
+#' titre = "Escarre & mode d'admission",
+#' stitre = "%", ltitre ="Escarre",
+#' capt ="Escarre", lab = "aa", angle = 20)
 #'
 bardeuxph <- function(dfx,
                       varp,

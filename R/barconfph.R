@@ -1,12 +1,14 @@
 #' Barplot avec barres d'erreur d'une valeur
+#'
 #' Trace un barplot avec les intervalles de confiance pour une valeur donnée
 #' d'une variable factorielle
+#'
 #' selon les classes d'une variable factorielle de classification
 #'
 #' @param dfx data.frame
 #' @param varx variable à représenter (factoriel) y
 #' @param testx Variable de tri (factoriel) x
-#' @param valx valeur de testx a presenter
+#' @param valx valeur de test à présenter
 #' @param titre Titre du graphique
 #' @param stitre Sous-titre du graphique
 #' @param capt légende du graphique
@@ -21,11 +23,7 @@
 #' @return graphique
 #' @export
 #'
-#' @examples barconfph(patients,alite.7.j.av,admission, "oui",
-#'   valx= "25-34",
-#'   titre = "24 à 34 ans"",
-#'   ang = 0
-#' )
+#' @examples barconfph(dfx = patients, varx =escarre, testx =sexea, valx = "oui", titre = "Sexe",ang = 0)
 #'
 barconfph <- function(dfx,
                       varx,

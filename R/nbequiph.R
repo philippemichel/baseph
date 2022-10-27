@@ -9,7 +9,7 @@
 #' @param zalpha risque alpha (0.05)
 #' @param zbeta risque beta (0.2)
 #'
-#' @return
+#' @return nombre
 #' @export
 #'
 #' @examples nb.equi.ph(po=0.5,dl = 0.1, zalpha = 0.05, zbeta = 0.2)

@@ -3,18 +3,19 @@
 \docType{data}
 \name{patients}
 \alias{patients}
-\title{Donnees (fictives & partielles) sur les escarres en réanimation}
+\title{Données (fictives & partielles) sur les escarres en réanimation}
 \format{
-A data frame with 100 rows and 9 variables:
+A data frame with 50 rows and 8 variables:
 \describe{
-\item{np}{numero ID}
-\item{admission}{Mode d'admission}
-\item{alite.7.j.av}{Alite plus de 7 jours avant (O/N)}
+\item{sexea}{Sexe}
 \item{age}{Age du patient}
-\item{taille}{Taille}
-\item{sexe}{Sexe}
-\item{poids.ad}{Poids a l'admission}
+\item{admission}{Mode d'admission}
+\item{lieudevie1}{Lieu de vie avant}
 \item{igs}{Score IGS2}
+\item{typemaladie}{médical ou chirurgical}
+\item{sejourrea}{Durée de séjour en réanimation (j)}
+\item{escarre}{Présence d'une escarre (donnée fictive)}
+
 }
 }
 \source{
@@ -24,6 +25,6 @@ A data frame with 100 rows and 9 variables:
 patients
 }
 \description{
-Donnees (fictives & partielles) sur les escarres en réanimation
+Données (fictives & partielles) sur les escarres en réanimation
 }
 \keyword{datasets}

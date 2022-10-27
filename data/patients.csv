@@ -1,0 +1,51 @@
+sexea,age,admission,lieudevie1,igs2,typemaladie,sejourrea,escarre
+m,85,court séjour,"Domicile, seul",49,Médical,2,non
+m,87,urgences,"Domicile, seul",40,Médical,NA,non
+f,92,smur,EHPAD,90,Médical,1,non
+f,91,court séjour,Maison de retraite ,57,Chirurgie programmée,11,non
+m,87,urgences,"Domicile, seul",48,Chirurgie non programmée,8,non
+f,86,smur,Avec la famille,57,Médical,10,non
+m,85,court séjour,En couple,42,Médical,9,non
+f,87,court séjour,Avec la famille,40,Chirurgie non programmée,2,non
+f,92,urgences,En couple,30,Médical,NA,non
+m,87,court séjour,En couple,31,Médical,4,oui
+m,86,court séjour,En couple,45,Médical,4,oui
+m,86,court séjour,"Domicile, seul",32,Médical,4,oui
+m,86,court séjour,Maison de retraite ,35,NA,1,oui
+m,89,court séjour,En couple,66,Chirurgie non programmée,1,oui
+f,88,smur,Avec la famille,43,Médical,NA,oui
+m,88,court séjour,"Domicile, seul",47,Chirurgie non programmée,NA,oui
+m,86,court séjour,En couple,45,Médical,19,oui
+m,86,court séjour,En couple,79,Chirurgie programmée,3,oui
+m,85,urgences,En couple,49,Médical,14,oui
+f,87,smur,Maison de retraite ,91,Médical,3,oui
+m,95,court séjour,EHPAD,91,Chirurgie non programmée,1,oui
+m,91,court séjour,"Domicile, seul",60,NA,4,oui
+m,94,court séjour,"Domicile, seul",63,NA,18,oui
+f,87,court séjour,NA,44,Médical,NA,non
+f,85,smur,"Domicile, seul",67,Médical,2,non
+m,86,urgences,Avec la famille,55,Médical,8,non
+m,87,ssr,Avec la famille,34,Médical,NA,non
+f,91,NA,"Domicile, seul",94,Médical,2,non
+m,95,ssr,"Domicile, seul",69,Médical,3,non
+m,85,court séjour,En couple,30,Médical,NA,non
+f,87,urgences,NA,69,Médical,2,non
+f,90,court séjour,"Domicile, seul",40,Médical,8,non
+f,85,ssr,EHPAD,56,Médical,3,non
+m,85,smur,"Domicile, seul",69,Médical,9,non
+f,88,court séjour,"Domicile, seul",66,Médical,3,non
+m,90,court séjour,En couple,39,Médical,8,non
+f,91,court séjour,Maison de retraite ,109,Médical,2,non
+m,86,urgences,Avec la famille,51,Médical,5,non
+m,85,urgences,"Domicile, seul",40,Médical,3,non
+f,90,smur,Maison de retraite ,44,Médical,6,non
+f,88,court séjour,En couple,24,Chirurgie programmée,NA,non
+f,86,court séjour,NA,41,Médical,10,non
+m,91,urgences,En couple,34,Médical,2,oui
+m,85,court séjour,En couple,72,Chirurgie non programmée,6,non
+f,91,court séjour,"Domicile, seul",55,Chirurgie non programmée,NA,non
+f,85,urgences,En couple,98,Médical,9,non
+m,88,court séjour,Avec la famille,31,Médical,NA,non
+f,85,urgences,En couple,56,Médical,7,non
+m,85,urgences,"Domicile, seul",30,Médical,3,non
+m,90,smur,NA,44,Médical,6,non

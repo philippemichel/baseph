@@ -2,10 +2,7 @@
 % Please edit documentation in R/barconfph.R
 \name{barconfph}
 \alias{barconfph}
-\title{Barplot avec barres d'erreur d'une valeur
-Trace un barplot avec les intervalles de confiance pour une valeur donnée
-d'une variable factorielle
-selon les classes d'une variable factorielle de classification}
+\title{Barplot avec barres d'erreur d'une valeur}
 \usage{
 barconfph(
   dfx,
@@ -26,7 +23,7 @@ barconfph(
 
 \item{testx}{Variable de tri (factoriel) x}
 
-\item{valx}{valeur de testx a presenter}
+\item{valx}{valeur de test à présenter}
 
 \item{titre}{Titre du graphique}
 
@@ -42,8 +39,13 @@ barconfph(
 graphique
 }
 \description{
-Barplot avec barres d'erreur d'une valeur
 Trace un barplot avec les intervalles de confiance pour une valeur donnée
 d'une variable factorielle
+}
+\details{
 selon les classes d'une variable factorielle de classification
+}
+\examples{
+barconfph(dfx = patients, varx =escarre, testx =sexea, valx = "oui", titre = "Sexe",ang = 0)
+
 }

@@ -21,7 +21,7 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
 
 
 # Autres aides : 
-- **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur* 
+- **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur*. Un deuxième tableau doit être présent contenant les nom des variables & les labels corrects pour les tableaux & les figures.
 - **listrandph** listes de randomisation multicentre, blocs variables.
 - **beaup** Écrire un *p = 0,05* esthétique avec *p< 0,001* si nécessaire.
 - **bmiph** Couper en facteurs un BMI numérique, version française & anglaise.
@@ -42,3 +42,12 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
 - **nbobsph** Enquète simple
 - **nb.equi.ph** Étude d'équivalence
 - **nb.obs.ph** Étude de non-infériorité
+
+# Jeu de données
+
+Un jeu de données est fourni pour exemple : 
+
+- **Patients** Escarres en réniamtion chez la personne âgée (données fictives).
+- **bnom** Les labels *propres* des variables: 
+    - `code` Code utilisé dans R (ex : `igs`)
+    - `nom` Beau label pour les tableaux, figures etc.  (ex : `IGS 2`)
