@@ -1,13 +1,13 @@
 Package: baseph
 Title: Tout ce qu'il faut pour commencer un projet simple en recherche clinique
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     person(given = "Philippe",
            family = "MICHEL",
            role = c("aut", "cre"),
            email = "philippe@docteur-michel.fr",
            comment = c(ORCID = "https://orcid.org/0000-0003-2392-7186"))
-Description: tables and graphics for a clinical project: descriptif, comparitive simple, regression. randomisation. 
+Description: Création des tabes & quelques figures ainsi que divers utilitaires pour une étude clinique simple.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -17,12 +17,16 @@ Imports:
     binom,
     blockrand,
     boot,
+    gtsummary,
+    labelled,
     dplyr,
+    tidyr,
     forcats,
     ggplot2,
     ggsci,
     janitor,
     kableExtra,
+    colorspace,
     knitr,
     stringr,
     questionr,

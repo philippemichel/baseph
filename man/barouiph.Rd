@@ -2,36 +2,32 @@
 % Please edit documentation in R/barouiph.R
 \name{barouiph}
 \alias{barouiph}
-\title{Barplot uniquement les "oui" en \%
-Trace un barplot d'une variable factorielle en oui/non, en affichant uniquement les "oui" selon les modalitées de la variable de tri}
+\title{Barplot avec barres d'erreur d'une valeur}
 \usage{
 barouiph(
-  df,
+  dfx,
   varx,
-  vartri,
-  oui = "oui",
+  testx,
+  valx = "oui",
   titre = "",
   stitre = "",
-  ytitre = "\%",
   capt = "",
   lab = "",
   angle = 0
 )
 }
 \arguments{
-\item{df}{data-frame}
+\item{dfx}{data.frame}
 
-\item{varx}{variable _ traiter (factorielle) le plus souvent binaire}
+\item{varx}{variable à représenter (factoriel) y}
 
-\item{vartri}{variable de tri (afficher sur l'axe des x)}
+\item{testx}{Variable de tri (factoriel) x}
 
-\item{oui}{oui la valeur _ afficher dans la variable varp}
+\item{valx}{valeur de test à présenter}
 
 \item{titre}{Titre du graphique}
 
 \item{stitre}{Sous-titre du graphique}
-
-\item{ytitre}{Titre de l'axe y (\%)}
 
 \item{capt}{légende du graphique}
 
@@ -40,17 +36,15 @@ barouiph(
 \item{angle}{angle affichage des valeurs de vart sur l'axe des x (0 par defaut)}
 }
 \value{
-un graphique
+graphique
 }
 \description{
-Barplot uniquement les "oui" en \%
-Trace un barplot d'une variable factorielle en oui/non, en affichant uniquement les "oui" selon les modalitées de la variable de tri
+Trace un barplot avec les intervalles de confiance pour une valeur donnée
+d'une variable factorielle selon les classes d'une variable factorielle de
+classification.
 }
 \examples{
-barouiph(df = patients, varx = sexe, vartri = admission,
-oui = "f", titre = "Mode d'admission",
-stitre =" Pour les dames",
-ytitre ="\%", capt ="Mode d'admission selon le sexe",
-lab = "ab", angle = 0)
+data(patients)
+barouiph(dfx = patients, varx =escarre, testx =sexea, valx = "oui", titre = "Sexe",ang = 0)
 
 }

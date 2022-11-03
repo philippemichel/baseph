@@ -6,13 +6,15 @@
   
 Les fonctions de base pour un projet simple de recherche clinique en R, particulièrement adapté pour une thèse ou un mémoire de DES. 
 
+
 # Plusieurs tableaux : 
 - **tab1ph** Descriptif simple
 - **tabcph** Comparaison simple
-- **glmph** Régression logistique
+- **tabregph** Toute régression
 
-Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des "beaux intitulés" en csv qui doit être importé dans un data-frame.
-Dans les fichiers d'exemple, les données (fictives) sont dans le fichier "patients" & les beaux noms dans le fichier "nn", variable "nom".
+Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des "beaux intitulés". C'est lors de l'import du csv principal par la fonction `debutph` que ces labels seront importés.
+
+Dans les fichiers d'exemple, les données (fictives) sont dans le fichier "patients" & les beaux noms dans le fichier "bnom", variable "nom".
 
 On peut aussi sélectionner les variables à afficher dans les tableaux tab1ph & tabcph. 
 
@@ -21,7 +23,7 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
 
 
 # Autres aides : 
-- **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur*. Un deuxième tableau doit être présent contenant les nom des variables & les labels corrects pour les tableaux & les figures.
+- **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur*. Un vecteur doit être présent contenant les labels corrects pour les tableaux & les figures.
 - **listrandph** listes de randomisation multicentre, blocs variables.
 - **beaup** Écrire un *p = 0,05* esthétique avec *p< 0,001* si nécessaire.
 - **bmiph** Couper en facteurs un BMI numérique, version française & anglaise.

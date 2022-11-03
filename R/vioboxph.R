@@ -16,11 +16,12 @@
 #' @return graphique
 #' @export
 #'
-#' @examples vioboxph(patients, admission, taille, titre =" grands",
+#' @examples vioboxph(patients, admission, age, titre =" grands",
 #' stit = "et grandes", titx = "Mode d'admission")
 #'
 vioboxph <- function(dfx, varx, varnum, titre = "", stit = "", titx= "", tity = "n", lab ="") {
   dfx |>
+  drop_na({{varx}}) |>
   ggplot() +
     aes(x = {{varx}}, y = {{varnum}}, fill = {{varx}}) +
     geom_violin() +
@@ -34,7 +35,7 @@ vioboxph <- function(dfx, varx, varnum, titre = "", stit = "", titx= "", tity = 
       label = lab
     ) +
     theme_light() +
-    ggsci::scale_fill_lancet() +
+    scale_fill_discrete_qualitative(palette = "Dynamic") +
     theme(
       plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),

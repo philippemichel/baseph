@@ -45,7 +45,7 @@ bardeuxph <- function(dfx,
          fill = ltitre,
          label = lab) +
     theme_light() +
-    ggsci::scale_fill_lancet() +
+    colorspace::scale_fill_discrete_qualitative(palette = "Dynamic") +
     scale_y_continuous("%", breaks = seq(0,1,0.2),labels = seq(0,100,20)) +
     theme(
       plot.title = element_text(size = 16, face = "bold"),

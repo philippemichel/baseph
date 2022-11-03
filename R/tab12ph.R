@@ -13,7 +13,7 @@
 #' @return tableau
 #' @export
 #'
-#' @examples tabdph(dfx = patients, test = "med", titre = "Escarre", capt = "Tableau 1")
+#' @examples tab1ph(dfx = patients, test = "med", titre = "Escarre", capt = "Tableau 1")
 #'
 tab1ph <-
   function(dfx,

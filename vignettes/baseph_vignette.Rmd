@@ -14,18 +14,26 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
+library(labelled)
+library(tidyverse)
 library(baseph)
+library(binom)
+library(colorspace)
 ```
 
-Pour tous les exemples suivant on utilise deux fichiers : 
+Pour tous les exemples suivant on utilise deux fichiers (dans le dossier `data`: 
 
-- **Patients** qui contient un petit jeu de données fictifs sur des patients. 
-- **nn** qui contient des intitulés plus clairs que les noms des variables avec majuscules, espaces, accents...
+- **patient.csv** qui contient des données fictives sur des patients.
+- **noms.sv** qui contient une colonne `code` avec les noms des variables (ex : *igs2*) & une colonne `nom` qui contient les vrais noms de la variable pour un affichage clair dans les tableaux, graphiques etc. (ex : *IGS 2*). Un exmeple d'utilisation pourrait être :
 
-```{r data}
-data("patients")
-data("nn")
+```{r import}
+# Création du vecteur de noms
+nn <- read_csv("../data/noms.csv")
+bnom <- nn$nom
+# Import de la base de données & incorporation des labels.
+pat <- debutph("../data/patients.csv", bnom)
 ```
+
 # Avant l'analyse des données
 
 ## Calcul du nombre de cas
@@ -44,13 +52,18 @@ nb.noninf.ph(po = 0.5,# proportion sur le groupe contrôle
              zbeta = 0.2) # risque beta
 ```
 
-```{r}
+```{r equi}
 nb.equi.ph(po=0.5, dl = 0.1, zalpha = 0.05, zbeta = 0.2)
 ```
 
 ### Étude observationelle simple
 
 Cette méthode permet d'avoir une estimation du nombre de cas nécessaire dans une étude purement observationnelle, sans test donc pas de calcul précis possible. Il faut néanmoins définir la marge d'erreur admissible sur les résultats.
+
+```{r obs}
+nb.obs.ph(px = 0.5, ex = 0.1, np = 1e5)
+```
+
 
 ## Randomisation
 
@@ -65,28 +78,15 @@ listrandph(nbcent = 1, # nombre de centres
 ```
 La sortie consiste en un fichier global & un par centre (csv).
 
-# Import d'un fichier csv
-
-C'est souvent la première étape. Le fonction `debutpĥ` permet d'automatiser :
-
--   L'import du fichier .csv vers un tibble. Cette fonction est prévue pour importer un csv créé par LibreOffice avec les réglages par défat, c'est à dire séparation des items par des virgules, nombres anglo-saxons.
--   Les noms des variables sont nettoyés & réécris selon la norme *Petit serpent* soit *mon_beau_titre*.
--   Les variables constantes ou vides sont éliminées.
 
 # Tableau 1
 
-Le premier tableau d'une étude est toujours un tableau simple, sans test (enfin presque toujours).
+Le premier tableau d'une étude est toujours un tableau simple, sans test (enfin presque toujours). Pour les valeurs numériques on peut choisir l’affichage de la moyenne ± écart-type (test = "moy") ou de la médiane (quartiles) (test = "med").
 
 ```{r tab1}
-tab1ph(
-patients, # nom du tibble
-nomv = nn$nom, # Les intitulés corrects
-nlignes = c(2:8), # Les variables à afficher
-titre = "Table 1", 
-label = "tab1", # peut être utile pour un export LaTeX 
-export = FALSE # Si TRUE exporte le tableau en csv.
-)
+tab1ph(dfx = pat, test = "med", titre = "Escarre", capt = "Tableau 1")
 ```
+
 
 # Tableaux comparatifs.
 
@@ -95,31 +95,21 @@ export = FALSE # Si TRUE exporte le tableau en csv.
 Ce tableau sert à présenter les résultats de tests variable par variable.  On peut en particulier définir si on considère que les données numériques ont une distribution normale (présentation des résultats en moyenne ± écart-type, test de Student) ou non (présentation en médiane (quartiles), test de Wilcoxon).
 
 ```{r tabc}
-tabcph(
-dfx = patients, # nom du tibble
-nomv = nn$nom, # Les intitulés corrects
-nlignes = c(2:8), # Les variables à afficher
-tri = alite.7.j.av,
-titre = "Tableau comparatif", 
-lab = "tabcomp", # peut être utile pour un export LaTeX 
-test = "med",
-export = FALSE # Si TRUE exporte le tableau en csv.
-)
+tabcph(dfx = patients, tri = escarre, test = "moy", titre = "Escarre", capt = "Tableau 1")
 ```
+
 
 ## Analyse multivariée
 
 On peut compléter l'analyse par une étude en multivariée par régression logistique.
+La fonction `tabregph` prend comme principal argument le résultat d'un régression (grand nombre de modèles possibles, voir <https://www.danieldsjoberg.com/gtsummary/articles/tbl_regression.html#supported-models>).
 
-```{r glm}
-glmph(dfx = "patients",
-      vart = "alite.7.j.av", 
-      vars = c("age", "igs", "sexe"),
-      bnom = nn$nom, 
-      titre = "Mes patients - analyse par régression logistique",
-      lab = "reg", export = FALSE
-)
+
+```{r treg}
+ll <- glm(escarre~ age + admission + igs2, data = patients, family = "binomial")
+# tabregph(reg = ll, titre = "Facteurs de risque d'escarre" )
 ```
 
-# 
+
+
 

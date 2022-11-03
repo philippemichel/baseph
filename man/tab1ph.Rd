@@ -22,6 +22,6 @@ tableau
 Génération d'un tableau simple pour une étude clinique avec tests unitaires pour les deux groupes. Aucun test.
 }
 \examples{
-tabdph(dfx = patients, test = "med", titre = "Escarre", capt = "Tableau 1")
+tab1ph(dfx = patients, test = "med", titre = "Escarre", capt = "Tableau 1")
 
 }

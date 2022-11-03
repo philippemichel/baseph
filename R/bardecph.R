@@ -60,7 +60,7 @@ bardecph <- function(dfx,
          label = lab)+
     scale_y_continuous(limits = c(0, maxy)) +
     theme_light() +
-    scale_fill_lancet() +
+    scale_fill_discrete_qualitative(palette = "Dynamic") +
     theme(
       plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),
