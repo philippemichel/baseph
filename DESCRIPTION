@@ -19,6 +19,7 @@ Imports:
     boot,
     gtsummary,
     labelled,
+    tidyverse,
     dplyr,
     tidyr,
     forcats,

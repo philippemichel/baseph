@@ -18,7 +18,8 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples bardecph(patients, admission, titre = "Mode d'admission",
+#' @examples data("patients")
+#' bardecph(patients, admission, titre = "Mode d'admission",
 #' stitre = "%", capt = "Mode d'admission", lab ="ma", angle = 0)
 #'
 bardecph <- function(dfx,

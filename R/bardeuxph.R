@@ -18,7 +18,8 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples bardeuxph(patients,escarre, admission ,
+#' @examples data("patients")
+#' bardeuxph(patients,escarre, admission ,
 #' titre = "Escarre & mode d'admission",
 #' stitre = "%", ltitre ="Escarre",
 #' capt ="Escarre", lab = "aa", angle = 20)

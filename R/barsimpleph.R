@@ -16,7 +16,8 @@
 #' @return un graphique
 #' @export
 #'
-#' @examples barsimpleph(dfx = patients, varx= admission,
+#' @examples data(patients)
+#' barsimpleph(dfx = patients, varx= admission,
 #' titre = "Mode d'admission", stitre ="ICU",
 #' capt ="Admission", lab = "aa", angle = 10)
 #'
@@ -52,7 +53,7 @@ barsimpleph <- function(dfx,
          caption = capt,
          label = lab) +
     theme_light() +
-    scale_fill_lancet() +
+    scale_fill_discrete_qualitative(palette = "Dynamic") +
     theme(
       plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),

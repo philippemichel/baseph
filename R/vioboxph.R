@@ -16,7 +16,8 @@
 #' @return graphique
 #' @export
 #'
-#' @examples vioboxph(patients, admission, age, titre =" grands",
+#' @examples data("patients)
+#' vioboxph(patients, admission, age, titre =" grands",
 #' stit = "et grandes", titx = "Mode d'admission")
 #'
 vioboxph <- function(dfx, varx, varnum, titre = "", stit = "", titx= "", tity = "n", lab ="") {

@@ -1,25 +1,44 @@
 ---
-title: "baseph_vignette"
+title: "Vignette baseph"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{baseph_vignette}
+  %\VignetteIndexEntry{Put the title of your vignette here}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+  \usepackage[utf8]{inputenc}
 ---
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE, warning = FALSE, message = FALSE
+  collapse = TRUE, warning = FALSE, message = FALSE, 
+  out.width = '80%',
+  fig.align = 'center'
 )
 ```
 
-```{r setup}
+ Ce package a pour but d'aider à réaliser la partie statistique d'une étude clinique simple, typiquement une thèse ou un mémoire de DES.
+ 
+ Les données proposées sont fictives. 
+
+# Installation
+
+```{r insta, eval = FALSE}
+devtools::install_github("https://github.com/philippemichel/baseph")
+```
+
+Tout simplement. Il vous faut juste le package `devtools`.
+
+
+```{r setup, echo = FALSE}
 library(labelled)
 library(tidyverse)
 library(baseph)
 library(binom)
 library(colorspace)
 ```
+
+ 
+ 
+# Les données
 
 Pour tous les exemples suivant on utilise deux fichiers (dans le dossier `data`: 
 
@@ -95,7 +114,7 @@ tab1ph(dfx = pat, test = "med", titre = "Escarre", capt = "Tableau 1")
 Ce tableau sert à présenter les résultats de tests variable par variable.  On peut en particulier définir si on considère que les données numériques ont une distribution normale (présentation des résultats en moyenne ± écart-type, test de Student) ou non (présentation en médiane (quartiles), test de Wilcoxon).
 
 ```{r tabc}
-tabcph(dfx = patients, tri = escarre, test = "moy", titre = "Escarre", capt = "Tableau 1")
+tabcph(dfx = patients, tri = escarre, test = "moy", titre = "Escarre", capt = "Facteurs de risque d'escarre")
 ```
 
 
@@ -106,10 +125,82 @@ La fonction `tabregph` prend comme principal argument le résultat d'un régress
 
 
 ```{r treg}
-ll <- glm(escarre~ age + admission + igs2, data = patients, family = "binomial")
-# tabregph(reg = ll, titre = "Facteurs de risque d'escarre" )
+ll <- glm(escarre~ age + admission + igs2, data = pat, family = "binomial")
+tabregph(reg = ll, titre = "Facteurs de risque d'escarre" )
 ```
 
+## Graphiques
 
+## Une variable factorielle
 
+Un graphique en barre simple pour afficher une donnée factorielle en % de chaque niveau.
+
+```{r gsimple}
+barsimpleph(
+  dfx = pat,
+  varx = admission,
+  titre = "Mode d'admission",
+  stitre = "ICU",
+  capt = "Admission",
+  lab = "graph1",
+  angle = 30
+)
+```
+
+### Graphique en barre décroissant
+
+Le même , les items classés en % décroissant.
+ 
+```{r gdec}
+bardecph(patients, admission, titre = "Mode d'admission",
+         stitre = "%"
+         , capt = "Mode d'admission", lab ="ma", angle = 30)
+```
+
+## Deux variables factorielles
+
+Une variable (y) représenté en % de  ses niveaux, découpé selon une seconde variable (x).
+
+```{r gdeux}
+bardeuxph(
+  dfx =  patients,
+  varp =  escarre,
+  vart = admission ,
+  titre = "Escarre & mode d'admission",
+  stitre = "%",
+  ltitre = "Escarre",
+  capt = "Escarre",
+  lab = "aa",
+  angle = 20
+)
+```
+
+## Une variable factorielle, une variable numérique
+
+### Graphique en barre
+
+Représentation de la moyenne avec son intervalle de confiance à 95 %  d'une variable numérique (y) selon les valeurs d'une variable factorielle (x).
+
+```{r gcbonf}
+barconfph(dfx = pat, varnum = igs2, vartri = admission, titre = "IGS II selon la provenance du patient", stitre = "en ICU", tx = "Mode d'admission", ty = "IGS II", angle = 0)
+```
+
+### Violons & boxplot
+
+Représentation  d'une variable numérique (y) en violons (complété d'un boxplot) selon les valeurs d'une variable factorielle (x).
+
+```{r gviol}
+vioboxph(pat, admission, age, titre =" grands",stit = "et grandes", titx = "Mode d'admission")
+```
+
+# Utilitaires
+
+## BMI ou IMC
+
+À partir d'un vecteur contenant les valeurs numériques de l'IMC , discrétise selon les limites usuelles. À savoir ces limites sont différentes en France & chez les anglo-saxons d'où l’importance de choisir la langue.
+
+```{r imc}
+imc <- c(18,25,40,32)
+bmiph(imc, "fr")
+```
 

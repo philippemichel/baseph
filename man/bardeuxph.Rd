@@ -44,6 +44,7 @@ Barplot 2 variables factorielles
 une variable de tri, une variable en \% par modalité de tri
 }
 \examples{
+data("patients")
 bardeuxph(patients,escarre, admission ,
 titre = "Escarre & mode d'admission",
 stitre = "\%", ltitre ="Escarre",

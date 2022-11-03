@@ -30,6 +30,7 @@ Barplot simple en \%
 Trace un barplot d'une variable factorielle, axe des y en \%
 }
 \examples{
+data(patients)
 barsimpleph(dfx = patients, varx= admission,
 titre = "Mode d'admission", stitre ="ICU",
 capt ="Admission", lab = "aa", angle = 10)

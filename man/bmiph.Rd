@@ -2,8 +2,8 @@
 % Please edit documentation in R/bmiph.R
 \name{bmiph}
 \alias{bmiph}
-\title{BMIPH
-Coupe un vecteur BMI(numeric) (ou IMC) en facteurs avec les limites usuelles, en français ou en anglais}
+\title{Bmiph
+Coupe un vecteur BMI(numeric) (ou IMC) en facteurs avec les limites usuelles, en français ou en anglais (les limites sont différentes)}
 \usage{
 bmiph(bmi, lang = "fr")
 }
@@ -16,8 +16,8 @@ bmiph(bmi, lang = "fr")
 vecteur factoriel
 }
 \description{
-BMIPH
-Coupe un vecteur BMI(numeric) (ou IMC) en facteurs avec les limites usuelles, en français ou en anglais
+Bmiph
+Coupe un vecteur BMI(numeric) (ou IMC) en facteurs avec les limites usuelles, en français ou en anglais (les limites sont différentes)
 }
 \examples{
 imc <- c(18,25,40,32)
