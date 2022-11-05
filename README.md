@@ -6,8 +6,12 @@
   
 Les fonctions de base pour un projet simple de recherche clinique en R, particulièrement adapté pour une thèse ou un mémoire de DES. 
 
+## Technique & progession
 
-# Plusieurs tableaux : 
+**05/11/22** Les tableaux sont actuellement réalisés grâce au package `gtsummary` qui permet facilement de mettre en forme de beaux tableaux . Mais , malgré de nombreuses possibili"ts de réglage, je n(arrive pas à faire exactement ce que je veux DOnc je sui en train de les réécrire complètement en me servant juste de `kableExtra` pour la mise en forme finale;  
+
+
+## Plusieurs tableaux : 
 - **tab1ph** Descriptif simple
 - **tabcph** Comparaison simple
 - **tabregph** Toute régression
@@ -22,13 +26,13 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
 
 
 
-# Autres aides : 
+## Autres aides : 
 - **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur*. Un vecteur doit être présent contenant les labels corrects pour les tableaux & les figures.
 - **listrandph** listes de randomisation multicentre, blocs variables.
 - **beaup** Écrire un *p = 0,05* esthétique avec *p< 0,001* si nécessaire.
 - **bmiph** Couper en facteurs un BMI numérique, version française & anglaise.
 
-# Graphiques
+## Graphiques
  - **barconfph** Graphique en barres avec intervalle de confiance pour une variable numérique (y) & une variable factorielle de tri (x).
 - **barsimpleph** Graphique en barre exprimé en %  des modalités pour une variable factorielle (x) 
 - **bardecph**  Même graphique que **barsimpleph** mais les % sont en ordre décroissant
@@ -39,13 +43,13 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
 - **vioboxph** Graphique en violon avec un box -plot intégré.
 - **pyrph** Pyramide des âges. La fonction *epiDisplay::pyramid()* donne aussi un très bon rendu. (en travaux)
 
-# Calcul du nombre de sujets nécessaires
+## Calcul du nombre de sujets nécessaires
 
 - **nbobsph** Enquète simple
 - **nb.equi.ph** Étude d'équivalence
 - **nb.obs.ph** Étude de non-infériorité
 
-# Jeu de données
+## Jeu de données
 
 Un jeu de données est fourni pour exemple : 
 
