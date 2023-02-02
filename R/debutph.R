@@ -19,7 +19,10 @@
 #'
 #' @example debutph(patients,bnom)
 #' @export
-debutph <- function(fich, nom) {
+debutph <- function(fich, nom="xx") {
+  if (nom == "xx"){
+    nom <- names(fich)
+  }
   dfx <- read_csv(
     fich,
     col_names = TRUE,

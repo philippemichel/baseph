@@ -6,20 +6,30 @@
   
 Les fonctions de base pour un projet simple de recherche clinique en R, particulièrement adapté pour une thèse ou un mémoire de DES. Si vous travaillez sur un PHRC ou une phase III ça va être un peu court !
 
+ # Installation
+ 
+ ```R
+ > library("remotes")
+ > remotes::install_github("https://github.com/philippemichel/baseph")
+```
 
 # Plusieurs tableaux : 
 - **tab1ph** Descriptif simple
 - **tabcph** Comparaison simple
 - **tabregph** Toute régression
 
-Pour ces tableaux, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des "beaux intitulés". C'est lors de l'import du csv principal par la fonction `debutph` que ces labels seront importés.
+Pour ces tableaux (ainsi que pour les graphiques), possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des "beaux intitulés". C'est lors de l'import du csv principal par la fonction `debutph` que ces labels seront importés par exemple :
+
+```R
+ > library(labelled)
+ > bnom <- read.csv("datas/bnom.csv") # Import des intitulés (tableau à deux colonnes : 'nom' & 'code' par ex.).
+ > bnom <- bnom$nom 
+ > ttd <- debutph("datas/drepa2.csv", bnom) #Import des données avec insertion des labels.
+```
 
 Dans les fichiers d'exemple, les données (fictives) sont dans le fichier "patients" & les beaux noms dans le fichier "bnom", variable "nom".
 
-On peut aussi sélectionner les variables à afficher dans les tableaux tab1ph & tabcph. 
-
-Les tests ou simplement l'affichage peuvent, pour les variables numériques, être présentés en moyenne ± écart-type ou en médiane (quartiles)
-
+Les tests ou simplement l'affichage peuvent, pour les variables numériques, être présentés en moyenne ± écart-type ou en médiane (quartiles). Les variables discrètes sont rendues en n (%). 
 
 
 # Autres aides : 
@@ -34,8 +44,8 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
 - **bardecph**  Même graphique que **barsimpleph** mais les % sont en ordre décroissant
 - **bardeuxph** Graphique en barre. Une variable exprimée en % (y) pour chaque modalité (x) de l'autre.
 - **barouiph** Graphique en barre avec barres d'erreur. Une variable
-  binaire (oui/non) exprimée en % d'une modalité (oui par ex.) pour
-  chaque modalité de l'autre.
+  binaire (`oui/non`) exprimée en % d'une modalité (`oui` par ex.) pour
+  chaque modalité de l'autre variable.
 - **vioboxph** Graphique en violon avec un box -plot intégré.
 - **pyrph** Pyramide des âges. La fonction *epiDisplay::pyramid()* donne aussi un très bon rendu. (en travaux)
 
@@ -56,7 +66,7 @@ Un jeu de données est fourni pour exemple :
 
 ## Branche TABLEAUX
 
-28/11/22 Réécriture en cours des fonctions gérant des tableaux sans utiliser `gtsummary`, très bon package mais trop rigide pour moi.
+01/02/2023 Réécriture des fonctions gérant des tableaux sans utiliser `gtsummary`, très bon package mais trop rigide pour moi.
 
 
 ## À faire
