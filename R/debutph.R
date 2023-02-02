@@ -28,9 +28,9 @@ debutph <- function(fich, nom) {
     show_col_types = FALSE
   ) |>
     mutate_if(is.character, as.factor) |>
-    janitor::clean_names() |>
-    janitor::remove_constant() |>
-    janitor::remove_empty()
+    janitor::clean_names()
+  #  janitor::remove_constant() |>
+  #  janitor::remove_empty()
 
   names(dfx) <- stringr::str_replace_all(names(dfx), "_", ".")
   var_label(dfx) <- as.character(nom)

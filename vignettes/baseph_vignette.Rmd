@@ -34,6 +34,8 @@ library(tidyverse)
 library(baseph)
 library(binom)
 library(colorspace)
+library(WriteXLS)
+library(kableExtra)
 ```
 
  
@@ -103,18 +105,18 @@ La sortie consiste en un fichier global & un par centre (csv).
 Le premier tableau d'une étude est toujours un tableau simple, sans test (enfin presque toujours). Pour les valeurs numériques on peut choisir l’affichage de la moyenne ± écart-type (test = "moy") ou de la médiane (quartiles) (test = "med").
 
 ```{r tab1}
-tab1ph(dfx = pat, test = "med", titre = "Escarre", capt = "Tableau 1")
+tab1ph(dfx = pat, test = "med", tit = "Escarre", note = "Tableau 1")
 ```
 
 
-# Tableaux comparatifs.
+# Tableaux comparatifs. 
 
 ## Analyse univariée
 
 Ce tableau sert à présenter les résultats de tests variable par variable.  On peut en particulier définir si on considère que les données numériques ont une distribution normale (présentation des résultats en moyenne ± écart-type, test de Student) ou non (présentation en médiane (quartiles), test de Wilcoxon).
 
 ```{r tabc}
-tabcph(dfx = patients, tri = escarre, test = "moy", titre = "Escarre", capt = "Facteurs de risque d'escarre")
+tabcph(dfx = patients, tri = escarre, test = "moy", tit = "Escarre", note = "Facteurs de risque d'escarre")
 ```
 
 

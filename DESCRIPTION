@@ -1,6 +1,6 @@
 Package: baseph
 Title: Tout ce qu'il faut pour commencer un projet simple en recherche clinique
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: 
     person(given = "Philippe",
            family = "MICHEL",
@@ -35,6 +35,7 @@ Imports:
     rlang,
     stats,
     utils,
+    WriteXLS,
     see
 VignetteBuilder: knitr
 Language: fr

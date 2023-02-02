@@ -4,14 +4,10 @@
   [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
   <!-- badges: end -->
   
-Les fonctions de base pour un projet simple de recherche clinique en R, particulièrement adapté pour une thèse ou un mémoire de DES. 
-
-## Technique & progession
-
-**05/11/22** Les tableaux sont actuellement réalisés grâce au package `gtsummary` qui permet facilement de mettre en forme de beaux tableaux . Mais , malgré de nombreuses possibili"ts de réglage, je n(arrive pas à faire exactement ce que je veux DOnc je sui en train de les réécrire complètement en me servant juste de `kableExtra` pour la mise en forme finale;  
+Les fonctions de base pour un projet simple de recherche clinique en R, particulièrement adapté pour une thèse ou un mémoire de DES. Si vous travaillez sur un PHRC ou une phase III ça va être un peu court !
 
 
-## Plusieurs tableaux : 
+# Plusieurs tableaux : 
 - **tab1ph** Descriptif simple
 - **tabcph** Comparaison simple
 - **tabregph** Toute régression
@@ -26,13 +22,13 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
 
 
 
-## Autres aides : 
+# Autres aides : 
 - **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur*. Un vecteur doit être présent contenant les labels corrects pour les tableaux & les figures.
 - **listrandph** listes de randomisation multicentre, blocs variables.
 - **beaup** Écrire un *p = 0,05* esthétique avec *p< 0,001* si nécessaire.
 - **bmiph** Couper en facteurs un BMI numérique, version française & anglaise.
 
-## Graphiques
+# Graphiques
  - **barconfph** Graphique en barres avec intervalle de confiance pour une variable numérique (y) & une variable factorielle de tri (x).
 - **barsimpleph** Graphique en barre exprimé en %  des modalités pour une variable factorielle (x) 
 - **bardecph**  Même graphique que **barsimpleph** mais les % sont en ordre décroissant
@@ -43,13 +39,13 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
 - **vioboxph** Graphique en violon avec un box -plot intégré.
 - **pyrph** Pyramide des âges. La fonction *epiDisplay::pyramid()* donne aussi un très bon rendu. (en travaux)
 
-## Calcul du nombre de sujets nécessaires
+# Calcul du nombre de sujets nécessaires
 
 - **nbobsph** Enquète simple
 - **nb.equi.ph** Étude d'équivalence
 - **nb.obs.ph** Étude de non-infériorité
 
-## Jeu de données
+# Jeu de données
 
 Un jeu de données est fourni pour exemple : 
 
@@ -57,3 +53,21 @@ Un jeu de données est fourni pour exemple :
 - **bnom** Les labels *propres* des variables: 
     - `code` Code utilisé dans R (ex : `igs`)
     - `nom` Beau label pour les tableaux, figures etc.  (ex : `IGS 2`)
+
+## Branche TABLEAUX
+
+28/11/22 Réécriture en cours des fonctions gérant des tableaux sans utiliser `gtsummary`, très bon package mais trop rigide pour moi.
+
+
+## À faire
+
+Des modèles en Quarto ou RMarkdown pour :
+
+- des plans d'analyse
+- un rapport pour rendre les résultats, complet
+- un rapport plus simple proche du chapitre *Résultats* qui sera dans l'article ou la thèse. 
+
+Tout ça en deux versions : 
+
+- Étude observationnelle simple
+- Étude comparant deux groupes, interventionnelle ou non. 

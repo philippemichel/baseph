@@ -6,6 +6,8 @@
 #' @param vart variable factorielle de tri (axe des x)
 #' @param titre Titre du graphique
 #' @param stitre Sous titre
+#' @param xtitre titre de l'axe x (vide par défaut)
+#' @param ytitre titre de l'axe y (% par défaut)
 #' @param ltitre titre de la légende
 #' @param capt  légende du graphique
 #' @param lab label du graphique
@@ -21,7 +23,7 @@
 #' @examples data("patients")
 #' bardeuxph(patients,escarre, admission ,
 #' titre = "Escarre & mode d'admission",
-#' stitre = "%", ltitre ="Escarre",
+#' stitre = "%", xtitre = "x", ytitre = "%, ltitre ="Escarre",
 #' capt ="Escarre", lab = "aa", angle = 20)
 #'
 bardeuxph <- function(dfx,
@@ -29,6 +31,8 @@ bardeuxph <- function(dfx,
                       vart,
                       titre = "",
                       stitre = "",
+                      xtitre ="",
+                      ytitre = "%",
                       ltitre = "",
                       capt = "",
                       lab = "",
@@ -41,7 +45,8 @@ bardeuxph <- function(dfx,
     geom_bar(stat = "count", position = "fill") +
     labs(title = titre,
          subtitle = stitre,
-         y = "%",
+         x = xtitre,
+         y = ytitre,
          caption = capt,
          fill = ltitre,
          label = lab) +
@@ -51,7 +56,7 @@ bardeuxph <- function(dfx,
     theme(
       plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),
-      axis.title.x = element_blank(),
+      axis.title.x = element_text(size = 12),
       legend.title = element_text(size = 12),
       axis.title.y = element_text(
         size = 12,

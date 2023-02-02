@@ -5,34 +5,112 @@
 #' @param dfx Tibble
 #' @param test Valeurs numériques en moyenne ± écart-type (`moy`) ou médiane (quartiles) (`med`)
 #' @param titre Nom à afficher au desu des colonnes de comparaison
-#' @param capt Titre du graphique
+#' @param note Titre du graphique
+#' @param lt logique. TRUE crée un *longtable*
+#' @param export logique. TRUE crée un export en xls
 #'
 #' @import dplyr
 #' @import gtsummary
+#' @import kableExtra
 #' @import labelled
+#' @import WriteXLS
 #' @return tableau
 #' @export
 #'
-#' @examples tab1ph(dfx = patients, test = "med", titre = "Escarre", capt = "Tableau 1")
+#' @examples tab1ph(dfx = patients, test = "med", tit = "Escarre", note = "Tableau 1", lt = FALSE, export = FALSE)
 #'
-tab1ph <-
-  function(dfx,
-           titre = "",
-           test = "med",
-           capt = ""){
-    if (test == "moy") {
-      vtest <- list(all_continuous() ~ "{mean} ± {sd}")
-    } else {
-      vtest <- list(all_continuous() ~ "{median} ({p25} ; {p75})")
-    }
-    dfx |>
-      tbl_summary(
-        statistic = vtest,
-        missing = "no"
-      ) |>
-      modify_header(label ~ " ") %>%
-      modify_caption(paste0("**", capt, "**")) %>%
-      bold_labels() |>
-      add_n()
-
+tab1ph  <- function(dfx,  test = "moy", tit = "", note ="", lt = FALSE, export = FALSE){
+  #
+  if (test == "moy"){
+    note <- "n (%) - moyenne ± écart type"
   }
+  else{
+    note <- "n (%) - médiane (quartiles)"
+  }
+  #
+  tabf <- NULL
+  tlig <- 1
+  nl <- 1
+  #
+  for (l in 1:ncol(dfx)) {
+    varx <- dfx[l]
+    varx <- varx[,1]
+    lvarx <- length(na.omit(varx))
+    nom <- var_label(varx)
+    nom <- names(dfx)[l]
+    print("******************")
+    print(nom)
+    #
+    # Factoriel
+    #
+    if (!is.numeric(varx)) {
+      tabp <- c(nom,lvarx,"")
+      bb <- table(varx)
+      aa <- prop.table(bb)*100
+      for (i in 1:length(levels(varx))) {
+        ll <- c(levels(varx)[i],
+                "",
+                paste0(bb[i]," (",round(aa[[1]],1),"%)")
+        )
+        tabp <- rbind(tabp,ll)
+      }
+      print(tabp)
+      nl <- nl + length(levels(varx))
+    }
+    else{
+      # Numérique
+      if (test == "moy"){
+        am <- signif(mean(varx, na.rm = TRUE),4)
+        as <- signif(sd(varx, na.rm = TRUE),4)
+        aa <- paste0(am, " ± ", as)
+      }
+      else{
+        mdx <- quantile(varx)
+        aa <- paste0(mdx[[3]], " (",mdx[[2]]," ; ",mdx[[4]],")")
+      }
+      tabp <- c(nom,lvarx,aa)
+    }
+    
+    tabf <- rbind(tabf,tabp)
+    #print(tabf)
+    nl <- nl + 1
+    tlig <- c(tlig,nl)
+  }
+  #
+  titn = c(" ","n", "n (%)")
+  #
+  # Export
+  #
+  if (export == TRUE) {
+    txls <-  as.data.frame(rbind(titn, tabf) )
+    extit <- paste0("tables/", tit, ".xls")
+    WriteXLS(
+      txls, extit
+    )
+  }
+  #
+  # Tracé
+  #
+  titn = c(" ","n", paste0("n (%)\n",note))
+  tabf <- as_tibble(tabf)
+  ltab <- 1:nrow(tabf)
+  lg <- ltab %in% tlig
+  tlig <- tlig[-length(tlig)]
+  print (lg)
+  trait <- tlig[-1] - 1
+  tabf$V1 <- cell_spec(tabf$V1 , bold =  lg)
+  kbl(
+    tabf,
+    booktabs = TRUE,
+    longtable = lt,
+    row.names = FALSE,
+    col.names = titn,
+    escape = FALSE
+  ) |>
+    kable_styling(
+      latex_options = c("HOLD_position", "scale_down", "repeat_header"),
+      position = "center"
+    ) |>
+    footnote(general = note) |>
+    row_spec(trait, hline_after = TRUE)
+}

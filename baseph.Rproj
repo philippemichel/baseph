@@ -1,7 +1,7 @@
 Version: 1.0
 
-RestoreWorkspace: No
-SaveWorkspace: No
+RestoreWorkspace: Default
+SaveWorkspace: Default
 AlwaysSaveHistory: Default
 
 EnableCodeIndexing: Yes
@@ -13,12 +13,7 @@ RnwWeave: knitr
 LaTeX: XeLaTeX
 
 AutoAppendNewline: Yes
-StripTrailingWhitespace: Yes
-LineEndingConversion: Posix
 
 BuildType: Package
 PackageUseDevtools: Yes
 PackageInstallArgs: --no-multiarch --with-keep.source
-PackageRoxygenize: rd,collate,namespace
-
-ZoteroLibraries: "My Library"
