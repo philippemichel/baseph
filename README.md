@@ -6,14 +6,14 @@
   
 Les fonctions de base pour un projet simple de recherche clinique en R, particulièrement adapté pour une thèse ou un mémoire de DES. Si vous travaillez sur un PHRC ou une phase III ça va être un peu court !
 
- # Installation
+ ## Installation
  
  ```R
  > library("remotes")
  > remotes::install_github("https://github.com/philippemichel/baseph")
 ```
 
-# Plusieurs tableaux : 
+## Plusieurs tableaux : 
 - **tab1ph** Descriptif simple
 - **tabcph** Comparaison simple
 - **tabregph** Toute régression
@@ -32,7 +32,7 @@ Dans les fichiers d'exemple, les données (fictives) sont dans le fichier "patie
 Les tests ou simplement l'affichage peuvent, pour les variables numériques, être présentés en moyenne ± écart-type ou en médiane (quartiles). Les variables discrètes sont rendues en n (%). 
 
 
-# Autres aides : 
+## Autres aides : 
 - **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur*. Un vecteur doit être présent contenant les labels corrects pour les tableaux & les figures.
 - **listrandph** listes de randomisation multicentre, blocs variables.
 - **beaup** Écrire un *p = 0,05* esthétique avec *p< 0,001* si nécessaire.
@@ -49,13 +49,13 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
 - **vioboxph** Graphique en violon avec un box -plot intégré.
 - **pyrph** Pyramide des âges. La fonction *epiDisplay::pyramid()* donne aussi un très bon rendu. (en travaux)
 
-# Calcul du nombre de sujets nécessaires
+## Calcul du nombre de sujets nécessaires
 
 - **nbobsph** Enquète simple
 - **nb.equi.ph** Étude d'équivalence
 - **nb.obs.ph** Étude de non-infériorité
 
-# Jeu de données
+## Jeu de données
 
 Un jeu de données est fourni pour exemple : 
 
@@ -63,13 +63,15 @@ Un jeu de données est fourni pour exemple :
 - **bnom** Les labels *propres* des variables: 
     - `code` Code utilisé dans R (ex : `igs`)
     - `nom` Beau label pour les tableaux, figures etc.  (ex : `IGS 2`)
+    
+## ÉVOLUTION
 
-## Branche TABLEAUX
+### Branche TABLEAUX
 
 01/02/2023 Réécriture des fonctions gérant des tableaux sans utiliser `gtsummary`, très bon package mais trop rigide pour moi.
 
 
-## À faire
+### À faire
 
 Des modèles en Quarto ou RMarkdown pour :
 
