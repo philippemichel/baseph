@@ -1,10 +1,11 @@
 #' Tableau 1
 #'
 #' Génération d'un tableau simple pour une étude clinique avec tests unitaires pour les deux groupes. Aucun test.
+#' 
+#' Il n'y a pas de titre au tableau car cela interfère avec le titre du chunck.
 #'
 #' @param dfx Tibble
 #' @param test Valeurs numériques en moyenne ± écart-type (`moy`) ou médiane (quartiles) (`med`)
-#' @param titre Nom à afficher au desu des colonnes de comparaison
 #' @param note Titre du graphique
 #' @param lt logique. TRUE crée un *longtable*
 #' @param export logique. TRUE crée un export en xls
@@ -17,9 +18,9 @@
 #' @return tableau
 #' @export
 #'
-#' @examples tab1ph(dfx = patients, test = "med", tit = "Escarre", note = "Tableau 1", lt = FALSE, export = FALSE)
+#' @examples tab1ph(dfx = patients, test = "med", note = "Tableau 1", lt = FALSE, export = FALSE)
 #'
-tab1ph  <- function(dfx,  test = "moy", tit = "", note ="", lt = FALSE, export = FALSE){
+tab1ph  <- function(dfx,  test = "moy", note ="", lt = FALSE, export = FALSE){
   #
   if (test == "moy"){
     note <- "n (%) - moyenne ± écart type"
@@ -38,8 +39,6 @@ tab1ph  <- function(dfx,  test = "moy", tit = "", note ="", lt = FALSE, export =
     lvarx <- length(na.omit(varx))
     nom <- var_label(varx)
     nom <- names(dfx)[l]
-    print("******************")
-    print(nom)
     #
     # Factoriel
     #
@@ -54,7 +53,7 @@ tab1ph  <- function(dfx,  test = "moy", tit = "", note ="", lt = FALSE, export =
         )
         tabp <- rbind(tabp,ll)
       }
-      print(tabp)
+#      print(tabp)
       nl <- nl + length(levels(varx))
     }
     else{
@@ -91,12 +90,11 @@ tab1ph  <- function(dfx,  test = "moy", tit = "", note ="", lt = FALSE, export =
   #
   # Tracé
   #
-  titn = c(" ","n", paste0("n (%)\n",note))
+  titn = c(" ","n", note)
   tabf <- as_tibble(tabf)
   ltab <- 1:nrow(tabf)
   lg <- ltab %in% tlig
   tlig <- tlig[-length(tlig)]
-  print (lg)
   trait <- tlig[-1] - 1
   tabf$V1 <- cell_spec(tabf$V1 , bold =  lg)
   kbl(

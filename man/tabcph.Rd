@@ -4,18 +4,30 @@
 \alias{tabcph}
 \title{Tableau comparatif}
 \usage{
-tabcph(dfx, tri, test = "moy", titre = "", capt = "")
+tabcph(
+  dfx,
+  trix,
+  test = "moy",
+  tit = "",
+  note = "",
+  lt = FALSE,
+  export = FALSE
+)
 }
 \arguments{
 \item{dfx}{Tibble}
 
-\item{tri}{Variable de tri, comparaison}
-
 \item{test}{Test paramétrique & chi2 si = moy, sinon, test de Wilcoxon + fisher}
 
-\item{titre}{Nom à afficher au dessus des colonnes de comparaison}
+\item{note}{Titre du graphique}
 
-\item{capt}{Titre du graphique}
+\item{lt}{logique. TRUE crée un \emph{longtable}}
+
+\item{export}{logique. TRUE crée un export en xls}
+
+\item{tri}{Variable de tri, comparaison}
+
+\item{titre}{Nom à afficher au dessus des colonnes de comparaison}
 }
 \value{
 tableau
@@ -24,6 +36,6 @@ tableau
 Génération d'un tableau comparatif pour une étude clinique avec tests unitaires pour les deux groupes. Choix du type de test (paramétriques ou non).
 }
 \examples{
-tabcph(dfx = patients, tri = escarre, test = "moy", titre = "Escarre", capt = "Tableau 1")
+tabcph(dfx = patients, trix = escarre, test = "moy", tit = "Escarre", note = "Tableau 1", lt = FALSE, export = FALSE)
 
 }

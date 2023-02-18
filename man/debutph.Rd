@@ -4,7 +4,7 @@
 \alias{debutph}
 \title{Début du travail}
 \usage{
-debutph(fich, nom)
+debutph(fich, nom = "xx")
 }
 \arguments{
 \item{fich}{Fichier csv contenant les labels corrects des variables (colonne 'nom')}

@@ -49,10 +49,10 @@ Pour tous les exemples suivant on utilise deux fichiers (dans le dossier `data`:
 
 ```{r import}
 # Création du vecteur de noms
-nn <- read_csv("../data/noms.csv")
+nn <- read_csv("/home/philm/pratique/baseph/data/noms.csv")
 bnom <- nn$nom
 # Import de la base de données & incorporation des labels.
-pat <- debutph("../data/patients.csv", bnom)
+pat <- debutph("/home/philm/pratique/baseph/data/patients.csv", bnom)
 ```
 
 # Avant l'analyse des données
@@ -105,7 +105,7 @@ La sortie consiste en un fichier global & un par centre (csv).
 Le premier tableau d'une étude est toujours un tableau simple, sans test (enfin presque toujours). Pour les valeurs numériques on peut choisir l’affichage de la moyenne ± écart-type (test = "moy") ou de la médiane (quartiles) (test = "med").
 
 ```{r tab1}
-tab1ph(dfx = pat, test = "med", tit = "Escarre", note = "Tableau 1")
+tab1ph(dfx = pat, test = "med",  note = "Tableau 1")
 ```
 
 

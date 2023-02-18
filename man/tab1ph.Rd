@@ -4,16 +4,18 @@
 \alias{tab1ph}
 \title{Tableau 1}
 \usage{
-tab1ph(dfx, titre = "", test = "med", capt = "")
+tab1ph(dfx, test = "moy", note = "", lt = FALSE, export = FALSE)
 }
 \arguments{
 \item{dfx}{Tibble}
 
-\item{titre}{Nom à afficher au desu des colonnes de comparaison}
-
 \item{test}{Valeurs numériques en moyenne ± écart-type (\code{moy}) ou médiane (quartiles) (\code{med})}
 
-\item{capt}{Titre du graphique}
+\item{note}{Titre du graphique}
+
+\item{lt}{logique. TRUE crée un \emph{longtable}}
+
+\item{export}{logique. TRUE crée un export en xls}
 }
 \value{
 tableau
@@ -21,7 +23,10 @@ tableau
 \description{
 Génération d'un tableau simple pour une étude clinique avec tests unitaires pour les deux groupes. Aucun test.
 }
+\details{
+Il n'y a pas de titre au tableau car cela interfère avec le titre du chunck.
+}
 \examples{
-tab1ph(dfx = patients, test = "med", titre = "Escarre", capt = "Tableau 1")
+tab1ph(dfx = patients, test = "med", note = "Tableau 1", lt = FALSE, export = FALSE)
 
 }

@@ -23,7 +23,7 @@
 #' @examples data("patients")
 #' bardeuxph(patients,escarre, admission ,
 #' titre = "Escarre & mode d'admission",
-#' stitre = "%", xtitre = "x", ytitre = "%, ltitre ="Escarre",
+#' stitre = "%", xtitre = "x", ytitre = "%", ltitre ="Escarre",
 #' capt ="Escarre", lab = "aa", angle = 20)
 #'
 bardeuxph <- function(dfx,

@@ -20,7 +20,7 @@
 #' @example debutph(patients,bnom)
 #' @export
 debutph <- function(fich, nom="xx") {
-  if (nom == "xx"){
+  if (length(nom) == 1){
     nom <- names(fich)
   }
   dfx <- read_csv(
