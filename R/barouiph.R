@@ -11,6 +11,8 @@
 #' @param valx valeur de test à présenter
 #' @param titre Titre du graphique
 #' @param stitre Sous-titre du graphique
+#' @param titx titre (optionnel) de l'axe x
+#' @param tity titre (% par défaut) de l'axe y
 #' @param capt légende du graphique
 #' @param lab label du graphique
 #' @param angle angle affichage des valeurs de vart sur l'axe des x (0 par defaut)
@@ -33,6 +35,8 @@ barouiph <- function(dfx,
                       valx = "oui",
                       titre = "",
                       stitre = "",
+                      titx="",
+                      tity = "%",
                       capt = "",
                       lab = "",
                       angle = 0) {
@@ -71,7 +75,8 @@ barouiph <- function(dfx,
     labs(
       title = titre,
       subtitle = stitre,
-      y = "%",
+      x = titx,
+      y = tity,
       caption = capt,
       label = lab
     ) +
@@ -80,11 +85,15 @@ barouiph <- function(dfx,
     theme(
       plot.title = element_text(size = 18, face = "bold"),
       plot.subtitle = element_text(size = 12),
-      axis.title.x = element_blank(),
       axis.title.y = element_text(
         size = 12,
-        angle = 0,
+        angle = 90,
         vjust = .5
+      ),
+      axis.title.x = element_text(
+        size = 12,
+        angle = angle,
+        hjust = hj
       ),
       axis.text.x = element_text(
         size = 12,

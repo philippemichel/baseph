@@ -11,6 +11,8 @@ barouiph(
   valx = "oui",
   titre = "",
   stitre = "",
+  titx = "",
+  tity = "\%",
   capt = "",
   lab = "",
   angle = 0
@@ -28,6 +30,10 @@ barouiph(
 \item{titre}{Titre du graphique}
 
 \item{stitre}{Sous-titre du graphique}
+
+\item{titx}{titre (optionnel) de l'axe x}
+
+\item{tity}{titre (\% par défaut) de l'axe y}
 
 \item{capt}{légende du graphique}
 

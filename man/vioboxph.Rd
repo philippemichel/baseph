@@ -38,3 +38,7 @@ graphique
 \description{
 Graphique violon + boxplot
 }
+\examples{
+data("patients")
+vioboxph(patients, admission, age, titre ="grands", stit = "et grandes", titx = "Mode d'admission")
+}

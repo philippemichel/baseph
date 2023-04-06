@@ -22,6 +22,9 @@ histmultiph(dfx, varx, varn, tit = "", stit = 0, titx = "", bin = 1)
 
 \item{bin}{largeur d'une barre}
 }
+\value{
+un graphique
+}
 \description{
 HISTMULTIPH
 Graphique en plusieurs histogrammes superposés, pratique pour bien visualiser les variation d'une distribution selon une modalité.

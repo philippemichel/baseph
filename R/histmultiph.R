@@ -13,7 +13,7 @@
 #' @import ggplot2
 #' @import colorspace
 #' 
-#' @return 
+#' @return un graphique
 #' @export 
 #'
 #' @examples histmultiph(dfx = iris, varx= Species, varn = Sepal.Width, tit = "IRIS", stit = 0.002, titx = "Pétales (mm)", bin = 5)

@@ -9,6 +9,7 @@
 #'
 #' @param fich Fichier csv contenant les données
 #' @param fich Fichier csv contenant les labels corrects des variables (colonne 'nom')
+#' 
 #' @import utils
 #' @import stats
 #' @import labelled
@@ -17,7 +18,7 @@
 #' @import stringr
 #' @return data.frame
 #'
-#' @example debutph(patients,bnom)
+#' @example debutph("patients","bnom")
 #' @export
 debutph <- function(fich, nom="xx") {
   if (length(nom) == 1){
