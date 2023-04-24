@@ -5,11 +5,10 @@
 #' @param dfx dataframe
 #' @param varnum Variable numérique à afficher
 #' @param vartri Variable de tri, factorielle
-#' @param titre Titre du graphique
+#' @param titre Titre du graphique (vide par défaut)
 #' @param stitre Sous titre du graphique (vide par défaut)
 #' @param tx Titre de l'axe des x (vide par défaut)
 #' @param ty Titre de l'axe des x ("n" par défaut)
-#' @param capt Texte affiché sous le graphique
 #' @param lab label  (vide par défaut) rarement utile
 #' @param angle d'affichage des labels de l'axe x s'ils ont trop longs
 #'
@@ -30,7 +29,6 @@ barconfph <-
            stitre = "",
            tx = "",
            ty = "n",
-           capt = "x",
            lab = "",
            angle = 0)
   {
@@ -39,7 +37,6 @@ barconfph <-
   } else {
     hj <- 1
   }
-  if(capt == "x") {capt <- titre}
   angy <-  (str_length(ty) > 3)*90
   #
   dfx |>
@@ -65,7 +62,6 @@ barconfph <-
       subtitle = stitre,
       x = tx,
       y = ty,
-      caption = capt,
       label = lab
     ) +
     theme_light() +
