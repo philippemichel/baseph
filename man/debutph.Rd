@@ -7,7 +7,9 @@
 debutph(fich, nom = "xx")
 }
 \arguments{
-\item{fich}{Fichier csv contenant les labels corrects des variables (colonne 'nom')}
+\item{fich}{Fichier csv contenant les données}
+
+\item{nom}{Fichier csv contenant les labels corrects des variables (colonne 'nom')}
 }
 \value{
 data.frame

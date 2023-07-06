@@ -12,7 +12,6 @@ barconfph(
   stitre = "",
   tx = "",
   ty = "n",
-  capt = "x",
   lab = "",
   angle = 0
 )
@@ -24,15 +23,13 @@ barconfph(
 
 \item{vartri}{Variable de tri, factorielle}
 
-\item{titre}{Titre du graphique}
+\item{titre}{Titre du graphique (vide par défaut)}
 
 \item{stitre}{Sous titre du graphique (vide par défaut)}
 
 \item{tx}{Titre de l'axe des x (vide par défaut)}
 
 \item{ty}{Titre de l'axe des x ("n" par défaut)}
-
-\item{capt}{Texte affiché sous le graphique}
 
 \item{lab}{label  (vide par défaut) rarement utile}
 
@@ -46,6 +43,6 @@ Tracé d'un graphique en barre représentant la moyenne avec son intervalle de c
 }
 \examples{
 data("patients")
-barconfph(dfx = patients, varnum = igs2, vartri = admission, titre = "IGS II selon la provenance du patient", stitre = "en ICU", tx = "Mode d'admission", ty = "IGS II", angle = 0)
+barconfph(dfx = patients, varnum = igs2, vartri = admission, titre = "IGS II vs provenance", stitre = "en ICU", tx = "Mode d'admission", ty = "IGS II", angle = 0)
 
 }

@@ -12,6 +12,7 @@
 #' @import ggplot2
 #' @import see
 #' @import dplyr
+#' @import colorspace
 #'
 #' @return un graphique
 #' @export
@@ -53,7 +54,7 @@ barsimpleph <- function(dfx,
          caption = capt,
          label = lab) +
     theme_light() +
-    scale_fill_discrete_qualitative(palette = "Dynamic") +
+    scale_fill_discrete_sequential(palette = "Blues 2", c2 = 1) +
     theme(
       plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),

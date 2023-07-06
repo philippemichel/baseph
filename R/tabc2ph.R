@@ -3,9 +3,9 @@
 #' Génération d'un tableau comparatif pour une étude clinique avec tests unitaires pour les deux groupes. Choix du type de test (paramétriques ou non).
 #'
 #' @param dfx Tibble
-#' @param tri Variable de tri, comparaison
+#' @param trix Variable de tri, comparaison
 #' @param test Test paramétrique & chi2 si = moy, sinon, test de Wilcoxon + fisher
-#' @param titre Nom à afficher au dessus des colonnes de comparaison
+#' @param tit Nom à afficher au dessus des colonnes de comparaison
 #' @param note Titre du graphique
 #' @param lt logique. TRUE crée un *longtable*
 #' @param export logique. TRUE crée un export en xls
@@ -21,8 +21,15 @@
 #'
 #' @examples tabcph(dfx = patients, trix = escarre, test = "moy", tit = "Escarre", note = "Tableau 1", lt = FALSE, export = FALSE)
 #'
-tabcph  <- function(dfx, trix, test = "moy", tit = "", note ="", lt = FALSE, export = FALSE){
-  aa <- enquo(trix)
+tabcph  <-
+  function(dfx,
+           trix,
+           test = "moy",
+           tit = "",
+           note = "",
+           lt = FALSE,
+           export = FALSE) {
+    aa <- enquo(trix)
   ntrix <- as.character(aa[2])
   if (test == "moy"){
     note <- "n (%) - moyenne ± écart type"

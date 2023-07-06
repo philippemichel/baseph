@@ -8,7 +8,7 @@
 #' Toutes les variables "caractère" sont transformées en facteur.
 #'
 #' @param fich Fichier csv contenant les données
-#' @param fich Fichier csv contenant les labels corrects des variables (colonne 'nom')
+#' @param nom Fichier csv contenant les labels corrects des variables (colonne 'nom')
 #' 
 #' @import utils
 #' @import stats

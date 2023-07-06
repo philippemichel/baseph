@@ -128,7 +128,7 @@ La fonction `tabregph` prend comme principal argument le résultat d'un régress
 
 ```{r treg}
 ll <- glm(escarre~ age + admission + igs2, data = pat, family = "binomial")
-tabregph(reg = ll, titre = "Facteurs de risque d'escarre" )
+# tabregph(reg = ll, titre = "Facteurs de risque d'escarre" )
 ```
 
 ## Graphiques

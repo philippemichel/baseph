@@ -19,7 +19,7 @@
 #' @export
 #'
 #' @examples data("patients")
-#' barconfph(dfx = patients, varnum = igs2, vartri = admission, titre = "IGS II selon la provenance du patient", stitre = "en ICU", tx = "Mode d'admission", ty = "IGS II", angle = 0)
+#' barconfph(dfx = patients, varnum = igs2, vartri = admission, titre = "IGS II vs provenance", stitre = "en ICU", tx = "Mode d'admission", ty = "IGS II", angle = 0)
 #'
 barconfph <-
   function(dfx,

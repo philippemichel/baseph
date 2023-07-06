@@ -17,17 +17,17 @@ tabcph(
 \arguments{
 \item{dfx}{Tibble}
 
+\item{trix}{Variable de tri, comparaison}
+
 \item{test}{Test paramétrique & chi2 si = moy, sinon, test de Wilcoxon + fisher}
+
+\item{tit}{Nom à afficher au dessus des colonnes de comparaison}
 
 \item{note}{Titre du graphique}
 
 \item{lt}{logique. TRUE crée un \emph{longtable}}
 
 \item{export}{logique. TRUE crée un export en xls}
-
-\item{tri}{Variable de tri, comparaison}
-
-\item{titre}{Nom à afficher au dessus des colonnes de comparaison}
 }
 \value{
 tableau
