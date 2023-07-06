@@ -2,6 +2,9 @@
 
   <!-- badges: start -->
   [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+  
+  [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+  
   <!-- badges: end -->
   
 Les fonctions de base pour un projet simple de recherche clinique en R, particulièrement adapté pour une thèse ou un mémoire de DES. Si vous travaillez sur un PHRC ou une phase III ça va être un peu court !
@@ -48,6 +51,7 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
   chaque modalité de l'autre variable.
 - **vioboxph** Graphique en violon avec un box -plot intégré.
 - **pyrph** Pyramide des âges. La fonction *epiDisplay::pyramid()* donne aussi un très bon rendu. (en travaux)
+- **barpcph** Graphique en barre avec une variiable en % pour chauqe niveau de l'autre variable.
 
 ## Calcul du nombre de sujets nécessaires
 
