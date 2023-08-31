@@ -81,7 +81,7 @@ barouiph <- function(dfx,
       label = lab
     ) +
     theme_light() +
-  scale_fill_discrete_qualitative(palette = "Dynamic") +
+  scale_fill_discrete_qualitative(palette = "Dark 3") +
     theme(
       plot.title = element_text(size = 18, face = "bold"),
       plot.subtitle = element_text(size = 12),

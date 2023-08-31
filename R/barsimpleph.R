@@ -54,7 +54,7 @@ barsimpleph <- function(dfx,
          caption = capt,
          label = lab) +
     theme_light() +
-    scale_fill_discrete_sequential(palette = "Blues 2", c2 = 1) +
+    scale_fill_discrete_qualitative(palette = "Dark 3") +
     theme(
       plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),

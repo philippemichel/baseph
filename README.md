@@ -33,7 +33,19 @@ Pour ces tableaux (ainsi que pour les graphiques), possibilité d'avoir les inti
 Dans les fichiers d'exemple, les données (fictives) sont dans le fichier "patients" & les beaux noms dans le fichier "bnom", variable "nom".
 
 Les tests ou simplement l'affichage peuvent, pour les variables numériques, être présentés en moyenne ± écart-type ou en médiane (quartiles). Les variables discrètes sont rendues en n (%). 
+La sortie sera meilleure (surtout en $LaTeX$) si on passe par KableExtra par exemple via la fonction `gexptabph` (pour les tableaux trop larges mais *longtable* n'est pas géré) ou `pexptabph` qui permettent de gérer l'export en .xls au besoin  & la sortie en *longtable*. On va donc avoir quelque chose comme : 
 
+```R
+ > library(gtsummary)
+ > library (kableExtra)
+ > tab1ph(dfx = patients, 
+          colx = 2:5,
+          test = "zz") |> 
+      pexptabph(exp = FALSE,
+                nomfich = "export.xls",
+                nomsheet = "x",
+                lg = FALSE)
+```
 
 ## Autres aides : 
 - **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur*. Un vecteur doit être présent contenant les labels corrects pour les tableaux & les figures.
@@ -45,13 +57,13 @@ Les tests ou simplement l'affichage peuvent, pour les variables numériques, êt
  - **barconfph** Graphique en barres avec intervalle de confiance pour une variable numérique (y) & une variable factorielle de tri (x).
 - **barsimpleph** Graphique en barre exprimé en %  des modalités pour une variable factorielle (x) 
 - **bardecph**  Même graphique que **barsimpleph** mais les % sont en ordre décroissant
-- **bardeuxph** Graphique en barre. Une variable exprimée en % (y) pour chaque modalité (x) de l'autre.
 - **barouiph** Graphique en barre avec barres d'erreur. Une variable
   binaire (`oui/non`) exprimée en % d'une modalité (`oui` par ex.) pour
   chaque modalité de l'autre variable.
 - **vioboxph** Graphique en violon avec un box -plot intégré.
 - **pyrph** Pyramide des âges. La fonction *epiDisplay::pyramid()* donne aussi un très bon rendu. (en travaux)
-- **barpcph** Graphique en barre avec une variiable en % pour chauqe niveau de l'autre variable.
+- **barpcph** Graphique en barre avec une variable en % pour chaque niveau de l'autre variable.
+- **lollipph** Graphique *lollipop* de distribution d'une donnée factorielle avec éventuelle mise en évidence d'un ou plusieurs niveaux.
 
 ## Calcul du nombre de sujets nécessaires
 

@@ -1,45 +1,45 @@
 Package: baseph
-Title: Tout ce qu'il faut pour commencer un projet simple en recherche clinique
-Version: 0.3.1
+Title: Tout ce qu'il faut pour commencer un projet simple en recherche
+    clinique
+Version: 0.3.2
 Authors@R: 
-    person(given = "Philippe",
-           family = "MICHEL",
-           role = c("aut", "cre"),
-           email = "philippe@docteur-michel.fr",
+    person("Philippe", "MICHEL", , "philippe@docteur-michel.fr", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0003-2392-7186"))
-Description: Création des tabes & quelques figures ainsi que divers utilitaires pour une étude clinique simple.
+Description: Création des tables & quelques figures ainsi que divers
+    utilitaires pour une étude clinique simple.
 License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+URL: https://github.com/philippemichel/baseph
+Depends: 
+    R (>= 2.10)
 Imports: 
     binom,
     blockrand,
     boot,
-    gtsummary,
-    labelled,
-    tidyverse,
+    colorspace,
     dplyr,
-    tidyr,
     forcats,
     ggplot2,
     ggsci,
-    knitr,
+    gtsummary,
     janitor,
     kableExtra,
-    colorspace,
-    stringr,
+    labelled,
     readr,
+    see,
     stats,
+    stringr,
+    tidyr,
+    tidyverse,
     utils,
     WriteXLS,
-    see,
     xlsx
-VignetteBuilder: knitr
-Language: fr
-URL: https://github.com/philippemichel/baseph
-Depends: 
-    R (>= 2.10)
 Suggests: 
+    knitr,
     rmarkdown
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+Language: fr
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3

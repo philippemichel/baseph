@@ -25,7 +25,7 @@ histmultiph <- function(dfx, varx, varn, tit = "", stit= 0, titx = "", bin = 1){
     ggplot() +
     aes(x = {{varn}}, fill = {{varx}}, color = {{varx}}) +
     geom_histogram(, binwidth = bin, alpha = 0.9) +
-    facet_grid(vars({{varx}})) +
+    facet_grid(vars({{varx}}), scales = "free", space = "free") +
     labs(title = tit,
          subtitle = stit,
          x = titx,
@@ -33,7 +33,7 @@ histmultiph <- function(dfx, varx, varn, tit = "", stit= 0, titx = "", bin = 1){
          caption = tit) +
     scale_y_continuous(limits = c(0, 10), breaks = seq(0,10,2)) +
     theme_light() +
-    scale_fill_discrete_qualitative(palette = "Dynamic") +
+    scale_fill_discrete_qualitative(palette = "Dark 3") +
     theme(
       strip.text.y = element_text(size=12),
       plot.title = element_text(size = 16, face = "bold"),

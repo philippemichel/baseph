@@ -13,6 +13,7 @@ barconfph(
   tx = "",
   ty = "n",
   lab = "",
+  cap = "",
   angle = 0
 )
 }
@@ -33,6 +34,8 @@ barconfph(
 
 \item{lab}{label  (vide par défaut) rarement utile}
 
+\item{cap}{caption(texte écrit en bas du graphique)}
+
 \item{angle}{d'affichage des labels de l'axe x s'ils ont trop longs}
 }
 \value{
@@ -43,6 +46,6 @@ Tracé d'un graphique en barre représentant la moyenne avec son intervalle de c
 }
 \examples{
 data("patients")
-barconfph(dfx = patients, varnum = igs2, vartri = admission, titre = "IGS II vs provenance", stitre = "en ICU", tx = "Mode d'admission", ty = "IGS II", angle = 0)
+barconfph(dfx = patients, varnum = igs2, vartri = admission, titre = "IGS II vs provenance", stitre = "en ICU", tx = "Mode d'admission", ty = "IGS II", cap = "Texte écrit petit",angle = 0)
 
 }

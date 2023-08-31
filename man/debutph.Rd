@@ -4,19 +4,18 @@
 \alias{debutph}
 \title{Début du travail}
 \usage{
-debutph(fich, nom = "xx")
+debutph(fich, nax = c("", "na", "NA", " "))
 }
 \arguments{
 \item{fich}{Fichier csv contenant les données}
 
-\item{nom}{Fichier csv contenant les labels corrects des variables (colonne 'nom')}
+\item{nax}{liste des valeurs à considérer comme NA}
 }
 \value{
 data.frame
 }
 \description{
 Lit un csv contenant les données, simplifie & normalise les titres des variables.
-le vecteur \code{nom} contenant les beaux labels des variables pour les tableaux, graphiques etc. sera incorporé dans le tableau principal.
 }
 \details{
 Le csv doit avoir les réglages par défaut (UTF-8, séparateur de champs : ",") soit les réglages par défaut de LibreOffice

@@ -10,16 +10,18 @@
 #' @param tx Titre de l'axe des x (vide par défaut)
 #' @param ty Titre de l'axe des x ("n" par défaut)
 #' @param lab label  (vide par défaut) rarement utile
+#' @param cap caption(texte écrit en bas du graphique)
 #' @param angle d'affichage des labels de l'axe x s'ils ont trop longs
 #'
 #' @import tidyverse
 #' @import colorspace
+#' @import stringr
 
 #' @return un graphique
 #' @export
 #'
 #' @examples data("patients")
-#' barconfph(dfx = patients, varnum = igs2, vartri = admission, titre = "IGS II vs provenance", stitre = "en ICU", tx = "Mode d'admission", ty = "IGS II", angle = 0)
+#' barconfph(dfx = patients, varnum = igs2, vartri = admission, titre = "IGS II vs provenance", stitre = "en ICU", tx = "Mode d'admission", ty = "IGS II", cap = "Texte écrit petit",angle = 0)
 #'
 barconfph <-
   function(dfx,
@@ -30,6 +32,7 @@ barconfph <-
            tx = "",
            ty = "n",
            lab = "",
+           cap = "",
            angle = 0)
   {
   if (angle == 0) {
@@ -62,10 +65,11 @@ barconfph <-
       subtitle = stitre,
       x = tx,
       y = ty,
+      caption = cap, 
       label = lab
     ) +
     theme_light() +
-    scale_fill_discrete_qualitative(palette = "Dynamic") +
+    scale_fill_discrete_qualitative(palette = "Dark 3") +
     theme(
       plot.title = element_text(size = 18, face = "bold"),
       plot.subtitle = element_text(size = 12),
