@@ -8,6 +8,9 @@
 
 Les fonctions de base pour un projet simple de recherche clinique en R, particulièrement adapté pour une thèse ou un mémoire de DES. Si vous travaillez sur un PHRC ou une phase III ça va être un peu court !
 
+
+La [vignette]("vignettes/my-vignette.html")
+
 \## Installation
 
 ``` r
@@ -62,8 +65,6 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
 ## Calcul du nombre de sujets nécessaires
 
 -   **nbobsph** Enquète simple
--   **nb.equi.ph** Étude d'équivalence
--   **nb.obs.ph** Étude de non-infériorité
 
 ## Jeu de données
 

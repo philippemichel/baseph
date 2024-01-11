@@ -45,15 +45,15 @@ barconfph <-
   }
   angy <-  (str_length(ty) > 3)*90
   #
-  dfx |>
+ zz <-  dfx |>
     drop_na({{vartri}}) |>
     group_by({{vartri}}) |>
     summarise(
       bas = bashaut({{varnum}})[[1]],
       haut = bashaut({{varnum}})[[2]],
       moy = mean({{varnum}}, na.rm = TRUE)
-    ) |> 
-    ggplot() +
+    )
+    ggplot(zz) +
     aes(x = {{vartri}}, y = moy, fill = {{vartri}}) +
     # geom_bar(stat = "identity") +
     geom_col() +
@@ -61,7 +61,7 @@ barconfph <-
       aes(ymin = bas, ymax = haut),
       width = .6,
       position = position_dodge(0.5),
-      size = 0.6
+      linewidth = 0.6
     ) +
     labs(
       title = titre,
