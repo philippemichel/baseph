@@ -51,6 +51,6 @@ classification.
 }
 \examples{
 data(patients)
-barouiph(dfx = patients, varx =escarre, testx =sexea, valx = "oui", titre = "Sexe",ang = 0)
+barouiph(dfx = patients, varx =escarre, testx =sexea, valx = "oui", titre = "Sexe",angle = 0)
 
 }

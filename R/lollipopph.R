@@ -17,7 +17,9 @@
 #' @return graphique
 #' @export
 #'
-#' @examples lollipph(dfx = patients, nom = lieudevie1, tri = c("EHPAD","Maison de retraite"), titre = "Lieu de vie", capt = "Lieu de vie avant l'hospitalisation")
+#' @examples lollipph(dfx = patients, nom = lieudevie1, 
+#' tri = c("EHPAD","Maison de retraite"), 
+#' titre = "Lieu de vie", capt = "Lieu de vie avant l'hospitalisation")
 #' 
  lollipph <- function(dfx,nom, tri= "xx", titre = "", capt = "x"){
   ndfx <- dfx |> 

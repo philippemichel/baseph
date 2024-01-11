@@ -27,7 +27,7 @@
 #' @export
 #'
 #' @examples data(patients)
-#' barouiph(dfx = patients, varx =escarre, testx =sexea, alx = "oui", titre = "Sexe",vang = 0)
+#' barouiph(dfx = patients, varx =escarre, testx =sexea, valx = "oui", titre = "Sexe",angle = 0)
 #'
 barouiph <- function(dfx,
                       varx,

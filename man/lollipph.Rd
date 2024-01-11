@@ -24,6 +24,8 @@ graphique
 Tracé d'un graphique "lollipop" de distribution d'une variable factorielle avec possibilité de mise en évidence d'un ou plusieurs facteurs.
 }
 \examples{
-lollipph(dfx = patients, nom = lieudevie1, tri = c("EHPAD","Maison de retraite"), titre = "Lieu de vie", capt = "Lieu de vie avant l'hospitalisation")
+lollipph(dfx = patients, nom = lieudevie1, 
+tri = c("EHPAD","Maison de retraite"), 
+titre = "Lieu de vie", capt = "Lieu de vie avant l'hospitalisation")
 
 }

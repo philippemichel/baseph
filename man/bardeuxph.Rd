@@ -12,7 +12,6 @@ bardeuxph(
   titre = "",
   stitre = "",
   xtitre = "",
-  ytitre = "\%",
   ltitre = "",
   capt = "",
   lab = "",
@@ -31,8 +30,6 @@ bardeuxph(
 \item{stitre}{Sous titre}
 
 \item{xtitre}{titre de l'axe x (vide par défaut)}
-
-\item{ytitre}{titre de l'axe y (\% par défaut)}
 
 \item{ltitre}{titre de la légende}
 
@@ -53,7 +50,7 @@ une variable de tri, une variable en \% par modalité de tri
 data("patients")
 bardeuxph(patients,escarre, admission ,
 titre = "Escarre & mode d'admission",
-stitre = "\%", xtitre = "x", ytitre = "\%", ltitre ="Escarre",
+stitre = "\%", xtitre = "x", ltitre ="Escarre",
 capt ="Escarre", lab = "aa", angle = 20)
 
 }

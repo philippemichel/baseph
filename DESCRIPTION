@@ -23,7 +23,6 @@ Imports:
     gtsummary,
     janitor,
     kableExtra,
-    labelled,
     readr,
     see,
     stats,
@@ -31,7 +30,6 @@ Imports:
     tidyr,
     tidyverse,
     utils,
-    WriteXLS,
     xlsx
 Suggests: 
     knitr,

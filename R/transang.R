@@ -1,8 +1,8 @@
 #' TRANSFORMATION ANGULAIRE
 #' Calcul des bornes sup et inf d'un intervalle de confiance par transformation angulaire.
-#' @param vv  nb evenement
-#' @param ld taille echantillon
-#' @param pc percent of IC (95 by default)
+#' @param nb  nb evenement
+#' @param total taille echantillon
+#' @param pr percent of IC (95 by default)
 #'
 #' @return binf = borne inferieur de l'IC,
 #'         bsup = borne superieure de l'IC,

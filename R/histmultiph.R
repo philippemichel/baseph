@@ -16,7 +16,8 @@
 #' @return un graphique
 #' @export 
 #'
-#' @examples histmultiph(dfx = iris, varx= Species, varn = Sepal.Width, tit = "IRIS", stit = 0.002, titx = "Pétales (mm)", bin = 1)
+#' @examples histmultiph(dfx = iris, varx= Species,
+#' varn = Sepal.Width, tit = "IRIS", stit = 0.002, titx = "Pétales (mm)", bin = 1)
 #' 
 histmultiph <- function(dfx, varx, varn, tit = "", stit= 0, titx = "", bin = 1){
   stit <- paste0("p = ", stit)

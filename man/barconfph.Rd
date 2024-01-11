@@ -42,10 +42,13 @@ barconfph(
 un graphique
 }
 \description{
-Tracé d'un graphique en barre représentant la moyenne avec son intervalle de confiance à #' 95 \% d'une valeur numérique  découpé selon une variable factorielle.
+Tracé d'un graphique en barre représentant la moyenne avec son intervalle de confiance à
+95 \% d'une valeur numérique découpé selon une variable factorielle.
 }
 \examples{
 data("patients")
-barconfph(dfx = patients, varnum = igs2, vartri = admission, titre = "IGS II vs provenance", stitre = "en ICU", tx = "Mode d'admission", ty = "IGS II", cap = "Texte écrit petit",angle = 0)
+barconfph(dfx = patients, varnum = igs2, vartri = admission, 
+titre = "IGS II vs provenance", stitre = "en ICU", tx = "Mode d'admission", ty = "IGS II", 
+cap = "Texte écrit petit",angle = 0)
 
 }

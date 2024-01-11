@@ -3,7 +3,7 @@
 \name{histmultiph}
 \alias{histmultiph}
 \title{HISTMULTIPH
-Graphique en plusieurs histogrammes superposés, pratique pour bien visualiser les variation d'une distribution selon une modalité.}
+Graphique en plusieurs histogrammes superposés, pratique pour bien visualiser les variations d'une distribution selon une modalité.}
 \usage{
 histmultiph(dfx, varx, varn, tit = "", stit = 0, titx = "", bin = 1)
 }
@@ -27,9 +27,10 @@ un graphique
 }
 \description{
 HISTMULTIPH
-Graphique en plusieurs histogrammes superposés, pratique pour bien visualiser les variation d'une distribution selon une modalité.
+Graphique en plusieurs histogrammes superposés, pratique pour bien visualiser les variations d'une distribution selon une modalité.
 }
 \examples{
-histmultiph(dfx = iris, varx= Species, varn = Sepal.Width, tit = "IRIS", stit = 0.002, titx = "Pétales (mm)", bin = 5)
+histmultiph(dfx = iris, varx= Species,
+varn = Sepal.Width, tit = "IRIS", stit = 0.002, titx = "Pétales (mm)", bin = 1)
 
 }

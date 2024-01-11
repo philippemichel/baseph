@@ -4,22 +4,20 @@
 \alias{bashaut}
 \title{bashaut}
 \usage{
-bashaut(xx, bh)
+bashaut(xx)
 }
 \arguments{
 \item{xx}{Une variable numérique}
-
-\item{bh}{1 : borne basse, 2 : borne haute}
 }
 \value{
-un nombre simple
+deux nombres : la borne inf et la borne sup de l'IC
 }
 \description{
 Calcul de l'intervalle de confiance à 95 \% de la moyenne d'une variable numérique (utilisé par barconfph)
 }
 \examples{
 data ("patients")
-bashaut(xx =patients$age, bh = 1)
+bashaut(xx =patients$age)
 
 
 }

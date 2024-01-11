@@ -5,14 +5,14 @@
 \title{TRANSFORMATION ANGULAIRE
 Calcul des bornes sup et inf d'un intervalle de confiance par transformation angulaire.}
 \usage{
-transangph(vv, ld, pc = 95)
+transangph(nb, total, pr = 95)
 }
 \arguments{
-\item{vv}{nb evenement}
+\item{nb}{nb evenement}
 
-\item{ld}{taille echantillon}
+\item{total}{taille echantillon}
 
-\item{pc}{percent of IC (95 by default)}
+\item{pr}{percent of IC (95 by default)}
 }
 \value{
 binf = borne inferieur de l'IC,
@@ -24,6 +24,6 @@ TRANSFORMATION ANGULAIRE
 Calcul des bornes sup et inf d'un intervalle de confiance par transformation angulaire.
 }
 \examples{
-transangph(vv = 55, ld = 100, pc = 95)
+transangph(nb = 55, total = 100, pr = 95)
 
 }
