@@ -10,7 +10,7 @@
 #'
 #' @import stats
 #'
-#' @examples transangph(vv = 55, ld = 100, pc = 95)
+#' @examples transangph(nb = 55, total = 100, pr = 95)
 #'
 #' @export
 #'

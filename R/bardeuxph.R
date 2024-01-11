@@ -7,7 +7,6 @@
 #' @param titre Titre du graphique
 #' @param stitre Sous titre
 #' @param xtitre titre de l'axe x (vide par défaut)
-#' @param ytitre titre de l'axe y (% par défaut)
 #' @param ltitre titre de la légende
 #' @param capt  légende du graphique
 #' @param lab label du graphique
@@ -23,7 +22,7 @@
 #' @examples data("patients")
 #' bardeuxph(patients,escarre, admission ,
 #' titre = "Escarre & mode d'admission",
-#' stitre = "%", xtitre = "x", ytitre = "%", ltitre ="Escarre",
+#' stitre = "%", xtitre = "x", ltitre ="Escarre",
 #' capt ="Escarre", lab = "aa", angle = 20)
 #'
 bardeuxph <- function(dfx,
@@ -32,11 +31,10 @@ bardeuxph <- function(dfx,
                       titre = "",
                       stitre = "",
                       xtitre ="",
-                      ytitre = "%",
                       ltitre = "",
                       capt = "",
                       lab = "",
-                      angle = 0){
+                      angle = 0) {
   if (angle == 0) {hj <-  0.5} else {hj <-  1}
   dfx |>
     dplyr::filter(!is.na({{vart}}) & !is.na({{varp}})) |>
@@ -46,13 +44,13 @@ bardeuxph <- function(dfx,
     labs(title = titre,
          subtitle = stitre,
          x = xtitre,
-         y = ytitre,
+         y = "%",
          caption = capt,
          fill = ltitre,
          label = lab) +
     theme_light() +
-    colorspace::scale_fill_discrete_qualitative(palette = "Dynamic") +
-    scale_y_continuous("%", breaks = seq(0,1,0.2),labels = seq(0,100,20)) +
+    colorspace::scale_fill_discrete_qualitative(palette = "Dark 3") +
+    scale_y_continuous("%", breaks = seq(0, 1, 0.2), labels = seq(0, 100, 20)) +
     theme(
       plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),

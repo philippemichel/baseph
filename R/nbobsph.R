@@ -17,5 +17,6 @@ nb.obs.ph <- function(px = 0.5, ex = 0.1, np = 1e5) {
   pp <- px * (1 - px)
   zz <- 1.96^2
   nb <- (zz * (pp) / (ex^2)) / (1 + ((zz * pp) / (ex^2 * np)))
+  nb <- floor(nb) + 1
   return(nb)
 }
