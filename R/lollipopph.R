@@ -24,11 +24,11 @@
     count({{nom}})
   names(ndfx) <-  c("nom","n")
   #
-  if (capt == "x"){capt = tri}
+  if (capt == "x"){capt = titre}
   #
   cg <- 'darkslategrey'
   ndfx |> 
-    mutate(ndfx, trix = !(nom %in% tri)) |> 
+    mutate(ndfx, trix = (nom %in% tri)) |> 
     drop_na(nom) |> 
     ggplot() +
     aes(x = fct_reorder(nom, n), y = n, fill = trix) +
@@ -56,7 +56,7 @@
       caption = capt
     ) +
     theme_light() +
-    colorspace::scale_fill_discrete_qualitative(palette = "Dark 3") +
+    colorspace::scale_fill_discrete_qualitative(palette = "Dark 3", nmax = 2, order = c(2,1)) +
     theme(
       plot.title = element_text(size = 14, face = "bold"),
       plot.subtitle = element_text(size = 12),

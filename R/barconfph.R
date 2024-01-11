@@ -46,10 +46,10 @@ barconfph <-
     drop_na({{vartri}}) |>
     group_by({{vartri}}) |>
     summarise(
-      bas = bashaut({{varnum}}, 1),
-      haut = bashaut({{varnum}}, 2),
+      bas = bashaut({{varnum}})[[1]],
+      haut = bashaut({{varnum}})[[2]],
       moy = mean({{varnum}}, na.rm = TRUE)
-    ) |>
+    ) |> 
     ggplot() +
     aes(x = {{vartri}}, y = moy, fill = {{vartri}}) +
     # geom_bar(stat = "identity") +

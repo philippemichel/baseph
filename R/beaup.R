@@ -23,7 +23,7 @@ beaup <- function(varp, affp = 0) {
     }
   }
   else {
-    beaup <- round(varp, 2)
+    beaup <- round(varp, 3)
     if (affp == 1) {
       beaup <- paste0("p = ", beaup)
     }

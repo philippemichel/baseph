@@ -14,16 +14,14 @@
 #'
 #' @export
 #'
-transangph <- function(vv, ld, pc = 95) {
-  pp <- vv / ld
-  sp <- 1.959 / (2 * sqrt(ld))
-  pinf <- sin(asin(sqrt(pp - 1 / (2 * ld))) - sp) ^ 2 * 100
-  psup <- sin(asin(sqrt(pp + 1 / (2 * ld))) + sp) ^ 2 * 100
-  nb1 <- paste0(vv, "/", ld, " (", signif(pp * 100, 2), " \\%)")
-  nb2 <- paste0(" [", signif(pinf, 3), " ; ", signif(psup, 3), "]")
-  return(list(
-    binf = pinf,
-    bsup = psup,
-    nb = nb2
-  ))
+transangph <- function(nb , total, pr = 95) {
+  pc <- qnorm((100 - (100 - pr) / 2) / 100)
+  pz <- asin(sqrt(nb / total))
+  pinf <- sin(pz - pc * sqrt((pz * (1 - pz)) / (total))) ^ 2 * 100
+  psup <- sin(pz + pc * sqrt((pz * (1 - pz)) / (total))) ^ 2 * 100
+  nb1 <-
+    paste0(nb / total * 100, " [", signif(pinf, 3), " ; ", signif(psup, 3), "]")
+  return(list(binf = pinf,
+              bsup = psup,
+              nb = nb1))
 }

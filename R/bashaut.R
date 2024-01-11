@@ -3,17 +3,17 @@
 #' Calcul de l'intervalle de confiance à 95 % de la moyenne d'une variable numérique (utilisé par barconfph)
 #'
 #' @param xx Une variable numérique
-#' @param bh 1 : borne basse, 2 : borne haute
+
 #'
-#' @return un nombre simple
+#' @return deux nombres : la borne inf et la borne sup de l'IC
 #' @export
 #'
 #' @examples data ("patients")
-#' bashaut(xx =patients$age, bh = 1)
+#' bashaut(xx =patients$age)
 #'
 #'
-bashaut <- function(xx,bh){
+bashaut <- function(xx){
   zz <- t.test(xx)
-  zz <- zz$conf.int[[bh]]
+  zz <- list (zz$conf.int[[1]],zz$conf.int[[2]])
   return(zz)
 }

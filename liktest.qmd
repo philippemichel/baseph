@@ -1,0 +1,169 @@
+---
+title: "liktest"
+author: "phm"
+format: pdf
+echo: false
+warning: false
+---
+
+
+```{r}
+library(tidyverse)
+library(gtsummary)
+library(colorspace)
+library(baseph)
+```
+
+```{r}
+#| label: prepax
+
+prepax <- function(dfx,col) {
+  tabz <-   dfx |>
+    pivot_longer(col)
+  return(tabz)
+}
+```
+
+```{r}
+#| label: tabz
+#|  
+tabx <- function(dfx, expx = FALSE, classeur = "",nomfich = "") {
+dfx |>
+    tbl_cross(
+      name,
+      value,
+      percent = "row",
+      margin = "row",
+      label = name ~ "items"
+    ) |>
+    modify_header(label ~ " ") |>
+    modify_spanning_header(paste0("stat_", 1:5) ~ "Réponse") |>
+    bold_labels()  |>
+    gexptabph(
+    lg = FALSE,
+    exp = expx,
+    nomfich = classeur,
+    nomsheet = "complic1"
+  )
+}
+
+gik1 <- function(dfx, col, titre = "") {
+dfx |>
+  ggplot() +
+  aes(x = name, fill = value) +
+  geom_bar(stat = "count", position = "fill") +
+  scale_fill_discrete_sequential(palette = "Inferno") +
+  theme_light() +
+  labs(
+    title = titre,
+    subtitle = "",
+    y = "%",
+    fill = "Réponse",
+    caption = titre
+  ) +
+  theme(
+    plot.title = element_text(size = 18, face = "bold"),
+    plot.subtitle = element_text(size = 12),
+    axis.title.y = element_text(
+      size = 12,
+      angle = 90,
+      vjust = .5
+    ),
+    axis.title.x = element_blank(),
+    axis.text.x = element_text(
+      size = 12,
+      angle = 20,
+      hjust = 0.5,
+      vjust = 0.6
+    ),
+    axis.text.y = element_text(size = 12),
+    legend.position = "right"
+  )
+}
+
+gik2 <- function(dfx, col, titre = "") {
+dfx |>
+ggplot() +
+  aes(x = value, fill = value) +
+  geom_bar(stat = "count") +
+  facet_wrap(~name, ncol = 1) +
+  scale_fill_discrete_diverging(palette = "Green Orange") +
+  theme_light() +
+  labs(
+    title = titre,
+    subtitle = "",
+    y = "n",
+    fill = "Réponse",
+    caption = titre
+  ) +
+  theme(
+    plot.title = element_text(size = 18, face = "bold"),
+    plot.subtitle = element_text(size = 12),
+    axis.title.y = element_text(
+      size = 12,
+      angle = 90,
+      vjust = .5
+    ),
+    axis.title.x = element_blank(),
+    axis.text.x = element_text(
+      size = 12,
+      angle = 20,
+      hjust = 0.5,
+      vjust = 0.6
+    ),
+    axis.text.y = element_text(size = 12),
+    legend.position = "none",
+    strip.placement = "outside"
+  )
+}
+```
+
+
+```{r}
+
+lik <- c("Très satisfait(e)","Plutôt satisfait(e)","Ni satisfait(e) ni insatisfait(e)","Plutôt insatisfait(e)", "Très insatisfait(e)")
+library(tidyverse)
+library(gtsummary)
+library(colorspace)
+
+
+
+zz1 <- factor(round(runif(100,1,5),0), labels = lik)
+zz2 <- factor(round(runif(100,1,5),0), labels = lik)
+zz3 <- factor(round(runif(100,1,5),0), labels = lik)
+zz4 <- factor(round(runif(100,1,5),0), labels = lik)
+zz5 <- factor(round(runif(100,1,5),0), labels = lik)
+zz6 <- factor(round(runif(100,1,5),0), labels = lik)
+
+
+noms <- c("jours", "horaires", "types", "fréquence", "acessibilité", "diversité")
+
+
+tt <- tibble(zz1,zz2,zz3,zz4,zz5,zz6)
+names(tt) <- noms
+```
+
+```{r}
+#| label: table1
+#| tbl-cap: Déroulé des séances
+
+tabl <- prepax(tt,1:6)
+tabx(tabl)
+```
+
+```{r}
+#| label: fig1
+#| fig-cap: Déroulé des séances
+
+gik1(tabl,"Titre1")
+
+```  
+
+```{r}
+#| label: fig2
+#| fig-cap: Déroulé des séances
+#| fig-asp : 2
+
+gik2(tabl,"Titre1")
+
+```  
