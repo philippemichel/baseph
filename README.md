@@ -1,6 +1,6 @@
 # baseph
 
-<!-- badges: start --> [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+<!-- badges: start -->  
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
@@ -8,10 +8,11 @@
 
 Les fonctions de base pour un projet simple de recherche clinique en R, particulièrement adapté pour une thèse ou un mémoire de DES. Si vous travaillez sur un PHRC ou une phase III ça va être un peu court !
 
+Si tout cela vous effraie je peux vous aider. Plus de renseignements sur [https://docteur-michel.fr.latexr](https://docteur-michel.fr.latexr).
 
-La [vignette]("vignettes/my-vignette.html")
+Vous pouvez me contacter via un simple mail à <a href="mailto:docphilmstat@gmail.com">docphilmstat@gmail.com</a> ou un message sur [Twitter](https://twitter.com/PhiippeMICHEL) & je vous répondrai dans les plus brefs délais.
 
-\## Installation
+## Installation
 
 ``` r
 > library("remotes")
