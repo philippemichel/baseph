@@ -42,12 +42,12 @@ barsimpleph <- function(dfx,
     ggplot() +
     aes(x = nomx, y = fqx, fill = nomx) +
     geom_bar(stat = "identity") +
-    geom_text(
-      aes(label = paste0(round(fqx, 0), " %")),
-      vjust = 1.6,
-      color = "white",
-      size = 4
-    ) +
+    # geom_text(
+    #   aes(label = paste0(round(fqx, 0), " %")),
+    #   vjust = 1.6,
+    #   color = "white",
+    #   size = 4
+    # ) +
     labs(title = titre,
          subtitle = stitre,
          y = "%",
@@ -66,7 +66,7 @@ barsimpleph <- function(dfx,
         vjust = .5
       ),
       axis.text.x = element_text(
-        size = 12 ,
+        size = 11 ,
         angle = angle,
         hjust = hj
       ),

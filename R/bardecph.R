@@ -47,12 +47,12 @@ bardecph <- function(dfx,
     ggplot() +
     aes(x = fct_reorder(nomx,fqx, .desc = TRUE), nomx, y = fqx, fill = fct_reorder(nomx,fqx, .desc = TRUE)) +
     geom_bar(stat = "identity") +
-    geom_text(
-      aes(label = paste0(round(fqx, 0), " %")),
-      vjust = -0.8,
-      color = "black",
-      size = 6
-    ) +
+ #   geom_text(
+#     aes(label = paste0(round(fqx, 0), " %")),
+ #     vjust = -0.8,
+#      color = "black",
+ #     size = 6
+ #   ) +
     labs(title = titre,
          subtitle = stitre,
          y = "%",
@@ -72,7 +72,7 @@ bardecph <- function(dfx,
         vjust = .5
       ),
       axis.text.x = element_text(
-        size = 12 ,
+        size = 11 ,
         angle = angle,
         hjust = hj
       ),
