@@ -20,7 +20,7 @@ transangph <- function(nb , total, pr = 95) {
   pinf <- sin(pz - pc * sqrt((pz * (1 - pz)) / (total))) ^ 2 * 100
   psup <- sin(pz + pc * sqrt((pz * (1 - pz)) / (total))) ^ 2 * 100
   nb1 <-
-    paste0(nb / total * 100, " [", signif(pinf, 3), " ; ", signif(psup, 3), "]")
+    paste0(signif(nb / total * 100,3), "% [", signif(pinf, 3), " ; ", signif(psup, 3), "]")
   return(list(binf = pinf,
               bsup = psup,
               nb = nb1))

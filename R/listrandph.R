@@ -5,6 +5,7 @@
 #' @param nbcas Nombre total de cas souhaité
 #'
 #' @import blockrand
+#' @import utils
 #'
 #' @return 1 fichier csv global & un fichier par centre
 #' @export
@@ -24,8 +25,8 @@ for (l in 1:nbcent){
   id.prefix='patient_',
   block.sizes = sample(1:6,tca, replace = TRUE) ,
   levels=c("A", "B"))
-  write.csv2(listp,nn, row.names = FALSE)
+  utils::write.csv2(listp,nn, row.names = FALSE)
   listr <- rbind(listr,listp)
 }
-write.csv2(listr,"randomisation_total.csv", row.names = FALSE)
+utils::write.csv2(listr,"randomisation_total.csv", row.names = FALSE)
 }

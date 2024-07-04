@@ -47,10 +47,10 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
 
 ## Autres aides :
 
--   **debutph** Importation d'un csv avec normalisation des noms de variables, colonnes de type *caractère* converties en *facteur*. Un vecteur doit être présent contenant les labels corrects pour les tableaux & les figures.
 -   **listrandph** listes de randomisation multicentre, blocs variables.
 -   **beaup** Écrire un *p = 0,05* esthétique avec *p\< 0,001* si nécessaire.
 -   **bmiph** Couper en facteurs un BMI numérique, version française & anglaise.
+-   **tabph** Amélioration esthétique d'un tableau généré via `gtsummary` avec variable de tri & test statistique.
 
 # Graphiques
 
@@ -65,13 +65,13 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
 
 ## Calcul du nombre de sujets nécessaires
 
--   **nbobsph** Enquète simple
+-   **nbobsph** Enquête simple sans test.
 
 ## Jeu de données
 
 Un jeu de données est fourni pour exemple :
 
--   **Patients** Escarres en réaniamtion chez la personne âgée (données fictives).
+-   **Patients** Escarres en réanimation chez la personne âgée (données fictives).
 -   **bnom** Les labels *propres* des variables:
     -   `code` Code utilisé dans R (ex : `igs`)
     -   `nom` Beau label pour les tableaux, figures etc. (ex : `IGS 2`)
@@ -82,15 +82,4 @@ Un jeu de données est fourni pour exemple :
 
 Supprimée pour l'instant. J'avais écrit des fonctions pour gérer créer divers tableaux mais le package `gtsummary` est bien plus simple d'emploi avec de très beaux résultats. J'ai juste garder les fonctions `pexptabph` & `gexptabph` pour la sortie via kableExtra & l'export en .xls.
 
-### À FAIRE
 
-Des modèles en Quarto ou RMarkdown pour :
-
--   des plans d'analyse
--   un rapport pour rendre les résultats, complet
--   un rapport plus simple proche du chapitre *Résultats* qui sera dans l'article ou la thèse.
-
-Tout ça en deux versions :
-
--   Étude observationnelle simple
--   Étude comparant deux groupes, interventionnelle ou non.

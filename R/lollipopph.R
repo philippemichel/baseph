@@ -26,11 +26,11 @@
     count({{nom}})
   names(ndfx) <-  c("nom","n")
   #
-  if (capt == "x"){capt = titre}
+  if (capt == "x") {capt = titre}
   #
   cg <- 'darkslategrey'
   ndfx |> 
-    mutate(ndfx, trix = (nom %in% tri)) |> 
+    mutate(trix = (nom %in% tri)) |> 
     drop_na(nom) |> 
     ggplot() +
     aes(x = fct_reorder(nom, n), y = n, fill = trix) +

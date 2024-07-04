@@ -21,23 +21,22 @@ Imports:
     ggplot2,
     ggsci,
     gtsummary,
-    janitor,
     kableExtra,
-    readr,
     see,
     stats,
     stringr,
     tidyr,
     tidyverse,
-    utils,
     xlsx
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
 Language: fr
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
+Config/testthat/edition: 3

@@ -27,7 +27,7 @@ pexptabph <-
            lg = FALSE) {
     zz <- dfk |>
       as_kable_extra(longtable = lg, booktabs = TRUE) |>
-      kable_styling(latex_options = c("HOLD_position", "repeat_header"))
+      kable_styling(latex_options = c("repeat_header"))
     if (exp) {
       dfk |>
         as_tibble() |>
