@@ -8,7 +8,7 @@
 #' @import gtsummary
 #'
 #' @return un tableau fignolé 
-#' @export 
+#' @export
 #'
 #' @examples tabph(gtsummary::tbl_summary(patients[,1:4],by =sexea),  nn = 2, nomv = "Sexe", normx = FALSE)
 #' 

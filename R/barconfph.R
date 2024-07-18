@@ -45,6 +45,9 @@ barconfph <-
   }
   angy <-  (str_length(ty) > 3)*90
   #
+  bas <- NULL
+  haut <- NULL
+  moy <- NULL
 dfx |>
     drop_na({{vartri}}) |>
     group_by({{vartri}}) |>

@@ -21,6 +21,7 @@
 #' tri = c("EHPAD","Maison de retraite"), 
 #' titre = "Lieu de vie", capt = "Lieu de vie avant l'hospitalisation")
 #' 
+
  lollipph <- function(dfx,nom, tri= "xx", titre = "", capt = "x"){
   ndfx <- dfx |> 
     count({{nom}})
@@ -74,3 +75,4 @@
       legend.position = "none"
     )
 }
+ utils::globalVariables(c("trix"))

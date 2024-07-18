@@ -13,8 +13,8 @@
 #' @import dplyr
 #' @import gtsummary
 #'
-#' @return un tableau kbl prévu pour un export LaTeX
 #' @export
+#' @return un tableau kbl prévu pour un export LaTeX
 #'
 #' @examples zz <- gtsummary::tbl_summary(iris)
 #'           pexptabph(dfk = zz, exp = FALSE)
