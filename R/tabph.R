@@ -1,4 +1,5 @@
-#' Tabph
+#' TABPH
+#' 
 #' Réglages pour un tableau généré par gtsummary, le plus souvent tbl_summary (avec une variable de tri & des tests statistiques).
 #'
 #' @param tbx un tableau gtsummary
@@ -32,6 +33,7 @@ tabph <- function(tbx,
     modify_header(label ~ " ") |>
     modify_spanning_header(nn ~ nom) |>
     add_p(test = list(all_continuous() ~ cc, all_categorical() ~ "chisq.test")) |>
-    add_overall() |>
+    add_n(col_label = "**N**") |> 
+    add_overall(col_label = "**Total**  \nN = {style_number(N)}") |>
     bold_labels()
 }

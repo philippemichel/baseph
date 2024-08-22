@@ -1,4 +1,4 @@
-# baseph
+# BASEPH
 
 <!-- badges: start -->  
 
@@ -50,7 +50,7 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
 -   **listrandph** listes de randomisation multicentre, blocs variables.
 -   **beaup** Écrire un *p = 0,05* esthétique avec *p\< 0,001* si nécessaire.
 -   **bmiph** Couper en facteurs un BMI numérique, version française & anglaise.
--   **tabph** Amélioration esthétique d'un tableau généré via `gtsummary` avec variable de tri & test statistique.
+-   **tabph** Amélioration esthétique d'un tableau généré via `gtsummary` avec variable de tri & tests statistiques.
 
 # Graphiques
 
@@ -72,7 +72,7 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
 Un jeu de données est fourni pour exemple :
 
 -   **Patients** Escarres en réanimation chez la personne âgée (données fictives).
--   **bnom** Les labels *propres* des variables:
+-   **bnom** Les labels *propres* des variables (pour utiliser avec le package `labelled`):
     -   `code` Code utilisé dans R (ex : `igs`)
     -   `nom` Beau label pour les tableaux, figures etc. (ex : `IGS 2`)
 
@@ -80,6 +80,6 @@ Un jeu de données est fourni pour exemple :
 
 ### Branche TABLEAUX
 
-Supprimée pour l'instant. J'avais écrit des fonctions pour gérer créer divers tableaux mais le package `gtsummary` est bien plus simple d'emploi avec de très beaux résultats. J'ai juste garder les fonctions `pexptabph` & `gexptabph` pour la sortie via kableExtra & l'export en .xls.
+Supprimée pour l'instant. J'avais écrit des fonctions pour gérer créer divers tableaux mais le package `gtsummary` est bien plus simple d'emploi avec de très beaux résultats. J'ai juste gardé les fonctions `pexptabph` & `gexptabph` pour la sortie via kableExtra & l'export en .xls & `tabph` qui met en forme le tableau généré par `gtsummary`.
 
 
