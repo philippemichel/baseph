@@ -56,6 +56,7 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
 -   **beaup** Écrire un *p = 0,05* esthétique avec *p\< 0,001* si nécessaire.
 -   **bmiph** Couper en facteurs un BMI numérique, version française & anglaise.
 -   **tabph** Amélioration esthétique d'un tableau généré via `gtsummary` avec variable de tri & tests statistiques.
+-   **debph** Chargement des libraries de base, réglage des tableaux pour les variables numériques (normales ou pas).
 
 ### Graphiques
 
