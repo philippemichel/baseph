@@ -10,6 +10,13 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+# Installation
+
+``` r
+> library("remotes")
+> remotes::install_github("philippemichel/baseph")
+```
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -46,13 +53,10 @@ nbo <- nb.obs.ph(px = 0.5, ex = 0.1, np = 1e5)
 
 Le nombre de cas nécessaires pour une enquète avec une estimation des réponses pour les questions principales autour de 50 % (hypothèse la plus défavorable) & une marge d'erreur considérée comme acceptable de 10 % dans une grande population serait de `r nbo` cas (calcul très discutable).
 
+
 # Randomisation
 
-
-
-# Importation des données
-
-la fonction `listrandph`correspond juste à une mise en forme de la focntion `blockrand` du package homonyme pour générer des listes de randomisation par centre en blocs de taille aléatoire. ELle génère plusieurs fichiers .csv : une feuille globale de randomisation (pour le promoteur) & une feuille par centre.
+la fonction `listrandph`correspond juste à une mise en forme de la fonction `blockrand` du package homonyme pour générer des listes de randomisation par centre en blocs de taille aléatoire. Elle génère plusieurs fichiers .csv : une feuille globale de randomisation (pour le promoteur) & une feuille par centre.
 
 ```{r listerand, eval = FALSE}
 listrandph(nbcent = 1, # Nombre de centre
@@ -63,7 +67,21 @@ listrandph(nbcent = 1, # Nombre de centre
 
 # Mise en forme des tableaux
 
-J'utilise habituellement le package `gtsummary` pour créer mes tableaux.  Les deux fonctions suivantes prnnet un tableau, le mettent en forme via `kableExtra` (pour les sorties en pdf) & font l'export en .xls (optionnel).
+J'utilise habituellement le package `gtsummary` pour créer mes tableaux.  Les deux fonctions suivantes prennent un tableau, le mettent en forme via `kableExtra` (pour les sorties en pdf) & font l'export en .xls (optionnel).
+
+## Tabph
+
+Tabph permet de fignoler l'aspect des tables générées par `gtsummary` en particulie r;: 
+Titre de l'entête au dessus des catégories, mise en gras des titres des variables,ajout de diverses colonnes :
+
+-p-value
+- colonne *total*
+colonne des effectifs par variable. 
+
+Choix du type de tests utilisés (paramétriques ou non).
+
+
+## Export en kableExtra
 
 - `pexptabph` prépare le tableau sans régler la largeur (pour des tableaux qui tiennent sans problème dans la page), possibilité de `longtable`. 
 
@@ -73,8 +91,9 @@ J'utilise habituellement le package `gtsummary` pour créer mes tableaux.  Les d
 patients |>
   dplyr::select(sexea, age, escarre, lieudevie1) |>
   tbl_summary(by = escarre) |>
-  bold_labels() |>
-  add_p() |>
+  tabph(nomv = "Escarre", # Titre des colonnes
+        normx = TRUE # Tests paramétriques
+        ) |>  
   pexptabph(exp = FALSE, # pas d'export .xls
             lg = FALSE) # pas de longtable
 ```
