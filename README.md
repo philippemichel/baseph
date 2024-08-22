@@ -16,10 +16,12 @@ Vous pouvez me contacter via un simple mail à <a href="mailto:docphilmstat@gmai
 
 ``` r
 > library("remotes")
-> remotes::install_github("https://github.com/philippemichel/baseph")
+> remotes::install_github("philippemichel/baseph")
 ```
 
-Pour les graphiques, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des "beaux intitulés". C'est lors de l'import du csv principal par la fonction `debutph` que ces labels seront importés par exemple :
+### Beaux noms
+
+Pour les graphiques, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des *beaux intitulés*. C'est lors de l'import du csv principal par la fonction `debutph` que ces labels seront importés par exemple :
 
 ``` r
  > library(labelled)
@@ -30,8 +32,10 @@ Pour les graphiques, possibilité d'avoir les intitulés vrais des variables & n
 
 Dans les fichiers d'exemple, les données (fictives) sont dans le fichier "patients" & les beaux noms dans le fichier "bnom", variable "nom".
 
+### Tests statistiques
 Les tests ou simplement l'affichage peuvent, pour les variables numériques, être présentés en moyenne ± écart-type ou en médiane (quartiles). Les variables discrètes sont rendues en n (%).
 
+### Tableaux
 La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par exemple via la fonction `gexptabph` (pour les tableaux trop larges mais *longtable* n'est pas géré) ou `pexptabph` qui permettent de gérer l'export en .xls au besoin & la sortie en *longtable*. On va donc avoir quelque chose comme :
 
 ``` r
@@ -39,20 +43,21 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
  > library (kableExtra)
  > patients |> 
       tbl_summary(...) |> 
+      tabph(nomv = "Traitements", normx = TRUE) |>
       pexptabph(exp = FALSE,
                 nomfich = "export.xls",
                 nomsheet = "demo",
                 lg = FALSE)
 ```
 
-## Autres aides :
+### Autres aides :
 
 -   **listrandph** listes de randomisation multicentre, blocs variables.
 -   **beaup** Écrire un *p = 0,05* esthétique avec *p\< 0,001* si nécessaire.
 -   **bmiph** Couper en facteurs un BMI numérique, version française & anglaise.
 -   **tabph** Amélioration esthétique d'un tableau généré via `gtsummary` avec variable de tri & tests statistiques.
 
-# Graphiques
+### Graphiques
 
 -   **barconfph** Graphique en barres avec intervalle de confiance pour une variable numérique (y) & une variable factorielle de tri (x).
 -   **barsimpleph** Graphique en barre exprimé en % des modalités pour une variable factorielle (x)
@@ -63,7 +68,7 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
 -   **barpcph** Graphique en barre avec une variable en % pour chaque niveau de l'autre variable.
 -   **lollipph** Graphique *lollipop* de distribution d'une donnée factorielle avec éventuelle mise en évidence d'un ou plusieurs niveaux.
 
-## Calcul du nombre de sujets nécessaires
+### Calcul du nombre de sujets nécessaires
 
 -   **nbobsph** Enquête simple sans test.
 
@@ -76,7 +81,7 @@ Un jeu de données est fourni pour exemple :
     -   `code` Code utilisé dans R (ex : `igs`)
     -   `nom` Beau label pour les tableaux, figures etc. (ex : `IGS 2`)
 
-## ÉVOLUTION
+# ÉVOLUTION
 
 ### Branche TABLEAUX
 
