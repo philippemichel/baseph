@@ -7,6 +7,7 @@
 #' @param nomv nom à afficher pour la variable de tri
 #' @param normx si variables numériques normales TRUE
 #' @import gtsummary
+#' @import tidyverse
 #'
 #' @return un tableau fignolé 
 #' @export

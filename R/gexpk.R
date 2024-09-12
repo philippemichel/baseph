@@ -31,7 +31,7 @@ gexptabph <-
     if (exp) {
       dfk |>
         as_tibble() |>
-        write.xlsx(nomfich, sheetName = nomsheet, append = TRUE)
+        xlsx::write.xlsx(nomfich, sheetName = nomsheet, append = TRUE)
     }
     return(zz)
   }

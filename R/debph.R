@@ -10,21 +10,14 @@
 #' @examples debph(param = FALSE)
 #' 
 debph <- function(param = FALSE) {
-  library(tidyverse)
-  library(gtsummary)
-  library(xlsx)
   library(baseph)
   #
-  affpx <- "{median} [{p25} - {p75}]"
-  
-  if (paramx) {
-    affpx <-  "{mean} ({sd})"
-  }
+  affpx <- ifelse(param, "{mean} ({sd})", "{median} [{p25} - {p75}]")
   
   affs <- list(all_continuous() ~ affpx, 
                all_categorical() ~ "{n} / {N} ({p}%)")
   #
-  theme_gtsummary_language(language = "fr", decimal.mark = ",")
+  gtsummary::theme_gtsummary_language(language = "fr", decimal.mark = ",")
   options(OutDec = ",")
   #
   return(affs)

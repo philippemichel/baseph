@@ -26,12 +26,12 @@ pexptabph <-
            nomsheet = "x",
            lg = FALSE) {
     zz <- dfk |>
-      as_kable_extra(longtable = lg, booktabs = TRUE) |>
+      gtsummary::as_kable_extra(longtable = lg, booktabs = TRUE) |>
       kable_styling(latex_options = c("repeat_header"))
     if (exp) {
       dfk |>
         as_tibble() |>
-        write.xlsx(nomfich, sheetName = nomsheet, append = TRUE)
+        xlsx::write.xlsx(nomfich, sheetName = nomsheet, append = TRUE)
     }
     return(zz)
   }

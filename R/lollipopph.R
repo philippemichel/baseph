@@ -9,8 +9,7 @@
 #' @param capt légende 
 #' 
 #' @import ggplot2
-#' @import dplyr
-#' @import tidyr
+#' @import tidyverse
 #' @import colorspace
 #' @import forcats
 #'
