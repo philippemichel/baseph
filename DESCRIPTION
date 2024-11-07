@@ -15,7 +15,6 @@ Imports:
     binom,
     blockrand,
     boot,
-    colorspace,
     dplyr,
     forcats,
     ggplot2,

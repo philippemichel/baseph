@@ -15,7 +15,7 @@
 #' @param angle d'affichage des labels de l'axe x s'ils ont trop longs
 #'
 #' @import tidyverse
-#' @import colorspace
+#' @import ggsci
 #' @import stringr
 
 #' @return un graphique
@@ -75,7 +75,7 @@ dfx |>
       label = lab
     ) +
     theme_light() +
-    scale_fill_discrete_qualitative(palette = "Dark 3") +
+    scale_fill_jama() +
     theme(
       plot.title = element_text(size = 18, face = "bold"),
       plot.subtitle = element_text(size = 12),

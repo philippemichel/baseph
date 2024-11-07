@@ -21,7 +21,7 @@
 #' @import ggplot2
 #' @import dplyr
 #' @import tidyr
-#' @import colorspace
+#' @import ggsci
 #'
 #' @return graphique
 #' @export
@@ -81,7 +81,7 @@ barouiph <- function(dfx,
       label = lab
     ) +
     theme_light() +
-  scale_fill_discrete_qualitative(palette = "Dark 3") +
+    scale_fill_jama() +
     theme(
       plot.title = element_text(size = 18, face = "bold"),
       plot.subtitle = element_text(size = 12),

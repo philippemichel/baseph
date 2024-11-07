@@ -10,7 +10,7 @@
 #' @param lab label
 #'
 #' @import ggplot2
-#' @import colorspace
+#' @import ggsci
 #' @import dplyr
 #'
 #' @return graphique
@@ -43,7 +43,7 @@ vioboxph <-
         label = lab
       ) +
       theme_light() +
-      scale_fill_discrete_qualitative(palette = "Dynamic") +
+      scale_fill_jama() +
       theme(
         plot.title = element_text(size = 16, face = "bold"),
         plot.subtitle = element_text(size = 12),

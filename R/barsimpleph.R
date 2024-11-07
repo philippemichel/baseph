@@ -12,7 +12,7 @@
 #' @import ggplot2
 #' @import see
 #' @import dplyr
-#' @import colorspace
+#' @import ggsci
 #'
 #' @return un graphique
 #' @export
@@ -54,7 +54,7 @@ barsimpleph <- function(dfx,
          caption = capt,
          label = lab) +
     theme_light() +
-    scale_fill_discrete_qualitative(palette = "Dark 3") +
+    scale_fill_jama() +
     theme(
       plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),

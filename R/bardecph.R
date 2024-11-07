@@ -13,6 +13,7 @@
 #' @import ggplot2
 #' @import dplyr
 #' @import forcats
+#' @import ggsci
 #'
 #' @return un graphique
 #' @export
@@ -60,7 +61,7 @@ bardecph <- function(dfx,
          label = lab)+
     scale_y_continuous(limits = c(0, maxy)) +
     theme_light() +
-    scale_fill_discrete_qualitative(palette = "Dark 3") +
+    scale_fill_jama() +
     theme(
       plot.title = element_text(size = 16, face = "bold"),
       plot.subtitle = element_text(size = 12),

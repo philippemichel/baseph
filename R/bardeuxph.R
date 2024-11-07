@@ -49,7 +49,7 @@ bardeuxph <- function(dfx,
          fill = ltitre,
          label = lab) +
     theme_light() +
-    colorspace::scale_fill_discrete_qualitative(palette = "Dark 3") +
+    scale_fill_jama() +
     scale_y_continuous("%", breaks = seq(0, 1, 0.2), labels = seq(0, 100, 20)) +
     theme(
       plot.title = element_text(size = 16, face = "bold"),

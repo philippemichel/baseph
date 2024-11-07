@@ -11,7 +11,7 @@
 #' 
 #' @import tidyverse
 #' @import ggplot2
-#' @import colorspace
+#' @import ggsci
 #' 
 #' @return un graphique
 #' @export 
@@ -34,7 +34,7 @@ histmultiph <- function(dfx, varx, varn, tit = "", stit= 0, titx = "", bin = 1){
          caption = tit) +
     scale_y_continuous(limits = c(0, 10), breaks = seq(0,10,2)) +
     theme_light() +
-    scale_fill_discrete_qualitative(palette = "Dark 3") +
+    scale_fill_jama() +
     theme(
       strip.text.y = element_text(size=12),
       plot.title = element_text(size = 16, face = "bold"),

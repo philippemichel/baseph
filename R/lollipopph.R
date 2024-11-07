@@ -10,7 +10,7 @@
 #' 
 #' @import ggplot2
 #' @import tidyverse
-#' @import colorspace
+#' @import ggsci
 #' @import forcats
 #'
 #' @return graphique
@@ -58,7 +58,7 @@
       caption = capt
     ) +
     theme_light() +
-    colorspace::scale_fill_discrete_qualitative(palette = "Dark 3", nmax = 2, order = c(2,1)) +
+    scale_fill_jama() +
     theme(
       plot.title = element_text(size = 14, face = "bold"),
       plot.subtitle = element_text(size = 12),
