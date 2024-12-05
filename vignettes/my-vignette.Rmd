@@ -67,7 +67,7 @@ listrandph(nbcent = 1, # Nombre de centre
 
 # Mise en forme des tableaux
 
-J'utilise habituellement le package `gtsummary` pour créer mes tableaux.  Les deux fonctions suivantes prennent un tableau, le mettent en forme via `kableExtra` (pour les sorties en pdf) & font l'export en .xls (optionnel).
+J'utilise habituellement le package `gtsummary` pour créer mes tableaux.  Les deux fonctions suivantes prennent un tableau, le mettent en forme via `kableExtra` (pour les sorties en pdf) & font l'export en .ods (optionnel).
 
 ## Tabph
 
@@ -94,7 +94,7 @@ patients |>
   tabph(nomv = "Escarre", # Titre des colonnes
         normx = TRUE # Tests paramétriques
         ) |>  
-  pexptabph(exp = FALSE, # pas d'export .xls
+  pexptabph(exp = FALSE, # pas d'export .ods
             lg = FALSE) # pas de longtable
 ```
 

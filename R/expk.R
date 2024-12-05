@@ -1,11 +1,11 @@
 #' Export de tableau 
 #' 
-#' Sortie d'un tableau gtsummary en tableau kableExtra sans adaptation à la page ou comme feuille d'un tableur xls.  
+#' Sortie d'un tableau gtsummary en tableau kableExtra sans adaptation à la page ou comme feuille d'un tableur ods.  
 #'
 #' @param dfk objet gtsummary 
-#' @param exp  booleen. FALSE : vers kableExtra, TRUE : vers xls
-#' @param nomfich nom du classeur xls
-#' @param nomsheet nom de la feuille dans le classeur xls
+#' @param exp  booleen. FALSE : vers kableExtra, TRUE : vers ods
+#' @param nomfich nom du classeur ods
+#' @param nomsheet nom de la feuille dans le classeur ods
 #' @param lg Booleeen. TRUE si sortie en longtable
 #' 
 #' @import readODS

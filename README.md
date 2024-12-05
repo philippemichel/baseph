@@ -36,7 +36,7 @@ Dans les fichiers d'exemple, les données (fictives) sont dans le fichier "patie
 Les tests ou simplement l'affichage peuvent, pour les variables numériques, être présentés en moyenne ± écart-type ou en médiane (quartiles). Les variables discrètes sont rendues en n (%).
 
 ### Tableaux
-La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par exemple via la fonction `gexptabph` (pour les tableaux trop larges mais *longtable* n'est pas géré) ou `pexptabph` qui permettent de gérer l'export en .xls au besoin & la sortie en *longtable*. On va donc avoir quelque chose comme :
+La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par exemple via la fonction `gexptabph` (pour les tableaux trop larges mais *longtable* n'est pas géré) ou `pexptabph` qui permettent de gérer l'export en .ods au besoin & la sortie en *longtable*. On va donc avoir quelque chose comme :
 
 ``` r
  > library(gtsummary)
@@ -45,7 +45,7 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
       tbl_summary(...) |> 
       tabph(nomv = "Traitements", normx = TRUE) |>
       pexptabph(exp = FALSE,
-                nomfich = "export.xls",
+                nomfich = "export.ods", 
                 nomsheet = "demo",
                 lg = FALSE)
 ```
@@ -86,6 +86,6 @@ Un jeu de données est fourni pour exemple :
 
 ### Branche TABLEAUX
 
-Supprimée pour l'instant. J'avais écrit des fonctions pour gérer créer divers tableaux mais le package `gtsummary` est bien plus simple d'emploi avec de très beaux résultats. J'ai juste gardé les fonctions `pexptabph` & `gexptabph` pour la sortie via kableExtra & l'export en .xls & `tabph` qui met en forme le tableau généré par `gtsummary`.
+Supprimée pour l'instant. J'avais écrit des fonctions pour gérer créer divers tableaux mais le package `gtsummary` est bien plus simple d'emploi avec de très beaux résultats. J'ai juste gardé les fonctions `pexptabph` & `gexptabph` pour la sortie via kableExtra & l'export en .ods & `tabph` qui met en forme le tableau généré par `gtsummary`.
 
 
