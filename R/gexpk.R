@@ -8,7 +8,7 @@
 #' @param nomsheet nom de la feuille dans le classeur xls
 #' @param lg Booleeen. TRUE si sortie en longtable
 #' 
-#' @import xlsx
+#' @import readODS
 #' @import kableExtra
 #' @import dplyr
 #' @import gtsummary
@@ -31,7 +31,11 @@ gexptabph <-
     if (exp) {
       dfk |>
         as_tibble() |>
+<<<<<<< HEAD
+        write_ods(path = nomfich, sheet = nomsheet, append = TRUE)
+=======
         xlsx::write.xlsx(nomfich, sheetName = nomsheet, append = TRUE)
+>>>>>>> 818a468d053708ebadf5e9fd123b951494ef472c
     }
     return(zz)
   }
