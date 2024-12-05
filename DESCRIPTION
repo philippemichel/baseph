@@ -15,11 +15,8 @@ Imports:
     binom,
     blockrand,
     boot,
-<<<<<<< HEAD
     colorspace,
     labelled,
-=======
->>>>>>> 818a468d053708ebadf5e9fd123b951494ef472c
     dplyr,
     forcats,
     ggplot2,

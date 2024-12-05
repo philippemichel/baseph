@@ -31,11 +31,7 @@ pexptabph <-
     if (exp) {
       dfk |>
         as_tibble() |>
-<<<<<<< HEAD
         write_ods(path = nomfich, sheet = nomsheet, append = TRUE)
-=======
-        xlsx::write.xlsx(nomfich, sheetName = nomsheet, append = TRUE)
->>>>>>> 818a468d053708ebadf5e9fd123b951494ef472c
     }
     return(zz)
   }
