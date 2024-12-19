@@ -1,11 +1,11 @@
 ---
-title: "baeseph"
+title: "baseph"
 author: "Dr Philippe MICHEL"
 output: 
   rmarkdown::html_vignette:
     toc: true
 vignette: >
-  %\VignetteIndexEntry{my-vignette}
+  %\VignetteIndexEntry{baseph}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
