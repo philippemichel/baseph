@@ -1,8 +1,8 @@
-3# baseph 0.3.3
+# baseph 0.3.3
 
 ## 19/12/2024
 
-Fonction graphique raincloudph
+- Fonction graphique raincloudph
 
-Essai de publication des vignettes
+- Essai de publication des vignettes
           
