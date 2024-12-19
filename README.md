@@ -1,7 +1,7 @@
-# BASEPH
+# Utilitaires pour une petite étude clinique en R
 
 <!-- badges: start -->  
-
+  
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 <!-- badges: end -->

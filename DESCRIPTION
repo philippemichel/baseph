@@ -8,7 +8,7 @@ Authors@R:
 Description: Création des tables & quelques figures ainsi que divers
     utilitaires pour une étude clinique simple.
 License: MIT + file LICENSE
-URL: https://github.com/philippemichel/baseph
+URL: https://github.com/philippemichel/baseph, https://philippemichel.github.io/baseph/
 Depends: 
     R (>= 2.10)
 Imports: 
@@ -41,4 +41,3 @@ Language: fr
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-

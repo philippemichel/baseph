@@ -1,3 +1,8 @@
-# baseph 0.3.3
+3# baseph 0.3.3
 
-* Initial CRAN submission.
+## 19/12/2024
+
+Fonction graphique raincloudph
+
+Essai de publication des vignettes
+          
