@@ -22,6 +22,6 @@ un tableau fignolé
 Réglages pour un tableau généré par gtsummary, le plus souvent tbl_summary (avec une variable de tri & des tests statistiques).
 }
 \examples{
-tabph(gtsummary::tbl_summary(patients[,1:4],by =sexea),  nn = 2, nomv = "Sexe", normx = FALSE)
+tabph(gtsummary::tbl_summary(patients[,1:4],by =sexe),  nn = 2, nomv = "Sexe", normx = FALSE)
 
 }

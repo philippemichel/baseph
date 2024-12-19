@@ -89,7 +89,7 @@ Choix du type de tests utilisés (paramétriques ou non).
 
 ```{r petittab}
 patients |>
-  dplyr::select(sexea, age, escarre, lieudevie1) |>
+  dplyr::select(sexe, age, escarre, lieudevie1) |>
   tbl_summary(by = escarre) |>
   tabph(nomv = "Escarre", # Titre des colonnes
         normx = TRUE # Tests paramétriques
@@ -155,12 +155,12 @@ bardeuxph(patients,
 Barplot pour deux données factorielles : une de tri (axe x) & une qui doit être à deux niveaux avec affichage d'un seul niveau (par exemple réponse en oui/non où on affiche que les oui) avec les intervalles de confiance.
 
 ```{r baroui}
+
 barouiph(dfx = patients,
          varx = escarre, # Variable binaire à afficher
-         testx = sexea, # Variable de tri (axe x)
+         testx = sexe, # Variable de tri (axe x)
          valx = "oui", # Niveau à afficher (de la variable varx)
          titre = "Escarres selon le genre", # Titre
-         ang = 0 # angle d'affichage des niveaux sur l'axe x
 )
 ```
 
@@ -205,3 +205,19 @@ vioboxph(dfx = patients, #
          titx = "Mode d'admission" # titre de l'axe x
 )
 ```
+
+
+## raincloud
+
+```{r}
+raincloudph(
+  df = patients,
+  vcat = admission,
+  vnum = igs2,
+  titre = "IGS2 vs adm",
+  titcat = "Adm",
+  titnum = "IGS 2",
+  adj = 1
+)
+```
+

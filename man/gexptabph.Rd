@@ -9,11 +9,11 @@ gexptabph(dfk, exp = FALSE, nomfich = "export", nomsheet = "x", lg = FALSE)
 \arguments{
 \item{dfk}{objet gtsummary}
 
-\item{exp}{booleen. FALSE : vers kableExtra, TRUE : vers xls}
+\item{exp}{booleen.  TRUE : export vers ods}
 
-\item{nomfich}{nom du classeur xls}
+\item{nomfich}{nom du classeur ods}
 
-\item{nomsheet}{nom de la feuille dans le classeur xls}
+\item{nomsheet}{nom de la feuille dans le classeur ods}
 
 \item{lg}{Booleeen. TRUE si sortie en longtable}
 }
@@ -21,7 +21,7 @@ gexptabph(dfk, exp = FALSE, nomfich = "export", nomsheet = "x", lg = FALSE)
 un tableau kbl prévu pour un export LaTeX
 }
 \description{
-Sortie d'un tableau gtsummary en tableau kableExtra avec adaptation à la page ou comme feuille d'un tableur xls.
+Sortie d'un tableau gtsummary en tableau kableExtra avec adaptation à la page et  comme feuille d'un tableur ods
 }
 \examples{
 zz <- gtsummary::tbl_summary(iris)

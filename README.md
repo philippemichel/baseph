@@ -68,6 +68,7 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
 -   **pyrph** Pyramide des âges. La fonction *epiDisplay::pyramid()* donne aussi un très bon rendu. (en travaux)
 -   **barpcph** Graphique en barre avec une variable en % pour chaque niveau de l'autre variable.
 -   **lollipph** Graphique *lollipop* de distribution d'une donnée factorielle avec éventuelle mise en évidence d'un ou plusieurs niveaux.
+-  **raincloud** Graphique en *raincloud* (densité + boxplot + nuage de points) pour une variable numérique & une variable factorielle de tri.
 
 ### Calcul du nombre de sujets nécessaires
 

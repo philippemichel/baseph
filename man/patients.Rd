@@ -7,7 +7,7 @@
 \format{
 A data frame with 50 rows and 8 variables:
 \describe{
-\item{sexea}{Sexe}
+\item{sexe}{Sexe}
 \item{age}{Age du patient}
 \item{admission}{Mode d'admission}
 \item{lieudevie1}{Lieu de vie avant}

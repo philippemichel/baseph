@@ -14,8 +14,6 @@
 #' @param titx titre (optionnel) de l'axe x
 #' @param tity titre (% par défaut) de l'axe y
 #' @param capt légende du graphique
-#' @param lab label du graphique
-#' @param angle angle affichage des valeurs de vart sur l'axe des x (0 par defaut)
 #'
 #' @import binom
 #' @import ggplot2
@@ -27,44 +25,34 @@
 #' @export
 #'
 #' @examples data(patients)
-#' barouiph(dfx = patients, varx =escarre, testx =sexea, valx = "oui", titre = "Sexe",angle = 0)
+#' barouiph(dfx = patients, varx =escarre, testx =sexe, valx = "oui", titre = "Sexe")
 #'
 barouiph <- function(dfx,
-                      varx,
-                      testx,
-                      valx = "oui",
-                      titre = "",
-                      stitre = "",
-                      titx="",
-                      tity = "%",
-                      capt = "",
-                      lab = "",
-                      angle = 0) {
-  xx <- yy <- mean.yy <- NULL
-  mean.Freq <- lower <- upper <- NULL
-  if (angle == 0) {
-    hj <- 0.5
-  } else {
-    hj <- 1
-  }
-  aa <- dfx |>
+                    varx,
+                    testx,
+                    valx = "oui",
+                    titre = "",
+                    stitre = "",
+                    titx = "",
+                    tity = "%",
+                    capt = "") {
+  dfx <- dfx |>
     drop_na({{varx}}) |>
-    transmute(xx = as.factor({{varx}}), yy = as.factor({{testx}}))
-  ll <- aa %>%
-    summarise(which(valx == levels(xx)))
-  ll <- ll[[1]]
-  if (length(ll) == 0)
+    mutate(xx = as.factor({{varx}} == valx), yy = as.factor({{testx}})) |>
+    mutate(xx = factor(xx))
+  nn <- levels(dfx$yy)
+  
+  if (nrow(dfx) == 0) {
     return("Modalit\u00E9 absente")
-  zz <- aa %>%
-    summarise(table(xx,yy))
-  tzz <- colSums(zz)
-  szz <- pull(zz[ll, ])
-  aa <- binom::binom.confint(szz, tzz, method = "exact")
-  aa <- dplyr::tibble(aa)[, 7:10]
-  #
-  aa %>%
+  }
+  zz <- table(dfx$xx, dfx$yy)
+  
+  
+  binom::binom.confint(zz[2, ], colSums(zz), method = "exact") |>
+    dplyr::tibble() |>
+    mutate(nom = nn) |>
     ggplot() +
-    aes(x = mean.yy, y = mean.Freq * 100, fill = mean.yy) +
+    aes(x = nom, y = mean * 100, fill = nom) +
     geom_bar(stat = "identity") +
     geom_errorbar(
       aes(ymin = lower * 100, ymax = upper * 100),
@@ -77,8 +65,7 @@ barouiph <- function(dfx,
       subtitle = stitre,
       x = titx,
       y = tity,
-      caption = capt,
-      label = lab
+      caption = capt
     ) +
     theme_light() +
     scale_fill_jama() +
@@ -90,16 +77,8 @@ barouiph <- function(dfx,
         angle = 90,
         vjust = .5
       ),
-      axis.title.x = element_text(
-        size = 12,
-        angle = angle,
-        hjust = hj
-      ),
-      axis.text.x = element_text(
-        size = 12,
-        angle = angle,
-        hjust = hj
-      ),
+      axis.title.x = element_text(size = 12),
+      axis.text.x = element_text(size = 12),
       axis.text.y = element_text(size = 12),
       legend.position = "none"
     )

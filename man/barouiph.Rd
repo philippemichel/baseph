@@ -13,9 +13,7 @@ barouiph(
   stitre = "",
   titx = "",
   tity = "\%",
-  capt = "",
-  lab = "",
-  angle = 0
+  capt = ""
 )
 }
 \arguments{
@@ -36,10 +34,6 @@ barouiph(
 \item{tity}{titre (\% par défaut) de l'axe y}
 
 \item{capt}{légende du graphique}
-
-\item{lab}{label du graphique}
-
-\item{angle}{angle affichage des valeurs de vart sur l'axe des x (0 par defaut)}
 }
 \value{
 graphique
@@ -51,6 +45,6 @@ classification.
 }
 \examples{
 data(patients)
-barouiph(dfx = patients, varx =escarre, testx =sexea, valx = "oui", titre = "Sexe",angle = 0)
+barouiph(dfx = patients, varx =escarre, testx =sexe, valx = "oui", titre = "Sexe")
 
 }
