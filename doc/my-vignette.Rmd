@@ -1,19 +1,211 @@
 ---
-title: "baseph"
-output: rmarkdown::html_vignette
+title: "baeseph"
+author: "Dr Philippe MICHEL"
+output: 
+  rmarkdown::html_vignette:
+    toc: true
 vignette: >
-  %\VignetteIndexEntry{baseph}
+  %\VignetteIndexEntry{my-vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
+# Installation
+
+``` r
+> library("remotes")
+> remotes::install_github("philippemichel/baseph")
+```
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE,
+  fig.width = 5,
+  out.width = "70%",
+  fig.align = "center"
 )
 ```
 
 ```{r setup}
 library(baseph)
+library(gtsummary)
+library(tidyverse)
+library(kableExtra)
 ```
+
+Nous allons déroulé un projet de recherche clinique tout simple à partir du jeu de données `patients` contenu dans le package. Ce jeu de données contient deux fichiers :
+
+- `patients` avec les données (fictives)
+- `bnom` qui contient des vignettes claires pour les variables : par exemple pour la variable `sejourrea`  sera affiché dans les tableaux, légendes etc. : *Durée de séjour en réanimation*.
+
+# Calcul du nombre de cas 
+
+C'est toujours la première étape. Plusieurs fonctions font ces calculs pour les cas courants par exemple dans les packages `epiDisplay` ou `Hmisc`.  
+
+Nous avons écrit ici une fonction pour les sondages, enquètes etc. sans test principal donc pas de calcul de puissance possible.
+
+```{r nenquete}
+nbo <- nb.obs.ph(px = 0.5, ex = 0.1, np = 1e5)
+```
+
+Le nombre de cas nécessaires pour une enquète avec une estimation des réponses pour les questions principales autour de 50 % (hypothèse la plus défavorable) & une marge d'erreur considérée comme acceptable de 10 % dans une grande population serait de `r nbo` cas (calcul très discutable).
+
+
+# Randomisation
+
+la fonction `listrandph`correspond juste à une mise en forme de la fonction `blockrand` du package homonyme pour générer des listes de randomisation par centre en blocs de taille aléatoire. Elle génère plusieurs fichiers .csv : une feuille globale de randomisation (pour le promoteur) & une feuille par centre.
+
+```{r listerand, eval = FALSE}
+listrandph(nbcent = 1, # Nombre de centre
+           nbtrait = 2, # nombre de traitements/classes (habituellement 2)
+           nbcas = 100 # Nombre de cas total prévu
+)
+```
+
+# Mise en forme des tableaux
+
+J'utilise habituellement le package `gtsummary` pour créer mes tableaux.  Les deux fonctions suivantes prennent un tableau, le mettent en forme via `kableExtra` (pour les sorties en pdf) & font l'export en .xls (optionnel).
+
+## Tabph
+
+Tabph permet de fignoler l'aspect des tables générées par `gtsummary` en particulie r;: 
+Titre de l'entête au dessus des catégories, mise en gras des titres des variables,ajout de diverses colonnes :
+
+-p-value
+- colonne *total*
+colonne des effectifs par variable. 
+
+Choix du type de tests utilisés (paramétriques ou non).
+
+
+## Export en kableExtra
+
+- `pexptabph` prépare le tableau sans régler la largeur (pour des tableaux qui tiennent sans problème dans la page), possibilité de `longtable`. 
+
+- `gexptabph` adapte le tableau pour tenir dans la page en largeur (en jouant sur la taille de police etc.) mais on perd la possibilité de `longtable` (limitation technique).
+
+```{r petittab}
+patients |>
+  dplyr::select(sexe, age, escarre, lieudevie1) |>
+  tbl_summary(by = escarre) |>
+  tabph(nomv = "Escarre", # Titre des colonnes
+        normx = TRUE # Tests paramétriques
+        ) |>  
+  pexptabph(exp = FALSE, # pas d'export .xls
+            lg = FALSE) # pas de longtable
+```
+
+# Graphiques
+
+## barsimpleph & bardecph
+
+Graphique en barre simple.
+
+```{r barsimple}
+barsimpleph(dfx = patients, # tableau de données
+            varx = admission, # Variable à étudier
+            titre = "Mode d'admission",
+            stitre = "ICU", # sous-titre
+            capt = "Admission", # légende
+            lab = "admin", # label pour un lein éventuel
+            angle = 60) # angle d'affichage des niveaux sur l'axe x
+```
+
+`bardecph` est le même graphique avec les données présentées en ordre décroissant.
+
+
+## barconfph
+ 
+Graphique en barre d'une donnée numérique découpée selon une variable factorielle avec les intervalles de confiance.
+
+```{r barconf}
+barconfph(dfx = patients, # tableau de données
+          varnum = igs2, # variable numérique
+          vartri = admission, # variable factorielle
+          titre = "IGS II vs provenance", #
+          stitre = "en ICU", tx = "Mode d'admission", # sous titre
+          ty = "IGS II", # titre des y
+          cap = "Texte écrit petit", # légende
+          angle = 30 # angle d'affichage des niveaux sur l'axe x
+)
+```
+
+## bardeuxph
+
+Barplot pour 2 variables factorielles : une variable de tri, une variable en % par modalité de tri
+
+```{r bardeux}
+bardeuxph(patients,
+          lieudevie1, # Variable en %
+          admission, # variable de tri
+          titre = "Escarre & mode d'admission", # titre
+          stitre = "%", # sous titre
+          xtitre = "Mode d'admission", # titre des x
+          ltitre = "Escarre", # titre de lé légende
+          angle = 20, # angle d'affichage des niveaux sur l'axe x
+          lab = "aa" # label
+)
+```
+
+## Barouiph
+
+Barplot pour deux données factorielles : une de tri (axe x) & une qui doit être à deux niveaux avec affichage d'un seul niveau (par exemple réponse en oui/non où on affiche que les oui) avec les intervalles de confiance.
+
+```{r baroui}
+barouiph(dfx = patients, varx =escarre, testx =sexe, valx = "oui", titre = "Sexe")
+
+```
+
+## histmultiph
+
+Graphique en plusieurs histogrammes superposés, pratique pour bien visualiser les variations d'une distribution selon une modalité.
+
+```{r histm}
+histmultiph(dfx = patients,
+            varx= admission, # bariables de tri, factorielle
+            varn = age, # variable numérique
+            tit = "Mode d'admission selon l'âge", # titre
+            stit = 0.002, # p-value
+            titx = "Âge", # titre de l'axe x
+            bin = 1 # largeur des barres
+)
+```
+
+## lollipopph
+
+Tracé d'un graphique "lollipop" de distribution d'une variable factorielle avec possibilité de mise en évidence d'un ou plusieurs facteurs.
+
+```{r lollip}
+lollipph(dfx = patients, #
+         nom = lieudevie1, # variable à afficher
+         tri = c("EHPAD","Maison de retraite"), # modalités de la variable à mettre en évidence
+         titre = "Lieu de vie", # titre
+         capt = "Lieu de vie avant l'hospitalisation" #  légende
+         )
+```
+
+## vioboxph
+
+Graphique en violon + boxplot
+
+```{r viobox}
+vioboxph(dfx = patients, # 
+         varx = admission, # Variable de tri, factorielle
+         varnum = age, # variable numérique
+         titre = "grands", # titre
+         stit = "et grandes", # sous titre
+         titx = "Mode d'admission" # titre de l'axe x
+)
+```
+
+## raincloudph
+
+Graphique en *raincloud* (densité + boxplot + nuage de points) pour une variable numérique & une variable factorielle de tri.
+
+```{r raincloudph}
+raincloudph(df = patients, vcat = admission, vnum = igs2, titre = "IGS2 vs adm", titcat = "Adm", titnum = "IGS 2", adj = 1)
+```
+
