@@ -2,7 +2,7 @@
 
 ## 19/12/2024
 
-- Fonction graphique raincloudph
+- Fonction graphique `raincloudph`
 
 - Essai de publication des vignettes
           
