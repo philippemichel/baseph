@@ -36,10 +36,11 @@ barouiph <- function(dfx,
                     titx = "",
                     tity = "%",
                     capt = "") {
+  xx <- nom <- lower <- upper <- NULL
   dfx <- dfx |>
     drop_na({{varx}}) |>
-    mutate(xx = as.factor({{varx}} == valx), yy = as.factor({{testx}})) |>
-    mutate(xx = factor(xx))
+    mutate(xx = as.factor({{varx}}), yy = as.factor({{testx}})) |>
+    mutate(xx = xx == valx)
   nn <- levels(dfx$yy)
   
   if (nrow(dfx) == 0) {

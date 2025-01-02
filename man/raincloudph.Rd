@@ -21,9 +21,13 @@ raincloudph(df, vcat, vnum, titre = "", titcat = "", titnum = "", adj = 1)
 
 \item{adj}{facteur d'ajustement de la courbe de densité (1 par défaut)}
 }
+\value{
+graphique
+}
 \description{
 raincloudph
 }
 \examples{
-raincloudph(df = patients, vcat = admission, vnum = igs2, titre = "IGS2 vs admission", titcat = "Admission", titnum = "IGS 2", adj = 1)
+raincloudph(df = patients, vcat = admission, vnum = igs2, 
+titre = "IGS2 vs adm", titcat = "Adm", titnum = "IGS 2", adj = 1)
 }

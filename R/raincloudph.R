@@ -13,10 +13,11 @@
 #' @import ggsci
 #' @import ggdist
 #'
-#' @returns
+#' @returns graphique
 #' @export
 #'
-#' @examples raincloudph(df = patients, vcat = admission, vnum = igs2, titre = "IGS2 vs adm", titcat = "Adm", titnum = "IGS 2", adj = 1)
+#' @examples raincloudph(df = patients, vcat = admission, vnum = igs2, 
+#' titre = "IGS2 vs adm", titcat = "Adm", titnum = "IGS 2", adj = 1)
 raincloudph <- function(df,
                         vcat,
                         vnum,

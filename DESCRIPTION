@@ -8,32 +8,31 @@ Authors@R:
 Description: Création des tables & quelques figures ainsi que divers
     utilitaires pour une étude clinique simple.
 License: MIT + file LICENSE
-URL: https://github.com/philippemichel/baseph, https://philippemichel.github.io/baseph/
+URL: https://github.com/philippemichel/baseph,
+    https://philippemichel.github.io/baseph/
 Depends: 
     R (>= 2.10)
 Imports: 
     binom,
     blockrand,
     boot,
-    colorspace,
-    labelled,
     dplyr,
     forcats,
-    ggplot2,
     ggdist,
+    ggplot2,
     ggsci,
     gtsummary,
     kableExtra,
+    readODS,
     see,
     stats,
     stringr,
     tidyr,
     tidyverse,
-    readODS
+    utils
 Suggests: 
     knitr,
-    rmarkdown,
-    testthat (>= 3.0.0)
+    rmarkdown
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
