@@ -11,7 +11,7 @@ License: MIT + file LICENSE
 URL: https://github.com/philippemichel/baseph,
     https://philippemichel.github.io/baseph/
 Depends: 
-    R (>= 2.10)
+    R (>= 3.00)
 Imports: 
     binom,
     blockrand,

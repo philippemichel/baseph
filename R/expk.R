@@ -31,7 +31,7 @@ pexptabph <-
     if (exp) {
       dfk |>
         as_tibble() |>
-        write_ods(path = nomfich, sheet = nomsheet, append = TRUE)
+        write_ods(path = nomfich, sheet = nomsheet, append = TRUE, update = TRUE)
     }
     return(zz)
   }
