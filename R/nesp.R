@@ -7,9 +7,10 @@
 #' @returns chaine de caractères sans espaces superflus
 #' @export
 #'
-#' @examples  nesp("  Bonjour  ")
+#' @examples  nesp("  Bonjour à   vous ")
 #' 
 nesp <- function(x){
-  zz <-   gsub("^\\s+|\\s", "", x)
-  return(zz)
+  x <- gsub("\\s{2,}"," ",x)
+  x <-   gsub("^\\s+|\\s$", "", x)
+  return(x)
 }
