@@ -23,6 +23,7 @@ Imports:
     ggsci,
     gtsummary,
     kableExtra,
+    labelled,
     readODS,
     see,
     stats,
@@ -32,9 +33,10 @@ Imports:
     utils
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    quarto
 VignetteBuilder: 
-    rmarkdown
+    quarto
 Encoding: UTF-8
 Language: fr
 LazyData: true
