@@ -83,14 +83,13 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(<span class="st">"remotes"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"philippemichel/baseph"</span>)</span></code></pre></div>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/philippemichel/baseph" class="external-link">baseph</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/" class="external-link">kableExtra</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://larmarange.github.io/labelled/" class="external-link">labelled</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/readODS/" class="external-link">readODS</a></span><span class="op">)</span></span></code></pre></div>
-</details>
 </div>
 <p>Nous allons déroulé un projet de recherche clinique tout simple à partir du jeu de données <code>patients</code> contenu dans le package. Ce jeu de données contient deux fichiers :</p>
 <ul>
@@ -105,21 +104,19 @@
 <p>C’est toujours la première étape. Plusieurs fonctions font ces calculs pour les cas courants par exemple dans les packages <code>epiDisplay</code> ou <code>Hmisc</code>.</p>
 <p>Nous avons écrit ici une fonction pour les sondages, enquêtes etc. sans test principal donc pas de calcul de puissance possible.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nbo</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nb.obs.ph.html">nb.obs.ph</a></span><span class="op">(</span>px <span class="op">=</span> <span class="fl">0.5</span>, ex <span class="op">=</span> <span class="fl">0.1</span>, np <span class="op">=</span> <span class="fl">1e5</span><span class="op">)</span></span></code></pre></div>
-</details>
 </div>
 <p>Le nombre de cas nécessaires pour une enquète avec une estimation des réponses pour les questions principales autour de 50 % (hypothèse la plus défavorable) &amp; une marge d’erreur considérée comme acceptable de 10 % dans une grande population serait de 96 cas (calcul très discutable).</p>
 </div>
 <div id="tabset-1-3">
 <p>la fonction <code>listrandph</code>correspond juste à une mise en forme de la fonction <code>blockrand</code> du package homonyme pour générer des listes de randomisation par centre en blocs de taille aléatoire. Elle génère plusieurs fichiers .csv : une feuille globale de randomisation (pour le promoteur) &amp; une feuille par centre.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/listrandph.html">listrandph</a></span><span class="op">(</span>nbcent <span class="op">=</span> <span class="fl">1</span>, <span class="co"># Nombre de centre</span></span>
 <span>           nbtrait <span class="op">=</span> <span class="fl">2</span>, <span class="co"># nombre de traitements/classes (habituellement 2)</span></span>
 <span>           nbcas <span class="op">=</span> <span class="fl">100</span> <span class="co"># Nombre de cas total prévu</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-</details>
 </div>
 </div>
 <div id="tabset-1-4">
@@ -135,7 +132,7 @@
 <li><p><code>gexptabph</code> adapte le tableau pour tenir dans la page en largeur (en jouant sur la taille de police etc.) mais on perd la possibilité de <code>longtable</code> (limitation technique).</p></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">patients</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">sexe</span>, <span class="va">age</span>, <span class="va">escarre</span>, <span class="va">lieudevie1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html" class="external-link">tbl_summary</a></span><span class="op">(</span>by <span class="op">=</span> <span class="va">escarre</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -144,7 +141,7 @@
 <span>        <span class="op">)</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu"><a href="../reference/pexptabph.html">pexptabph</a></span><span class="op">(</span>exp <span class="op">=</span> <span class="cn">FALSE</span>, <span class="co"># pas d'export .xls</span></span>
 <span>            lg <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="co"># pas de longtable</span></span></code></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <table class="table table caption-top" data-quarto-postprocess="true" style="NAborder-bottom: 0; margin-left: auto; margin-right: auto;">
 <colgroup>
 <col style="width: 16%">
@@ -283,7 +280,7 @@ N = 15</th>
 </h2>
 <p>Graphique en barre simple.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/barsimpleph.html">barsimpleph</a></span><span class="op">(</span>dfx <span class="op">=</span> <span class="va">patients</span>, <span class="co"># tableau de données</span></span>
 <span>            varx <span class="op">=</span> <span class="va">admission</span>, <span class="co"># Variable à étudier</span></span>
 <span>            titre <span class="op">=</span> <span class="st">"Mode d'admission"</span>,</span>
@@ -291,7 +288,7 @@ N = 15</th>
 <span>            capt <span class="op">=</span> <span class="st">"Admission"</span>, <span class="co"># légende</span></span>
 <span>            lab <span class="op">=</span> <span class="st">"admin"</span>, <span class="co"># label pour un lein éventuel</span></span>
 <span>            angle <span class="op">=</span> <span class="fl">60</span><span class="op">)</span> <span class="co"># angle d'affichage des niveaux sur l'axe x</span></span></code></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img src="my-vignette_files/figure-html/barsimple-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
@@ -303,7 +300,7 @@ N = 15</th>
 </h2>
 <p>Graphique en barre d’une donnée numérique découpée selon une variable factorielle avec les intervalles de confiance.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/barconfph.html">barconfph</a></span><span class="op">(</span>dfx <span class="op">=</span> <span class="va">patients</span>, <span class="co"># tableau de données</span></span>
 <span>          varnum <span class="op">=</span> <span class="va">igs2</span>, <span class="co"># variable numérique</span></span>
 <span>          vartri <span class="op">=</span> <span class="va">admission</span>, <span class="co"># variable factorielle</span></span>
@@ -313,7 +310,7 @@ N = 15</th>
 <span>          cap <span class="op">=</span> <span class="st">"Texte écrit petit"</span>, <span class="co"># légende</span></span>
 <span>          angle <span class="op">=</span> <span class="fl">30</span> <span class="co"># angle d'affichage des niveaux sur l'axe x</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img src="my-vignette_files/figure-html/barconf-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
@@ -324,7 +321,7 @@ N = 15</th>
 </h2>
 <p>Barplot pour 2 variables factorielles : une variable de tri, une variable en % par modalité de tri</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/bardeuxph.html">bardeuxph</a></span><span class="op">(</span><span class="va">patients</span>,</span>
 <span>          <span class="va">lieudevie1</span>, <span class="co"># Variable en %</span></span>
 <span>          <span class="va">admission</span>, <span class="co"># variable de tri</span></span>
@@ -335,7 +332,7 @@ N = 15</th>
 <span>          angle <span class="op">=</span> <span class="fl">20</span>, <span class="co"># angle d'affichage des niveaux sur l'axe x</span></span>
 <span>          lab <span class="op">=</span> <span class="st">"aa"</span> <span class="co"># label</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img src="my-vignette_files/figure-html/bardeux-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
@@ -346,9 +343,9 @@ N = 15</th>
 </h2>
 <p>Barplot pour deux données factorielles : une de tri (axe x) &amp; une qui doit être à deux niveaux avec affichage d’un seul niveau (par exemple réponse en oui/non où on affiche que les oui) avec les intervalles de confiance.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/barouiph.html">barouiph</a></span><span class="op">(</span>dfx <span class="op">=</span> <span class="va">patients</span>, varx <span class="op">=</span><span class="va">escarre</span>, testx <span class="op">=</span><span class="va">sexe</span>, valx <span class="op">=</span> <span class="st">"oui"</span>, titre <span class="op">=</span> <span class="st">"Sexe"</span><span class="op">)</span></span></code></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img src="my-vignette_files/figure-html/baroui-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
@@ -359,7 +356,7 @@ N = 15</th>
 </h2>
 <p>Graphique en plusieurs histogrammes superposés, pratique pour bien visualiser les variations d’une distribution selon une modalité.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/histmultiph.html">histmultiph</a></span><span class="op">(</span>dfx <span class="op">=</span> <span class="va">patients</span>,</span>
 <span>            varx<span class="op">=</span> <span class="va">admission</span>, <span class="co"># bariables de tri, factorielle</span></span>
 <span>            varn <span class="op">=</span> <span class="va">age</span>, <span class="co"># variable numérique</span></span>
@@ -368,7 +365,7 @@ N = 15</th>
 <span>            titx <span class="op">=</span> <span class="st">"Âge"</span>, <span class="co"># titre de l'axe x</span></span>
 <span>            bin <span class="op">=</span> <span class="fl">1</span> <span class="co"># largeur des barres</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img src="my-vignette_files/figure-html/histm-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
@@ -379,14 +376,14 @@ N = 15</th>
 </h2>
 <p>Tracé d’un graphique “lollipop” de distribution d’une variable factorielle avec possibilité de mise en évidence d’un ou plusieurs facteurs.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/lollipph.html">lollipph</a></span><span class="op">(</span>dfx <span class="op">=</span> <span class="va">patients</span>, <span class="co">#</span></span>
 <span>         nom <span class="op">=</span> <span class="va">lieudevie1</span>, <span class="co"># variable à afficher</span></span>
 <span>         tri <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"EHPAD"</span>,<span class="st">"Maison de retraite"</span><span class="op">)</span>, <span class="co"># modalités de la variable à mettre en évidence</span></span>
 <span>         titre <span class="op">=</span> <span class="st">"Lieu de vie"</span>, <span class="co"># titre</span></span>
 <span>         capt <span class="op">=</span> <span class="st">"Lieu de vie avant l'hospitalisation"</span> <span class="co">#  légende</span></span>
 <span>         <span class="op">)</span></span></code></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img src="my-vignette_files/figure-html/lollip-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
@@ -397,7 +394,7 @@ N = 15</th>
 </h2>
 <p>Graphique en violon + boxplot</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/vioboxph.html">vioboxph</a></span><span class="op">(</span>dfx <span class="op">=</span> <span class="va">patients</span>, <span class="co"># </span></span>
 <span>         varx <span class="op">=</span> <span class="va">admission</span>, <span class="co"># Variable de tri, factorielle</span></span>
 <span>         varnum <span class="op">=</span> <span class="va">age</span>, <span class="co"># variable numérique</span></span>
@@ -405,7 +402,7 @@ N = 15</th>
 <span>         stit <span class="op">=</span> <span class="st">"et grandes"</span>, <span class="co"># sous titre</span></span>
 <span>         titx <span class="op">=</span> <span class="st">"Mode d'admission"</span> <span class="co"># titre de l'axe x</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img src="my-vignette_files/figure-html/viobox-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
@@ -416,9 +413,9 @@ N = 15</th>
 </h2>
 <p>Graphique en <em>raincloud</em> (densité + boxplot + nuage de points) pour une variable numérique &amp; une variable factorielle de tri.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/raincloudph.html">raincloudph</a></span><span class="op">(</span>df <span class="op">=</span> <span class="va">patients</span>, vcat <span class="op">=</span> <span class="va">admission</span>, vnum <span class="op">=</span> <span class="va">igs2</span>, titre <span class="op">=</span> <span class="st">"IGS2 vs adm"</span>, titcat <span class="op">=</span> <span class="st">"Adm"</span>, titnum <span class="op">=</span> <span class="st">"IGS 2"</span>, adj <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img src="my-vignette_files/figure-html/raincloudph-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
@@ -435,32 +432,29 @@ N = 15</th>
 </h3>
 <p>Fonction pour calculer les bornes inférieure et supérieure d’un intervalle de confiance à 95 % pour la moyenne d’une variable numérique.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/bashaut.html">bashaut</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Length</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $binf</span></span>
 <span><span class="co">#&gt; [1] 5.709732</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $bsup</span></span>
 <span><span class="co">#&gt; [1] 5.976934</span></span></code></pre></div>
-</details>
 </div>
 </section><section class="level3"><h3 id="moyciph">moyciph<a class="anchor" aria-label="anchor" href="#moyciph"></a>
 </h3>
 <p>Fonction pour calculer par bootstrap l’intervalle de confiance à 95 % d’une moyenne.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/moyciph.html">moyciph</a></span><span class="op">(</span><span class="va">patients</span><span class="op">$</span><span class="va">age</span>, ci <span class="op">=</span> <span class="fl">95</span><span class="op">)</span></span>
 <span><span class="co">#&gt;     binf     bsup </span></span>
 <span><span class="co">#&gt; 87.10051 88.60000</span></span></code></pre></div>
-</details>
 </div>
 </section><section class="level3"><h3 id="transangph">transangph<a class="anchor" aria-label="anchor" href="#transangph"></a>
 </h3>
 <p>Calcul de l’intervalle de confiance sur une loi binomiale après transformation angulaire (utile si on est très proche de 0 ou 1).</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/transangph.html">transangph</a></span><span class="op">(</span>nb <span class="op">=</span> <span class="fl">950</span>, total <span class="op">=</span> <span class="fl">1000</span>, pr <span class="op">=</span> <span class="fl">95</span><span class="op">)</span></span></code></pre></div>
-</details>
 </div>
 </section></section><section class="level2"><h2 id="affichage">Affichage<a class="anchor" aria-label="anchor" href="#affichage"></a>
 </h2>
@@ -468,31 +462,28 @@ N = 15</th>
 </h3>
 <p>Fonction pour afficher la moyenne &amp; l’écart-type d’une variable numérique.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>  <span class="fu"><a href="../reference/moyciph.html">moyciph</a></span><span class="op">(</span><span class="va">patients</span><span class="op">$</span><span class="va">age</span>, ci <span class="op">=</span> <span class="fl">95</span><span class="op">)</span></span>
 <span><span class="co">#&gt;     binf     bsup </span></span>
 <span><span class="co">#&gt; 87.10051 88.60000</span></span></code></pre></div>
-</details>
 </div>
 </section><section class="level3"><h3 id="meds">meds<a class="anchor" aria-label="anchor" href="#meds"></a>
 </h3>
 <p>Fonction pour afficher la médianes &amp; les quartiles d’une variable numérique.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>  <span class="fu"><a href="../reference/meds.html">meds</a></span><span class="op">(</span><span class="va">patients</span><span class="op">$</span><span class="va">age</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "87 (86;90)"</span></span></code></pre></div>
-</details>
 </div>
 </section><section class="level3"><h3 id="beaup">beaup<a class="anchor" aria-label="anchor" href="#beaup"></a>
 </h3>
 <p>Affichage de la p-value</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>  <span class="fu"><a href="../reference/beaup.html">beaup</a></span><span class="op">(</span><span class="fl">0.0002</span>, affp <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "&lt; 0,001"</span></span>
 <span>  <span class="fu"><a href="../reference/beaup.html">beaup</a></span><span class="op">(</span><span class="fl">0.05</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "0.05"</span></span></code></pre></div>
-</details>
 </div>
 </section></section>
 </div>
@@ -501,10 +492,9 @@ N = 15</th>
 </h3>
 <p>Correction d’une erreur de saisie habituelle dans les tableaux de données : la présence d’une espace en début ou fin d’une variable textuelle ou d’espaces multiples. ’</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/nesp.html">nesp</a></span><span class="op">(</span><span class="st">"  Bonjour à   vous "</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Bonjour à vous"</span></span></code></pre></div>
-</details>
 </div>
 </section>
 </div>
