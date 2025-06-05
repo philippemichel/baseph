@@ -61,39 +61,16 @@
 <p>Les fonctions de base pour un projet simple de recherche clinique en R, particulièrement adapté pour une thèse ou un mémoire de DES. Si vous travaillez sur un PHRC ou une phase III ça va être un peu court !</p>
 <p>Si tout cela vous effraie je peux vous aider. Plus de renseignements sur <a href="https://docteur-michel.fr.latexr" class="external-link">https://docteur-michel.fr.latexr</a>.</p>
 <p>Vous pouvez me contacter via un simple mail à <a href="mailto:docphilmstat@gmail.com">docphilmstat@gmail.com</a> ou un message sur <a href="https://twitter.com/PhiippeMICHEL" class="external-link">Twitter</a> &amp; je vous répondrai dans les plus brefs délais.</p>
+<p>Les <a href="https://philippemichel.github.io/baseph/">vignettes</a> pour plus d’information</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(<span class="st">"remotes"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="sc">&gt;</span> remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"philippemichel/baseph"</span>)</span></code></pre></div>
 <div class="section level3">
-<h3 id="beaux-noms">Beaux noms<a class="anchor" aria-label="anchor" href="#beaux-noms"></a>
-</h3>
-<p>Pour les graphiques, possibilité d’avoir les intitulés vrais des variables &amp; non les codes. Il vous faut alors créer une liste des <em>beaux intitulés</em>. C’est lors de l’import du csv principal par la fonction <code>debutph</code> que ces labels seront importés par exemple :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a> <span class="sc">&gt;</span> <span class="fu">library</span>(labelled)</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a> <span class="sc">&gt;</span> bnom <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"datas/bnom.csv"</span>) <span class="co"># Import des intitulés (tableau à deux colonnes : 'nom' &amp; 'code' par ex.).</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a> <span class="sc">&gt;</span> bnom <span class="ot">&lt;-</span> bnom<span class="sc">$</span>nom </span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a> <span class="sc">&gt;</span> ttd <span class="ot">&lt;-</span> <span class="fu">debutph</span>(<span class="st">"datas/drepa2.csv"</span>, bnom) <span class="co">#Import des données avec insertion des labels.</span></span></code></pre></div>
-<p>Dans les fichiers d’exemple, les données (fictives) sont dans le fichier “patients” &amp; les beaux noms dans le fichier “bnom”, variable “nom”.</p>
-</div>
-<div class="section level3">
-<h3 id="tests-statistiques">Tests statistiques<a class="anchor" aria-label="anchor" href="#tests-statistiques"></a>
-</h3>
-<p>Les tests ou simplement l’affichage peuvent, pour les variables numériques, être présentés en moyenne ± écart-type ou en médiane (quartiles). Les variables discrètes sont rendues en n (%).</p>
-</div>
-<div class="section level3">
 <h3 id="tableaux">Tableaux<a class="anchor" aria-label="anchor" href="#tableaux"></a>
 </h3>
 <p>La sortie sera meilleure pour du PDF via <span class="math inline">$\LaTeX$</span> si on passe par KableExtra par exemple via la fonction <code>gexptabph</code> (pour les tableaux trop larges mais <em>longtable</em> n’est pas géré) ou <code>pexptabph</code> qui permettent de gérer l’export en .ods au besoin &amp; la sortie en <em>longtable</em>. On va donc avoir quelque chose comme :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a> <span class="sc">&gt;</span> <span class="fu">library</span>(gtsummary)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a> <span class="sc">&gt;</span> <span class="fu">library</span> (kableExtra)</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a> <span class="sc">&gt;</span> patients <span class="sc">|&gt;</span> </span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>      <span class="fu">tbl_summary</span>(...) <span class="sc">|&gt;</span> </span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>      <span class="fu">tabph</span>(<span class="at">nomv =</span> <span class="st">"Traitements"</span>, <span class="at">normx =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>      <span class="fu">pexptabph</span>(<span class="at">exp =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>                <span class="at">nomfich =</span> <span class="st">"export.ods"</span>, </span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>                <span class="at">nomsheet =</span> <span class="st">"demo"</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>                <span class="at">lg =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="autres-aides-">Autres aides :<a class="anchor" aria-label="anchor" href="#autres-aides-"></a>
@@ -219,7 +196,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>
