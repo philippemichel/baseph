@@ -7,20 +7,14 @@ language:
 author:
   - name: "D<sup>r</sup> Philippe MICHEL"
     orcid: "0000-0003-2392-7186"
-    email: "philippe.michel@ght-novo.fr"
+    email: "philippe@docteur-michel.fr"
     role: "Statisticien"
-    affiliations:
-        name: "USRC - Hôpital NOVO"
-        city: Pontoise
-        department: "Unité de Soutien à la Recherche Clinique"
 format:
     html:
-      code-fold: true
+      code-fold: false
       page-layout: full
       theme:
-        light:
-          - sandstone
-          - custom.scss
+        light: sandstone
         dark: cyborg
       fontsize: 1.2em
 vignette: >
