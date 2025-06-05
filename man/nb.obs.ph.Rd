@@ -2,7 +2,8 @@
 % Please edit documentation in R/nbobsph.R
 \name{nb.obs.ph}
 \alias{nb.obs.ph}
-\title{Nb de sujets pour un sondage}
+\title{Calcul du nombre de cas nécessaires pour une enquête obsevationelle
+simple sans aucun test.Si il y a plusieurs questions prendre px = 0.5}
 \usage{
 nb.obs.ph(px = 0.5, ex = 0.1, np = 1e+05)
 }
@@ -17,9 +18,8 @@ nb.obs.ph(px = 0.5, ex = 0.1, np = 1e+05)
 nombre
 }
 \description{
-Calcul du nombre de cas necessaires pour une enquète obsevationelle
-simple sans aucun test.
-Si il y a plusieurs questions prendre px = 0.5
+Calcul du nombre de cas nécessaires pour une enquête obsevationelle
+simple sans aucun test.Si il y a plusieurs questions prendre px = 0.5
 }
 \examples{
 nb.obs.ph(px = 0.5, ex = 0.1, np = 1e5)

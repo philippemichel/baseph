@@ -1,8 +1,5 @@
-#' Nb de sujets pour un sondage
-#'
-#' Calcul du nombre de cas necessaires pour une enquète obsevationelle
-#' simple sans aucun test.
-#' Si il y a plusieurs questions prendre px = 0.5
+#' Calcul du nombre de cas nécessaires pour une enquête obsevationelle
+#' simple sans aucun test.Si il y a plusieurs questions prendre px = 0.5
 #'
 #' @param px Proportion estimée des réponses (0.5)
 #' @param ex Marge d'erreur consideree comme acceptable (0.1)

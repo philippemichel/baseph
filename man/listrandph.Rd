@@ -2,7 +2,7 @@
 % Please edit documentation in R/listrandph.R
 \name{listrandph}
 \alias{listrandph}
-\title{Title Tables de randomisation}
+\title{Tables de randomisation multicentre avec taille des blocs aléatoire}
 \usage{
 listrandph(nbcent = 1, nbtrait = 2, nbcas)
 }
@@ -17,7 +17,7 @@ listrandph(nbcent = 1, nbtrait = 2, nbcas)
 1 fichier csv global & un fichier par centre
 }
 \description{
-Title Tables de randomisation
+Tables de randomisation multicentre avec taille des blocs aléatoire
 }
 \examples{
 listrandph(nbcent = 1, nbtrait = 2, nbcas = 100)

@@ -1,4 +1,3 @@
-#' HISTMULTIPH
 #' Graphique en plusieurs histogrammes superposés, pratique pour bien visualiser les variations d'une distribution selon une modalité.
 #'
 #' @param dfx data-frame ou tibble

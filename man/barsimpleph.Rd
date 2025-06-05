@@ -2,8 +2,7 @@
 % Please edit documentation in R/barsimpleph.R
 \name{barsimpleph}
 \alias{barsimpleph}
-\title{Barplot simple en \%
-Trace un barplot d'une variable factorielle, axe des y en \%}
+\title{Barplot : une variable factorielle, axe des y en \%}
 \usage{
 barsimpleph(dfx, varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 }
@@ -26,8 +25,7 @@ barsimpleph(dfx, varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 un graphique
 }
 \description{
-Barplot simple en \%
-Trace un barplot d'une variable factorielle, axe des y en \%
+Barplot : une variable factorielle, axe des y en \%
 }
 \examples{
 data(patients)

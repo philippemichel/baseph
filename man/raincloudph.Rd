@@ -2,7 +2,7 @@
 % Please edit documentation in R/raincloudph.R
 \name{raincloudph}
 \alias{raincloudph}
-\title{raincloudph}
+\title{Graphique en "raincloud"}
 \usage{
 raincloudph(df, vcat, vnum, titre = "", titcat = "", titnum = "", adj = 1)
 }
@@ -25,7 +25,7 @@ raincloudph(df, vcat, vnum, titre = "", titcat = "", titnum = "", adj = 1)
 graphique
 }
 \description{
-raincloudph
+Graphique en "raincloud"
 }
 \examples{
 raincloudph(df = patients, vcat = admission, vnum = igs2, 

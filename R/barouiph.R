@@ -1,8 +1,5 @@
-#' Barplot avec barres d'erreur d'une valeur
-#'
-#' Trace un barplot avec les intervalles de confiance pour une valeur donnée
-#' d'une variable factorielle selon les classes d'une variable factorielle de
-#' classification.
+#' Barplot avec les intervalles de confiance pour une valeur donnée
+#' d'une variable factorielle selon les classes d'une variable factorielle de classification.
 #'
 #'
 #' @param dfx data.frame

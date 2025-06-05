@@ -16,5 +16,5 @@ moyenne +/- ecart-type
 Présentation moyenne  ecart-type
 }
 \examples{
-moys(iris$Sepal.Length)
+moys(patients$age)
 }

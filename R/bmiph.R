@@ -1,5 +1,5 @@
-#' Bmiph
-#'Coupe un vecteur BMI(numeric) (ou IMC) en facteurs avec les limites usuelles, en français ou en anglais (les limites sont différentes)
+#'Coupe un vecteur BMI ou IMC (numeric) en facteurs avec les limites usuelles, en français ou en anglais (les limites sont différentes)
+#'
 #' @param bmi BMI numérique
 #' @param lang Langue de sortie (french or english (fr/eng)). default : french
 #'

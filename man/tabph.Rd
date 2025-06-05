@@ -2,7 +2,7 @@
 % Please edit documentation in R/tabph.R
 \name{tabph}
 \alias{tabph}
-\title{TABPH}
+\title{Réglages pour un tableau généré par gtsummary (avec une variable de tri & des tests statistiques).}
 \usage{
 tabph(tbx, nn = 2, nomv = "", normx = FALSE)
 }
@@ -19,7 +19,7 @@ tabph(tbx, nn = 2, nomv = "", normx = FALSE)
 un tableau fignolé
 }
 \description{
-Réglages pour un tableau généré par gtsummary, le plus souvent tbl_summary (avec une variable de tri & des tests statistiques).
+Réglages pour un tableau généré par gtsummary (avec une variable de tri & des tests statistiques).
 }
 \examples{
 tabph(gtsummary::tbl_summary(patients[,1:4],by =sexe),  nn = 2, nomv = "Sexe", normx = FALSE)

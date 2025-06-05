@@ -1,6 +1,4 @@
-#' TABPH
-#' 
-#' Réglages pour un tableau généré par gtsummary, le plus souvent tbl_summary (avec une variable de tri & des tests statistiques).
+#' Réglages pour un tableau généré par gtsummary (avec une variable de tri & des tests statistiques).
 #'
 #' @param tbx un tableau gtsummary
 #' @param nn nombre de valeurs dans la variable de tri

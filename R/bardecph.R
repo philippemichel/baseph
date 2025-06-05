@@ -1,6 +1,6 @@
-#' Barplot décroissant en %
+#' Barplot décroissant en %.
 #' Trace un barplot d'une variable factorielle, axe des y en %,
-#' classement des items en décroissant.
+#' classement des items en ordre décroissant.
 #'
 #' @param dfx data.frame ou yibble
 #' @param varx nom de la variable à traiter (factorielle)

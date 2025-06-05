@@ -1,2 +1,4 @@
 *.R
 *.html
+
+/.quarto/

@@ -1,4 +1,4 @@
-#' Title Tables de randomisation
+#' Tables de randomisation multicentre avec taille des blocs aléatoire
 #'
 #' @param nbcent Nombre de centres
 #' @param nbtrait Nombre de classes

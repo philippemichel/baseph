@@ -2,9 +2,9 @@
 % Please edit documentation in R/bardecph.R
 \name{bardecph}
 \alias{bardecph}
-\title{Barplot décroissant en \%
+\title{Barplot décroissant en \%.
 Trace un barplot d'une variable factorielle, axe des y en \%,
-classement des items en décroissant.}
+classement des items en ordre décroissant.}
 \usage{
 bardecph(dfx, varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 }
@@ -27,9 +27,9 @@ bardecph(dfx, varx, titre = "", stitre = "", capt = "", lab = "", angle = 0)
 un graphique
 }
 \description{
-Barplot décroissant en \%
+Barplot décroissant en \%.
 Trace un barplot d'une variable factorielle, axe des y en \%,
-classement des items en décroissant.
+classement des items en ordre décroissant.
 }
 \examples{
 data("patients")

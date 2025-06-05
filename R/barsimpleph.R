@@ -1,5 +1,4 @@
-#' Barplot simple en %
-#' Trace un barplot d'une variable factorielle, axe des y en %
+#' Barplot : une variable factorielle, axe des y en %
 #'
 #' @param dfx data.frame
 #' @param varx nom de la variable à traiter (factorielle)

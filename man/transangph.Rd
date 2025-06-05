@@ -2,8 +2,7 @@
 % Please edit documentation in R/transang.R
 \name{transangph}
 \alias{transangph}
-\title{TRANSFORMATION ANGULAIRE
-Calcul des bornes sup et inf d'un intervalle de confiance par transformation angulaire.}
+\title{Calcul des bornes sup et inf d'un intervalle de confiance par transformation angulaire.}
 \usage{
 transangph(nb, total, pr = 95)
 }
@@ -20,7 +19,6 @@ bsup = borne superieure de l'IC,
 nb = borne inf ; borne sup]
 }
 \description{
-TRANSFORMATION ANGULAIRE
 Calcul des bornes sup et inf d'un intervalle de confiance par transformation angulaire.
 }
 \examples{

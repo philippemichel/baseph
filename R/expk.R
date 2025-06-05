@@ -1,6 +1,4 @@
-#' Export de tableau 
-#' 
-#' Sortie d'un tableau gtsummary en tableau kableExtra sans adaptation à la page ou comme feuille d'un tableur ods.  
+#' Sortie d'un tableau gtsummary en tableau kableExtra (pour export pdf via LaTeX) sans adaptation à la page ou comme feuille d'un tableur ods. Longtable possible
 #'
 #' @param dfk objet gtsummary 
 #' @param exp  booleen. FALSE : vers kableExtra, TRUE : vers ods

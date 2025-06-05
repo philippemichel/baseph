@@ -2,8 +2,7 @@
 % Please edit documentation in R/histmultiph.R
 \name{histmultiph}
 \alias{histmultiph}
-\title{HISTMULTIPH
-Graphique en plusieurs histogrammes superposés, pratique pour bien visualiser les variations d'une distribution selon une modalité.}
+\title{Graphique en plusieurs histogrammes superposés, pratique pour bien visualiser les variations d'une distribution selon une modalité.}
 \usage{
 histmultiph(dfx, varx, varn, tit = "", stit = 0, titx = "", bin = 1)
 }
@@ -26,7 +25,6 @@ histmultiph(dfx, varx, varn, tit = "", stit = 0, titx = "", bin = 1)
 un graphique
 }
 \description{
-HISTMULTIPH
 Graphique en plusieurs histogrammes superposés, pratique pour bien visualiser les variations d'une distribution selon une modalité.
 }
 \examples{

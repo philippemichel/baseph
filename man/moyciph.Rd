@@ -18,6 +18,6 @@ bornes inf & sup de l'IC
 Intervalle de Confiance par Bootstrap pour une moyenne
 }
 \examples{
-moyciph(iris$Sepal.Width, ci = 95)
+moyciph(patients$age, ci = 95)
 
 }

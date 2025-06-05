@@ -1,5 +1,3 @@
-#' lollipopph
-#' 
 #' Tracé d'un graphique "lollipop" de distribution d'une variable factorielle avec possibilité de mise en évidence d'un ou plusieurs facteurs.
 #'
 #' @param dfx data-frame

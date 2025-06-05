@@ -1,5 +1,3 @@
-#' Barconfph
-#'
 #'Tracé d'un graphique en barre représentant la moyenne avec son intervalle de confiance à 
 #' 95 % d'une valeur numérique découpé selon une variable factorielle.
 #'

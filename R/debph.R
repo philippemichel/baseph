@@ -1,5 +1,3 @@
-#' DEBPH
-#' 
 #' Réglages de base pour les tableaux. À éxécuter au début du document Quarto. Chargement de quleques libraries. 
 #'
 #' @param param TRUE si variables normales (moyenne et écart-type), FALSE si variables non normales (médiane et quartiles)

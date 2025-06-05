@@ -16,5 +16,5 @@ mediane (quartiles)
 Présentation mediane  quantiles
 }
 \examples{
-meds(iris$Sepal.Length)
+meds(patients$age)
 }

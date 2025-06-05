@@ -2,8 +2,8 @@
 % Please edit documentation in R/bardeuxph.R
 \name{bardeuxph}
 \alias{bardeuxph}
-\title{Barplot 2 variables factorielles
-une variable de tri, une variable en \% par modalité de tri}
+\title{Barplot 2 variables factorielles avec
+une variable de tri & une variable en \% par modalité de tri}
 \usage{
 bardeuxph(
   dfx,
@@ -43,8 +43,8 @@ bardeuxph(
 un graphique
 }
 \description{
-Barplot 2 variables factorielles
-une variable de tri, une variable en \% par modalité de tri
+Barplot 2 variables factorielles avec
+une variable de tri & une variable en \% par modalité de tri
 }
 \examples{
 data("patients")

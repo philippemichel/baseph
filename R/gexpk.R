@@ -1,6 +1,4 @@
-#' Export de tableau 
-#' 
-#' Sortie d'un tableau gtsummary en tableau kableExtra avec adaptation à la page et  comme feuille d'un tableur ods
+#' Sortie d'un tableau gtsummary en tableau kableExtra avec adaptation à la page et comme feuille d'un tableur ods. 
 #' 
 #' @param dfk objet gtsummary 
 #' @param exp  booleen.  TRUE : export vers ods

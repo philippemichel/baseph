@@ -2,7 +2,7 @@
 % Please edit documentation in R/bashaut.R
 \name{bashaut}
 \alias{bashaut}
-\title{bashaut}
+\title{Calcul de l'intervalle de confiance à 95 \% de la moyenne d'une variable numérique (utilisé par barconfph)}
 \usage{
 bashaut(xx)
 }
@@ -16,8 +16,7 @@ deux nombres : la borne inf et la borne sup de l'IC
 Calcul de l'intervalle de confiance à 95 \% de la moyenne d'une variable numérique (utilisé par barconfph)
 }
 \examples{
-data ("patients")
-bashaut(xx =patients$age)
-
+data("patients")
+bashaut(xx = patients$age)
 
 }

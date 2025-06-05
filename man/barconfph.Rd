@@ -2,7 +2,8 @@
 % Please edit documentation in R/barconfph.R
 \name{barconfph}
 \alias{barconfph}
-\title{Barconfph}
+\title{Tracé d'un graphique en barre représentant la moyenne avec son intervalle de confiance à
+95 \% d'une valeur numérique découpé selon une variable factorielle.}
 \usage{
 barconfph(
   dfx,

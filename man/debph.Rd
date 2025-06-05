@@ -2,7 +2,7 @@
 % Please edit documentation in R/debph.R
 \name{debph}
 \alias{debph}
-\title{DEBPH}
+\title{Réglages de base pour les tableaux. À éxécuter au début du document Quarto. Chargement de quleques libraries.}
 \usage{
 debph(param = FALSE)
 }

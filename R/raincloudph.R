@@ -1,4 +1,4 @@
-#' raincloudph
+#' Graphique en "raincloud"
 #' 
 #' @param df dataframe
 #' @param vcat variable de tri (catégorielle)

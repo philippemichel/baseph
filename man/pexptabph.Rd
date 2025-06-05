@@ -2,7 +2,7 @@
 % Please edit documentation in R/expk.R
 \name{pexptabph}
 \alias{pexptabph}
-\title{Export de tableau}
+\title{Sortie d'un tableau gtsummary en tableau kableExtra (pour export pdf via LaTeX) sans adaptation à la page ou comme feuille d'un tableur ods. Longtable possible}
 \usage{
 pexptabph(dfk, exp = FALSE, nomfich = "export", nomsheet = "x", lg = FALSE)
 }
@@ -21,7 +21,7 @@ pexptabph(dfk, exp = FALSE, nomfich = "export", nomsheet = "x", lg = FALSE)
 un tableau kbl prévu pour un export LaTeX
 }
 \description{
-Sortie d'un tableau gtsummary en tableau kableExtra sans adaptation à la page ou comme feuille d'un tableur ods.
+Sortie d'un tableau gtsummary en tableau kableExtra (pour export pdf via LaTeX) sans adaptation à la page ou comme feuille d'un tableur ods. Longtable possible
 }
 \examples{
 zz <- gtsummary::tbl_summary(iris)

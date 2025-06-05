@@ -7,7 +7,7 @@
 #' @return moyenne +/- ecart-type
 #' @export
 #'
-#' @examples moys(iris$Sepal.Length)
+#' @examples moys(patients$age)
 moys <- function(x) {
   mm <- signif(mean(x, na.rm = TRUE), 3)
   ss <- signif(sd(x, na.rm = TRUE), 3)
@@ -25,12 +25,12 @@ moys <- function(x) {
 #' @return mediane (quartiles)
 #' @export
 #'
-#' @examples meds(iris$Sepal.Length)
-meds <- function(x){
+#' @examples meds(patients$age)
+meds <- function(x) {
   mm <- quantile(x, na.rm = TRUE)
-  medx <- signif(mm[[3]],3)
-  binf <- signif(mm[[2]],3)
-  bsup <- signif(mm[[4]],3)
-  ligm <- paste0(medx," (",binf,";",bsup,")")
+  medx <- signif(mm[[3]], 3)
+  binf <- signif(mm[[2]], 3)
+  bsup <- signif(mm[[4]], 3)
+  ligm <- paste0(medx, " (", binf, ";", bsup, ")")
   return(ligm)
 }

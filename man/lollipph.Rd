@@ -2,7 +2,7 @@
 % Please edit documentation in R/lollipopph.R
 \name{lollipph}
 \alias{lollipph}
-\title{lollipopph}
+\title{Tracé d'un graphique "lollipop" de distribution d'une variable factorielle avec possibilité de mise en évidence d'un ou plusieurs facteurs.}
 \usage{
 lollipph(dfx, nom, tri = "xx", titre = "", capt = "x")
 }

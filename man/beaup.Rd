@@ -9,7 +9,7 @@ beaup(varp, affp = 0)
 \arguments{
 \item{varp}{résultat du p}
 
-\item{affp}{si 1 renvoie "p = 0,005" sinon "0,005"}
+\item{affp}{si TRUE renvoie "p = 0,005" sinon "0,005"}
 }
 \value{
 beaup , chaine de caractère
@@ -18,7 +18,7 @@ beaup , chaine de caractère
 Petit p bien presenté
 }
 \examples{
-pp <- cor.test(iris$Sepal.Length,iris$Sepal.Width)
+pp <- cor.test(iris$Sepal.Length, iris$Sepal.Width)
 beaup(pp$p.value)
 
 

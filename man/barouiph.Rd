@@ -2,7 +2,8 @@
 % Please edit documentation in R/barouiph.R
 \name{barouiph}
 \alias{barouiph}
-\title{Barplot avec barres d'erreur d'une valeur}
+\title{Barplot avec les intervalles de confiance pour une valeur donnée
+d'une variable factorielle selon les classes d'une variable factorielle de classification.}
 \usage{
 barouiph(
   dfx,
@@ -39,9 +40,8 @@ barouiph(
 graphique
 }
 \description{
-Trace un barplot avec les intervalles de confiance pour une valeur donnée
-d'une variable factorielle selon les classes d'une variable factorielle de
-classification.
+Barplot avec les intervalles de confiance pour une valeur donnée
+d'une variable factorielle selon les classes d'une variable factorielle de classification.
 }
 \examples{
 data(patients)

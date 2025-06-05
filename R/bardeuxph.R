@@ -1,5 +1,5 @@
-#' Barplot 2 variables factorielles
-#' une variable de tri, une variable en % par modalité de tri
+#' Barplot 2 variables factorielles avec 
+#' une variable de tri & une variable en % par modalité de tri
 #'
 #' @param dfx data.frame
 #' @param varp variable à exprimer en % (factorielle)

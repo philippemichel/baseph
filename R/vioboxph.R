@@ -1,4 +1,4 @@
-#' Graphique violon + boxplot
+#' Graphique violon + boxplot 
 #'
 #' @param dfx Tibble de référence
 #' @param varx Variable catégorielle

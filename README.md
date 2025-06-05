@@ -12,6 +12,8 @@ Si tout cela vous effraie je peux vous aider. Plus de renseignements sur [https:
 
 Vous pouvez me contacter via un simple mail à <a href="mailto:docphilmstat@gmail.com">docphilmstat@gmail.com</a> ou un message sur [Twitter](https://twitter.com/PhiippeMICHEL) & je vous répondrai dans les plus brefs délais.
 
+Les [vignettes](https://philippemichel.github.io/baseph/) pour plus d'information
+
 ## Installation
 
 ``` r
@@ -19,36 +21,10 @@ Vous pouvez me contacter via un simple mail à <a href="mailto:docphilmstat@gmai
 > remotes::install_github("philippemichel/baseph")
 ```
 
-### Beaux noms
-
-Pour les graphiques, possibilité d'avoir les intitulés vrais des variables & non les codes. Il vous faut alors créer une liste des *beaux intitulés*. C'est lors de l'import du csv principal par la fonction `debutph` que ces labels seront importés par exemple :
-
-``` r
- > library(labelled)
- > bnom <- read.csv("datas/bnom.csv") # Import des intitulés (tableau à deux colonnes : 'nom' & 'code' par ex.).
- > bnom <- bnom$nom 
- > ttd <- debutph("datas/drepa2.csv", bnom) #Import des données avec insertion des labels.
-```
-
-Dans les fichiers d'exemple, les données (fictives) sont dans le fichier "patients" & les beaux noms dans le fichier "bnom", variable "nom".
-
-### Tests statistiques
-Les tests ou simplement l'affichage peuvent, pour les variables numériques, être présentés en moyenne ± écart-type ou en médiane (quartiles). Les variables discrètes sont rendues en n (%).
 
 ### Tableaux
 La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par exemple via la fonction `gexptabph` (pour les tableaux trop larges mais *longtable* n'est pas géré) ou `pexptabph` qui permettent de gérer l'export en .ods au besoin & la sortie en *longtable*. On va donc avoir quelque chose comme :
 
-``` r
- > library(gtsummary)
- > library (kableExtra)
- > patients |> 
-      tbl_summary(...) |> 
-      tabph(nomv = "Traitements", normx = TRUE) |>
-      pexptabph(exp = FALSE,
-                nomfich = "export.ods", 
-                nomsheet = "demo",
-                lg = FALSE)
-```
 
 ### Autres aides :
 

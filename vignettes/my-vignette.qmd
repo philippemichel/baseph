@@ -1,14 +1,35 @@
 ---
 title: "baseph"
-author: "Dr Philippe MICHEL"
-output: 
-  rmarkdown::html_vignette:
-    toc: true
+date: today
+lang: fr
+language:
+  title-block-author-single: "Auteur"
+author:
+  - name: "D<sup>r</sup> Philippe MICHEL"
+    orcid: "0000-0003-2392-7186"
+    email: "philippe.michel@ght-novo.fr"
+    role: "Statisticien"
+    affiliations:
+        name: "USRC - Hôpital NOVO"
+        city: Pontoise
+        department: "Unité de Soutien à la Recherche Clinique"
+format:
+    html:
+      code-fold: true
+      page-layout: full
+      theme:
+        light:
+          - sandstone
+          - custom.scss
+        dark: cyborg
+      fontsize: 1.2em
 vignette: >
   %\VignetteIndexEntry{baseph}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
 ---
+
+::: {.panel-tabset}
 
 # Installation
 
@@ -34,18 +55,20 @@ library(baseph)
 library(gtsummary)
 library(tidyverse)
 library(kableExtra)
+library(labelled)
+library(readODS)
 ```
 
 Nous allons déroulé un projet de recherche clinique tout simple à partir du jeu de données `patients` contenu dans le package. Ce jeu de données contient deux fichiers :
 
 - `patients` avec les données (fictives)
-- `bnom` qui contient des vignettes claires pour les variables : par exemple pour la variable `sejourrea`  sera affiché dans les tableaux, légendes etc. : *Durée de séjour en réanimation*.
+- `bnom` qui contient des vignettes claires pour les variables : par exemple pour la variable `sejourrea`  sera affiché dans les tableaux, légendes etc. : *Durée de séjour en réanimation*. À utiliser ave le package `labelled`.
 
 # Calcul du nombre de cas 
 
 C'est toujours la première étape. Plusieurs fonctions font ces calculs pour les cas courants par exemple dans les packages `epiDisplay` ou `Hmisc`.  
 
-Nous avons écrit ici une fonction pour les sondages, enquètes etc. sans test principal donc pas de calcul de puissance possible.
+Nous avons écrit ici une fonction pour les sondages, enquêtes etc. sans test principal donc pas de calcul de puissance possible.
 
 ```{r nenquete}
 nbo <- nb.obs.ph(px = 0.5, ex = 0.1, np = 1e5)
@@ -71,8 +94,7 @@ J'utilise habituellement le package `gtsummary` pour créer mes tableaux.  Les d
 
 ## Tabph
 
-Tabph permet de fignoler l'aspect des tables générées par `gtsummary` en particulie r;: 
-Titre de l'entête au dessus des catégories, mise en gras des titres des variables,ajout de diverses colonnes :
+Tabph permet de fignoler l'aspect des tables générées par `gtsummary` en particulier le titre de l'entête au dessus des catégories, mise en gras des titres des variables,ajout de diverses colonnes :
 
 -p-value
 - colonne *total*
@@ -209,3 +231,81 @@ Graphique en *raincloud* (densité + boxplot + nuage de points) pour une variabl
 raincloudph(df = patients, vcat = admission, vnum = igs2, titre = "IGS2 vs adm", titcat = "Adm", titnum = "IGS 2", adj = 1)
 ```
 
+# Utilitaires
+
+IL s'agit de petits utilitaires simples souvent utilisés dans les fonctions précédentes.
+
+## Moyennes & intervalles de confiance
+### bashaut
+
+Fonction pour calculer les bornes inférieure et supérieure d'un intervalle de confiance à 95 % pour la moyenne d'une variable numérique.
+
+```{r}
+#| label: bashaut
+
+bashaut(iris$Sepal.Length)
+```
+
+### moyciph
+
+Fonction pour calculer par bootstrap l'intervalle de confiance à 95 % d'une moyenne.
+
+```{r}  
+#| label: moyciph
+#| 
+moyciph(patients$age, ci = 95)
+```
+
+### transangph
+
+Calcul de l'intervalle de confiance sur une loi binomiale après transformation angulaire (utile si on est très proche de 0 ou 1).
+
+```{r}
+#| label: transangph
+#| eval: false
+transangph(nb = 950, total = 1000, pr = 95)
+```
+
+## Affichage
+
+### moys
+
+Fonction pour afficher la moyenne & l'écart-type d'une variable numérique.    
+
+```{r}
+#| label: moys
+  moyciph(patients$age, ci = 95)
+```
+
+### meds
+
+Fonction pour afficher la médianes & les quartiles d'une variable numérique.    
+
+```{r}
+#| label: meds
+  meds(patients$age)
+```
+
+### beaup
+
+Affichage de la p-value
+
+```{r}
+#| label: beaup
+  beaup(0.0002, affp = FALSE)
+  beaup(0.05)
+```
+
+# Import & mise en forme des données
+
+### nesp
+
+Correction d'une erreur de saisie habituelle dans les tableaux de données : la présence d'une espace en début ou fin d'une variable textuelle ou d'espaces multiples.
+'
+```{r}
+#| label: nesp
+
+nesp("  Bonjour à   vous ")
+```
+
+:::

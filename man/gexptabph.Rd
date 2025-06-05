@@ -2,7 +2,7 @@
 % Please edit documentation in R/gexpk.R
 \name{gexptabph}
 \alias{gexptabph}
-\title{Export de tableau}
+\title{Sortie d'un tableau gtsummary en tableau kableExtra avec adaptation à la page et comme feuille d'un tableur ods.}
 \usage{
 gexptabph(dfk, exp = FALSE, nomfich = "export", nomsheet = "x", lg = FALSE)
 }
@@ -21,7 +21,7 @@ gexptabph(dfk, exp = FALSE, nomfich = "export", nomsheet = "x", lg = FALSE)
 un tableau kbl prévu pour un export LaTeX
 }
 \description{
-Sortie d'un tableau gtsummary en tableau kableExtra avec adaptation à la page et  comme feuille d'un tableur ods
+Sortie d'un tableau gtsummary en tableau kableExtra avec adaptation à la page et comme feuille d'un tableur ods.
 }
 \examples{
 zz <- gtsummary::tbl_summary(iris)
