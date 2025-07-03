@@ -6,3 +6,6 @@
 
 - Essai de publication des vignettes
           
+## 05/06/2025
+
+ - `figp` pour ajouter des p-values sur des graphiques.

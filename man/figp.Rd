@@ -17,13 +17,21 @@ figp(pp, x1, x2, yy, pval, od = FALSE, h = 1.1)
 
 \item{pval}{p-value à afficher}
 
-\item{od}{Décalage horizontal des crochets (si plusieur s niveaux)}
+\item{od}{Décalage horizontal des crochets (si plusieurs niveaux)}
 
-\item{h}{Ècart barre horizontale-texte}
+\item{h}{Écart barre horizontale-texte}
 }
 \value{
 graphique
 }
 \description{
 Dessin des crochets avec texte pour les p-value dans les graphiques
+}
+\examples{
+fp <- patients |>
+  drop_na(typemaladie, igs2) |>
+  ggplot(aes(x = typemaladie, y = igs2)) +
+  geom_boxplot()
+figp(fp, x1 = 1, x2 = 2, yy = 95, pval = 0.01, od = FALSE, h = 2)
+
 }

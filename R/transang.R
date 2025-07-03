@@ -2,6 +2,7 @@
 #' @param nb  nb evenement
 #' @param total taille echantillon
 #' @param pr percent of IC (95 by default)
+#' #' @param pcs nb décimales (2 by default)
 #'
 #' @return binf = borne inferieur de l'IC,
 #'         bsup = borne superieure de l'IC,
@@ -13,13 +14,14 @@
 #'
 #' @export
 #'
-transangph <- function(nb, total, pr = 95) {
+transangph <- function(nb, total, pr = 95, pcs = 3) {
+  options(OutDec = ",")
   pc <- qnorm((100 - (100 - pr) / 2) / 100)
   pz <- asin(sqrt(nb / total))
   pinf <- sin(pz - pc * sqrt(1 / (4 * total)))^2
   psup <- sin(pz + pc * sqrt(1 / (4 * total)))^2
   nb1 <-
-    paste0(signif(nb / total * 100, 3), "% [", signif(pinf, 3), " ; ", signif(psup, 3), "]")
+    paste0(signif(nb / total * 100, pcs), "% [", signif(pinf * 100, pcs), " ; ", signif(psup * 100, pcs), "]")
   return(list(
     binf = pinf,
     bsup = psup,

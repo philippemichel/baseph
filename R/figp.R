@@ -8,15 +8,18 @@
 #' @param od Décalage horizontal des crochets (si plusieurs niveaux)
 #' @param h Écart barre horizontale-texte
 #'
-#' @returns graphique
-#' @export
+#' @import ggplot2
+#' @import dplyr
+#' @import tidyr
 #'
-#' @examplesfp <- patients |>
-#' drop_na(typemaladie, igs2) |>
-#'  ggplot(aes(x = typemaladie, y = igs2)) +
-#'  geom_boxplot()
-#'  figp(fp, x1 =1, x2 = 2, yy =95, pval = 0.01, od = FALSE, h = 2)
-
+#' @returns graphique
+#'
+#' @examples fp <- patients |>
+#'   drop_na(typemaladie, igs2) |>
+#'   ggplot(aes(x = typemaladie, y = igs2)) +
+#'   geom_boxplot()
+#' figp(fp, x1 = 1, x2 = 2, yy = 95, pval = 0.01, od = FALSE, h = 2)
+#'
 figp <- function(pp, x1, x2, yy, pval, od = FALSE, h = 1.1) {
   od <- ifelse(od, 0, 0.1)
   txt <- beaup(pval, affp = 1)

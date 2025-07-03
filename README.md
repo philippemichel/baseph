@@ -45,6 +45,7 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
 -   **barpcph** Graphique en barre avec une variable en % pour chaque niveau de l'autre variable.
 -   **lollipph** Graphique *lollipop* de distribution d'une donnée factorielle avec éventuelle mise en évidence d'un ou plusieurs niveaux.
 -  **raincloud** Graphique en *raincloud* (densité + boxplot + nuage de points) pour une variable numérique & une variable factorielle de tri.
+- **figp** Trace un "crochet horizontal" & la p-value. pour marquer une comparaison entre deux niveaux.
 
 ### Calcul du nombre de sujets nécessaires
 

@@ -49,7 +49,7 @@ library(baseph)
 library(gtsummary)
 library(tidyverse)
 library(kableExtra)
-library(labelled)
+# library(labelled)
 library(readODS)
 ```
 
