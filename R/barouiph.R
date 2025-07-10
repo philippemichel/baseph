@@ -22,33 +22,31 @@
 #' @export
 #'
 #' @examples data(patients)
-#' barouiph(dfx = patients, varx =escarre, testx =sexe, valx = "oui", titre = "Sexe")
+#' barouiph(dfx = patients, varx = escarre, testx = sexe, valx = "oui", titre = "Sexe")
 #'
 barouiph <- function(dfx,
-                    varx,
-                    testx,
-                    valx = "oui",
-                    titre = "",
-                    stitre = "",
-                    titx = "",
-                    tity = "%",
-                    capt = "") {
+                     varx,
+                     testx,
+                     valx = "oui",
+                     titre = "",
+                     stitre = "",
+                     titx = "",
+                     tity = "%",
+                     capt = "") {
   xx <- nom <- lower <- upper <- NULL
   dfx <- dfx |>
-    drop_na({{varx}}) |>
-    mutate(xx = as.factor({{varx}}), yy = as.factor({{testx}})) |>
+    drop_na({{ varx }}) |>
+    mutate(xx = as.factor({{ varx }}), yy = as.factor({{ testx }})) |>
     mutate(xx = xx == valx)
   nn <- levels(dfx$yy)
-  
+
   if (nrow(dfx) == 0) {
     return("Modalit\u00E9 absente")
   }
   zz <- table(dfx$xx, dfx$yy)
-  
-  
   binom::binom.confint(zz[2, ], colSums(zz), method = "exact") |>
     dplyr::tibble() |>
-    mutate(nom = nn) |>
+    mutate(nom = factor(nn, levels = nn)) |>
     ggplot() +
     aes(x = nom, y = mean * 100, fill = nom) +
     geom_bar(stat = "identity") +
