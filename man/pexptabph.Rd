@@ -25,6 +25,6 @@ Sortie d'un tableau gtsummary en tableau kableExtra (pour export pdf via LaTeX) 
 }
 \examples{
 zz <- gtsummary::tbl_summary(iris)
-          pexptabph(dfk = zz, exp = FALSE)
+pexptabph(dfk = zz, exp = FALSE)
 
 }

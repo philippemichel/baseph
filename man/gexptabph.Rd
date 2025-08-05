@@ -25,6 +25,6 @@ Sortie d'un tableau gtsummary en tableau kableExtra avec adaptation à la page e
 }
 \examples{
 zz <- gtsummary::tbl_summary(iris)
-          gexptabph(dfk = zz, exp = FALSE)
+gexptabph(dfk = zz, exp = FALSE)
 
 }

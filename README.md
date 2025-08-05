@@ -22,11 +22,9 @@ Les [vignettes](https://philippemichel.github.io/baseph/) pour plus d'informatio
 ```
 
 
-### Tableaux
-La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par exemple via la fonction `gexptabph` (pour les tableaux trop larges mais *longtable* n'est pas géré) ou `pexptabph` qui permettent de gérer l'export en .ods au besoin & la sortie en *longtable*. On va donc avoir quelque chose comme :
 
 
-### Autres aides :
+### Aides diverse
 
 -   **listrandph** listes de randomisation multicentre, blocs variables.
 -   **beaup** Écrire un *p = 0,05* esthétique avec *p\< 0,001* si nécessaire.
@@ -55,7 +53,7 @@ La sortie sera meilleure pour du PDF via $\LaTeX$ si on passe par KableExtra par
 
 Un jeu de données est fourni pour exemple :
 
--   **Patients** Escarres en réanimation chez la personne âgée (données fictives).
+-   **Patients** Escarres en réanimation chez la personne âgée (données faussées).
 -   **bnom** Les labels *propres* des variables (pour utiliser avec le package `labelled`):
     -   `code` Code utilisé dans R (ex : `igs`)
     -   `nom` Beau label pour les tableaux, figures etc. (ex : `IGS 2`)
@@ -66,4 +64,4 @@ Un jeu de données est fourni pour exemple :
 
 Supprimée pour l'instant. J'avais écrit des fonctions pour gérer créer divers tableaux mais le package `gtsummary` est bien plus simple d'emploi avec de très beaux résultats. J'ai juste gardé les fonctions `pexptabph` & `gexptabph` pour la sortie via kableExtra & l'export en .ods & `tabph` qui met en forme le tableau généré par `gtsummary`.
 
-
+05/08/2025 : Correction de l'affichage des *p<0.001* dans les tableaux.

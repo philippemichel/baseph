@@ -45,6 +45,6 @@ d'une variable factorielle selon les classes d'une variable factorielle de class
 }
 \examples{
 data(patients)
-barouiph(dfx = patients, varx =escarre, testx =sexe, valx = "oui", titre = "Sexe")
+barouiph(dfx = patients, varx = escarre, testx = sexe, valx = "oui", titre = "Sexe")
 
 }

@@ -4,14 +4,15 @@
 \alias{transangph}
 \title{Calcul des bornes sup et inf d'un intervalle de confiance par transformation angulaire.}
 \usage{
-transangph(nb, total, pr = 95)
+transangph(nb, total, pr = 95, pcs = 3)
 }
 \arguments{
 \item{nb}{nb evenement}
 
 \item{total}{taille echantillon}
 
-\item{pr}{percent of IC (95 by default)}
+\item{pr}{percent of IC (95 by default)
+#' @param pcs nb décimales (2 by default)}
 }
 \value{
 binf = borne inferieur de l'IC,
