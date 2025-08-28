@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">baseph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
       <h1>baseph</h1>
 
       <p class="author">D<sup>r</sup> Philippe MICHEL</p>
-      <p class="date">2025-06-05</p>
+      <p class="date">2025-08-28</p>
 
       <small class="dont-index">Source: <a href="https://github.com/philippemichel/baseph/blob/main/vignettes/my-vignette.qmd" class="external-link"><code>vignettes/my-vignette.qmd</code></a></small>
       <div class="d-none name"><code></code></div>
@@ -88,7 +88,7 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/" class="external-link">kableExtra</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://larmarange.github.io/labelled/" class="external-link">labelled</a></span><span class="op">)</span></span>
+<span><span class="co"># library(labelled)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/readODS/" class="external-link">readODS</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <p>Nous allons déroulé un projet de recherche clinique tout simple à partir du jeu de données <code>patients</code> contenu dans le package. Ce jeu de données contient deux fichiers :</p>
@@ -162,18 +162,15 @@ Escarre
 <tr class="even">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">N</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Total<br>
-N = 50</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">non<br>
-N = 35</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">oui<br>
-N = 15</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Total N = 50</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">non N = 35</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">oui N = 15</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">p-value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><span style=" font-weight: bold;    ">sexe</span></td>
+<td style="text-align: left; font-weight: bold;">sexe</td>
 <td style="text-align: center;">50</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -197,7 +194,7 @@ N = 15</th>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span style=" font-weight: bold;    ">age</span></td>
+<td style="text-align: left; font-weight: bold;">age</td>
 <td style="text-align: center;">50</td>
 <td style="text-align: center;">87 (86, 90)</td>
 <td style="text-align: center;">87 (85, 90)</td>
@@ -205,7 +202,7 @@ N = 15</th>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span style=" font-weight: bold;    ">lieudevie1</span></td>
+<td style="text-align: left; font-weight: bold;">lieudevie1</td>
 <td style="text-align: center;">46</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>

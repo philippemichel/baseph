@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">baseph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,12 +68,7 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(<span class="st">"remotes"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="sc">&gt;</span> remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"philippemichel/baseph"</span>)</span></code></pre></div>
 <div class="section level3">
-<h3 id="tableaux">Tableaux<a class="anchor" aria-label="anchor" href="#tableaux"></a>
-</h3>
-<p>La sortie sera meilleure pour du PDF via <span class="math inline">$\LaTeX$</span> si on passe par KableExtra par exemple via la fonction <code>gexptabph</code> (pour les tableaux trop larges mais <em>longtable</em> n’est pas géré) ou <code>pexptabph</code> qui permettent de gérer l’export en .ods au besoin &amp; la sortie en <em>longtable</em>. On va donc avoir quelque chose comme :</p>
-</div>
-<div class="section level3">
-<h3 id="autres-aides-">Autres aides :<a class="anchor" aria-label="anchor" href="#autres-aides-"></a>
+<h3 id="aides-diverse">Aides diverse<a class="anchor" aria-label="anchor" href="#aides-diverse"></a>
 </h3>
 <ul>
 <li>
@@ -110,6 +105,8 @@
 <strong>lollipph</strong> Graphique <em>lollipop</em> de distribution d’une donnée factorielle avec éventuelle mise en évidence d’un ou plusieurs niveaux.</li>
 <li>
 <strong>raincloud</strong> Graphique en <em>raincloud</em> (densité + boxplot + nuage de points) pour une variable numérique &amp; une variable factorielle de tri.</li>
+<li>
+<strong>figp</strong> Trace un <em>crochet horizontal</em> &amp; la p-value. pour marquer une comparaison entre deux niveaux. Surtout utile su des boxplot ou violon-box.</li>
 </ul>
 </div>
 <div class="section level3">
@@ -127,7 +124,7 @@
 <p>Un jeu de données est fourni pour exemple :</p>
 <ul>
 <li>
-<strong>Patients</strong> Escarres en réanimation chez la personne âgée (données fictives).</li>
+<strong>Patients</strong> Escarres en réanimation chez la personne âgée (données faussées).</li>
 <li>
 <strong>bnom</strong> Les labels <em>propres</em> des variables (pour utiliser avec le package <code>labelled</code>):
 <ul>
@@ -147,6 +144,7 @@
 <h3 id="branche-tableaux">Branche TABLEAUX<a class="anchor" aria-label="anchor" href="#branche-tableaux"></a>
 </h3>
 <p>Supprimée pour l’instant. J’avais écrit des fonctions pour gérer créer divers tableaux mais le package <code>gtsummary</code> est bien plus simple d’emploi avec de très beaux résultats. J’ai juste gardé les fonctions <code>pexptabph</code> &amp; <code>gexptabph</code> pour la sortie via kableExtra &amp; l’export en .ods &amp; <code>tabph</code> qui met en forme le tableau généré par <code>gtsummary</code>.</p>
+<p>05/08/2025 : Correction de l’affichage des <em>p&lt;0.001</em> dans les tableaux.</p>
 </div>
 </div>
 
