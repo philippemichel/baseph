@@ -56,7 +56,7 @@ library(readODS)
 Nous allons déroulé un projet de recherche clinique tout simple à partir du jeu de données `patients` contenu dans le package. Ce jeu de données contient deux fichiers :
 
 - `patients` avec les données (fictives)
-- `bnom` qui contient des vignettes claires pour les variables : par exemple pour la variable `sejourrea`  sera affiché dans les tableaux, légendes etc. : *Durée de séjour en réanimation*. À utiliser ave le package `labelled`.
+- `bnom` qui contient des vignettes claires pour les variables : par exemple pour la variable `sejourrea`  sera affiché dans les tableaux, légendes etc. : *Durée de séjour en réanimation*. À utiliser avec le package `labelled`.
 
 # Calcul du nombre de cas 
 
@@ -90,9 +90,9 @@ J'utilise habituellement le package `gtsummary` pour créer mes tableaux.  Les d
 
 Tabph permet de fignoler l'aspect des tables générées par `gtsummary` en particulier le titre de l'entête au dessus des catégories, mise en gras des titres des variables,ajout de diverses colonnes :
 
--p-value
-- colonne *total*
-colonne des effectifs par variable. 
+- p-value
+- colonne **Total**
+- colonne **N**des effectifs par variable. 
 
 Choix du type de tests utilisés (paramétriques ou non).
 
@@ -126,7 +126,7 @@ barsimpleph(dfx = patients, # tableau de données
             titre = "Mode d'admission",
             stitre = "ICU", # sous-titre
             capt = "Admission", # légende
-            lab = "admin", # label pour un lein éventuel
+            lab = "admin", # label pour un lien éventuel
             angle = 60) # angle d'affichage des niveaux sur l'axe x
 ```
 

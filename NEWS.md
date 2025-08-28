@@ -8,4 +8,5 @@
           
 ## 05/06/2025
 
- - `figp` pour ajouter des p-values sur des graphiques.
+ - `figp` pour ajouter des p-values sur des graphiques type boxplot.
+ 

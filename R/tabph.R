@@ -7,18 +7,18 @@
 #' @import gtsummary
 #' @import tidyverse
 #'
-#' @return un tableau fignolé 
+#' @return un tableau fignolé
 #' @export
-#' 
 #'
-#' @examples tabph(gtsummary::tbl_summary(patients[,1:4],by =sexe),  nn = 2, nomv = "Sexe", normx = FALSE)
-#' 
+#'
+#' @examples tabph(gtsummary::tbl_summary(patients[, 1:4], by = sexe), nn = 2, nomv = "Sexe", normx = FALSE)
+#'
 tabph <- function(tbx,
                   nn = 2,
                   nomv = "",
                   normx = FALSE) {
   if (normx) {
-    ccx <-  "t.test"
+    ccx <- "t.test"
   } else {
     ccx <- "wilcox.test"
   }
@@ -33,7 +33,8 @@ tabph <- function(tbx,
     modify_header(label ~ " ") |>
     modify_spanning_header(nn ~ nom) |>
     add_p(test = list(all_continuous() ~ cc, all_categorical() ~ "chisq.test")) |>
-    add_n(col_label = "**N**") |> 
-    add_overall(col_label = "**Total**  \nN = {style_number(N)}") |>
-    bold_labels()
+    add_n(col_label = "**N**") |>
+    add_overall(col_label = "**Total**  n/N = {style_number(N)}") |>
+    bold_labels() |>
+    bold_p()
 }
