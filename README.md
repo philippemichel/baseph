@@ -43,7 +43,7 @@ Les [vignettes](https://philippemichel.github.io/baseph/) pour plus d'informatio
 -   **barpcph** Graphique en barre avec une variable en % pour chaque niveau de l'autre variable.
 -   **lollipph** Graphique *lollipop* de distribution d'une donnée factorielle avec éventuelle mise en évidence d'un ou plusieurs niveaux.
 -  **raincloud** Graphique en *raincloud* (densité + boxplot + nuage de points) pour une variable numérique & une variable factorielle de tri.
-- **figp** Trace un "crochet horizontal" & la p-value. pour marquer une comparaison entre deux niveaux.
+- **figp** Trace un *crochet horizontal* & la p-value. pour marquer une comparaison entre deux niveaux. Surtout utile su des boxplot ou violon-box.
 
 ### Calcul du nombre de sujets nécessaires
 

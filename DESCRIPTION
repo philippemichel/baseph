@@ -1,7 +1,7 @@
 Package: baseph
 Title: Tout ce qu'il faut pour commencer un projet simple en recherche
     clinique
-Version: 0.4
+Version: 0.4.1
 Authors@R: 
     person("Philippe", "MICHEL", , "philippe@docteur-michel.fr", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0003-2392-7186"))

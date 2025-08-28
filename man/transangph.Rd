@@ -11,8 +11,9 @@ transangph(nb, total, pr = 95, pcs = 3)
 
 \item{total}{taille echantillon}
 
-\item{pr}{percent of IC (95 by default)
-#' @param pcs nb décimales (2 by default)}
+\item{pr}{percent of IC (95 by default)}
+
+\item{pcs}{nb décimales (2 by default)}
 }
 \value{
 binf = borne inferieur de l'IC,

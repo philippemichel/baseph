@@ -11,13 +11,15 @@
 #' @import ggplot2
 #' @import dplyr
 #' @import tidyr
+#' @export
 #'
-#' @returns graphique
+#' @return graphique
 #'
 #' @examples fp <- patients |>
-#'   drop_na(typemaladie, igs2) |>
-#'   ggplot(aes(x = typemaladie, y = igs2)) +
-#'   geom_boxplot()
+#'   tidyr::drop_na(typemaladie, igs2) |>
+#'   ggplot2::ggplot() +
+#'   ggplot2::aes(x = typemaladie, y = igs2)
+#' ggplot2::geom_boxplot()
 #' figp(fp, x1 = 1, x2 = 2, yy = 95, pval = 0.01, od = FALSE, h = 2)
 #'
 figp <- function(pp, x1, x2, yy, pval, od = FALSE, h = 1.1) {

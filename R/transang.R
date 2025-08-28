@@ -2,7 +2,7 @@
 #' @param nb  nb evenement
 #' @param total taille echantillon
 #' @param pr percent of IC (95 by default)
-#' #' @param pcs nb décimales (2 by default)
+#' @param pcs nb décimales (2 by default)
 #'
 #' @return binf = borne inferieur de l'IC,
 #'         bsup = borne superieure de l'IC,
