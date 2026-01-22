@@ -29,7 +29,8 @@ Imports:
     stringr,
     tidyr,
     tidyverse,
-    utils
+    utils,
+    biostats
 Suggests: 
     knitr,
     rmarkdown,
