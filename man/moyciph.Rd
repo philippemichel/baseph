@@ -7,12 +7,12 @@
 moyciph(varx, ci = 95)
 }
 \arguments{
-\item{varx}{la variable à étudier}
+\item{varx}{numeric variable}
 
 \item{ci}{Intervalle de confiance en \% (95 par défaut)}
 }
 \value{
-bornes inf & sup de l'IC
+bornes inf & sup of confidence interval, mean ci
 }
 \description{
 Intervalle de Confiance par Bootstrap pour une moyenne

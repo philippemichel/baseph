@@ -1,9 +1,9 @@
 #' Intervalle de Confiance par Bootstrap pour une moyenne
 #'
-#' @param varx la variable à étudier
+#' @param varx numeric variable
 #' @param ci Intervalle de confiance en % (95 par défaut)
 #'
-#' @return bornes inf & sup de l'IC
+#' @return bornes inf & sup of confidence interval, mean ci
 #'
 #' @import boot
 #' @import stats
@@ -25,7 +25,8 @@ moyciph <- function(varx, ci = 95) {
     bb <- boot::boot.ci(b1, conf = ci, type = "perc")
     binf <- bb$percent[4]
     bsup <- bb$percent[5]
-    bbr <- c(binf = binf, bsup = bsup)
+    mic <- bicph(mean(varx, na.rm = TRUE), binf, bsup)
+    bbr <- c(binf = binf, bsup = bsup, mic = mic)
   }
   return(bbr)
 }

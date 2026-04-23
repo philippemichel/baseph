@@ -1,13 +1,13 @@
 #' Tableau Odds-Ratio, Risque Relatif & nb à traiter
 #'
-#' @param df un tibble
+#' @param df a tibble
 #' @param intervention variable d'entree
-#' @param nomv Variable de sortie
+#' @param evenement Variable de sortie (diagnostic)
 #' @import biostats
 #' @import kableExtra
 #' @import tidyverse
 #'
-#' @return un tableau
+#' @return a table
 #' @export
 #'
 #'
