@@ -12,7 +12,7 @@ moyciph(varx, ci = 95)
 
 - varx:
 
-  la variable à étudier
+  numeric variable
 
 - ci:
 
@@ -20,12 +20,12 @@ moyciph(varx, ci = 95)
 
 ## Value
 
-bornes inf & sup de l'IC
+bornes inf & sup of confidence interval, mean ci
 
 ## Examples
 
 ``` r
 moyciph(patients$age, ci = 95)
-#>     binf     bsup 
-#> 87,10051 88,60000 
+#>                 binf                 bsup                  mic 
+#>   "87,1005081014161"               "88,6" "87,9 [87,1 ; 88,6]" 
 ```

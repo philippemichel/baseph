@@ -51,7 +51,7 @@
 
 
 <dl><dt id="arg-varx">varx<a class="anchor" aria-label="anchor" href="#arg-varx"></a></dt>
-<dd><p>la variable à étudier</p></dd>
+<dd><p>numeric variable</p></dd>
 
 
 <dt id="arg-ci">ci<a class="anchor" aria-label="anchor" href="#arg-ci"></a></dt>
@@ -60,14 +60,14 @@
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>bornes inf &amp; sup de l'IC</p>
+    <p>bornes inf &amp; sup of confidence interval, mean ci</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">moyciph</span><span class="op">(</span><span class="va">patients</span><span class="op">$</span><span class="va">age</span>, ci <span class="op">=</span> <span class="fl">95</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     binf     bsup </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 87,10051 88,60000 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 binf                 bsup                  mic </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   "87,1005081014161"               "88,6" "87,9 [87,1 ; 88,6]" </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

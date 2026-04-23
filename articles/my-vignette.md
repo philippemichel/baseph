@@ -45,7 +45,7 @@ test principal donc pas de calcul de puissance possible.
 nbo <- nb.obs.ph(px = 0.5, ex = 0.1, np = 1e5)
 ```
 
-Le nombre de cas nécessaires pour une enquète avec une estimation des
+Le nombre de cas nécessaires pour une enquête avec une estimation des
 réponses pour les questions principales autour de 50 % (hypothèse la
 plus défavorable) & une marge d’erreur considérée comme acceptable de 10
 % dans une grande population serait de 96 cas (calcul très discutable).
@@ -57,9 +57,9 @@ plusieurs fichiers .csv : une feuille globale de randomisation (pour le
 promoteur) & une feuille par centre.
 
 ``` r
-listrandph(nbcent = 1, # Nombre de centre
-           nbtrait = 2, # nombre de traitements/classes (habituellement 2)
-           nbcas = 100 # Nombre de cas total prévu
+# listrandph(nbcent = 1, # Nombre de centre
+#            nbtrait = 2, # nombre de traitements/classes (habituellement 2)
+#            nbcas = 100 # Nombre de cas total prévu
 )
 ```
 
@@ -270,17 +270,6 @@ bashaut(iris$Sepal.Length)
 #> [1] 5.976934
 ```
 
-### moyciph
-
-Fonction pour calculer par bootstrap l’intervalle de confiance à 95 %
-d’une moyenne.
-
-``` r
-moyciph(patients$age, ci = 95)
-#>     binf     bsup 
-#> 87.10051 88.60000
-```
-
 ### transangph
 
 Calcul de l’intervalle de confiance sur une loi binomiale après
@@ -299,8 +288,8 @@ numérique.
 
 ``` r
   moyciph(patients$age, ci = 95)
-#>     binf     bsup 
-#> 87.10051 88.60000
+#>                 binf                 bsup                  mic 
+#>   "87.1005081014161"               "88.6" "87.9 [87.1 ; 88.6]"
 ```
 
 ### meds
@@ -311,6 +300,16 @@ numérique.
 ``` r
   meds(patients$age)
 #> [1] "87 (86;90)"
+```
+
+## Intervalle de confiance
+
+Fonction pour afficher un nombre avec son intervalle de confiance (aucun
+calcul, juste de l’affichage propre)
+
+``` r
+ bicph(nn = 55, bb = 22, hh = 77, pc = 3)
+#> [1] "55 [22 ; 77]"
 ```
 
 ### beaup

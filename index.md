@@ -30,8 +30,9 @@ d’information
   anglaise.
 - **tabph** Amélioration esthétique d’un tableau généré via `gtsummary`
   avec variable de tri & tests statistiques.
-- **debph** Chargement des libraries de base, réglage des tableaux pour
+- **debph** Chargement des librairies de base, réglage des tableaux pour
   les variables numériques (normales ou pas).
+- **bicph** affiche un nombre avec un intervalle de confiance
 
 ### Graphiques
 

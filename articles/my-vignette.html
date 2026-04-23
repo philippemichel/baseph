@@ -58,7 +58,7 @@
       <h1>baseph</h1>
 
       <p class="author">D<sup>r</sup> Philippe MICHEL</p>
-      <p class="date">2026-01-22</p>
+      <p class="date">2026-04-23</p>
 
       <small class="dont-index">Source: <a href="https://github.com/philippemichel/baseph/blob/main/vignettes/my-vignette.qmd" class="external-link"><code>vignettes/my-vignette.qmd</code></a></small>
       <div class="d-none name"><code></code></div>
@@ -107,16 +107,15 @@
 <div class="sourceCode cell-code" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nbo</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nb.obs.ph.html">nb.obs.ph</a></span><span class="op">(</span>px <span class="op">=</span> <span class="fl">0.5</span>, ex <span class="op">=</span> <span class="fl">0.1</span>, np <span class="op">=</span> <span class="fl">1e5</span><span class="op">)</span></span></code></pre></div>
 </div>
-<p>Le nombre de cas nécessaires pour une enquète avec une estimation des réponses pour les questions principales autour de 50 % (hypothèse la plus défavorable) &amp; une marge d’erreur considérée comme acceptable de 10 % dans une grande population serait de 96 cas (calcul très discutable).</p>
+<p>Le nombre de cas nécessaires pour une enquête avec une estimation des réponses pour les questions principales autour de 50 % (hypothèse la plus défavorable) &amp; une marge d’erreur considérée comme acceptable de 10 % dans une grande population serait de 96 cas (calcul très discutable).</p>
 </div>
 <div id="tabset-1-3">
 <p>la fonction <code>listrandph</code>correspond juste à une mise en forme de la fonction <code>blockrand</code> du package homonyme pour générer des listes de randomisation par centre en blocs de taille aléatoire. Elle génère plusieurs fichiers .csv : une feuille globale de randomisation (pour le promoteur) &amp; une feuille par centre.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/listrandph.html">listrandph</a></span><span class="op">(</span>nbcent <span class="op">=</span> <span class="fl">1</span>, <span class="co"># Nombre de centre</span></span>
-<span>           nbtrait <span class="op">=</span> <span class="fl">2</span>, <span class="co"># nombre de traitements/classes (habituellement 2)</span></span>
-<span>           nbcas <span class="op">=</span> <span class="fl">100</span> <span class="co"># Nombre de cas total prévu</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># listrandph(nbcent = 1, # Nombre de centre</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#            nbtrait = 2, # nombre de traitements/classes (habituellement 2)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#            nbcas = 100 # Nombre de cas total prévu</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="er">)</span></span></code></pre></div>
 </div>
 </div>
 <div id="tabset-1-4">
@@ -470,20 +469,11 @@ Escarre
 <span><span class="co">#&gt; $bsup</span></span>
 <span><span class="co">#&gt; [1] 5.976934</span></span></code></pre></div>
 </div>
-</section><section class="level3"><h3 id="moyciph">moyciph<a class="anchor" aria-label="anchor" href="#moyciph"></a>
-</h3>
-<p>Fonction pour calculer par bootstrap l’intervalle de confiance à 95 % d’une moyenne.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/moyciph.html">moyciph</a></span><span class="op">(</span><span class="va">patients</span><span class="op">$</span><span class="va">age</span>, ci <span class="op">=</span> <span class="fl">95</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     binf     bsup </span></span>
-<span><span class="co">#&gt; 87.10051 88.60000</span></span></code></pre></div>
-</div>
 </section><section class="level3"><h3 id="transangph">transangph<a class="anchor" aria-label="anchor" href="#transangph"></a>
 </h3>
 <p>Calcul de l’intervalle de confiance sur une loi binomiale après transformation angulaire (utile si on est très proche de 0 ou 1).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/transangph.html">transangph</a></span><span class="op">(</span>nb <span class="op">=</span> <span class="fl">950</span>, total <span class="op">=</span> <span class="fl">1000</span>, pr <span class="op">=</span> <span class="fl">95</span><span class="op">)</span></span></code></pre></div>
 </div>
 </section></section><section class="level2"><h2 id="affichage">Affichage<a class="anchor" aria-label="anchor" href="#affichage"></a>
@@ -492,20 +482,28 @@ Escarre
 </h3>
 <p>Fonction pour afficher la moyenne &amp; l’écart-type d’une variable numérique.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>  <span class="fu"><a href="../reference/moyciph.html">moyciph</a></span><span class="op">(</span><span class="va">patients</span><span class="op">$</span><span class="va">age</span>, ci <span class="op">=</span> <span class="fl">95</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     binf     bsup </span></span>
-<span><span class="co">#&gt; 87.10051 88.60000</span></span></code></pre></div>
+<span><span class="co">#&gt;                 binf                 bsup                  mic </span></span>
+<span><span class="co">#&gt;   "87.1005081014161"               "88.6" "87.9 [87.1 ; 88.6]"</span></span></code></pre></div>
 </div>
 </section><section class="level3"><h3 id="meds">meds<a class="anchor" aria-label="anchor" href="#meds"></a>
 </h3>
 <p>Fonction pour afficher la médianes &amp; les quartiles d’une variable numérique.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>  <span class="fu"><a href="../reference/meds.html">meds</a></span><span class="op">(</span><span class="va">patients</span><span class="op">$</span><span class="va">age</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "87 (86;90)"</span></span></code></pre></div>
 </div>
-</section><section class="level3"><h3 id="beaup">beaup<a class="anchor" aria-label="anchor" href="#beaup"></a>
+</section></section><section class="level2"><h2 id="intervalle-de-confiance">Intervalle de confiance<a class="anchor" aria-label="anchor" href="#intervalle-de-confiance"></a>
+</h2>
+<p>Fonction pour afficher un nombre avec son intervalle de confiance (aucun calcul, juste de l’affichage propre)</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span> <span class="fu"><a href="../reference/bicph.html">bicph</a></span><span class="op">(</span>nn <span class="op">=</span> <span class="fl">55</span>, bb <span class="op">=</span> <span class="fl">22</span>, hh <span class="op">=</span> <span class="fl">77</span>, pc <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "55 [22 ; 77]"</span></span></code></pre></div>
+</div>
+<section class="level3"><h3 id="beaup">beaup<a class="anchor" aria-label="anchor" href="#beaup"></a>
 </h3>
 <p>Affichage de la p-value</p>
 <div class="cell" data-layout-align="center">

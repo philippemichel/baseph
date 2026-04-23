@@ -34,7 +34,7 @@ un tableau fignolé
 ## Examples
 
 ``` r
-tabph(gtsummary::tbl_summary(patients[,1:4],by =sexe),  nn = 2, nomv = "Sexe", normx = FALSE)
+tabph(gtsummary::tbl_summary(patients[, 1:4], by = sexe), nn = 2, nomv = "Sexe", normx = FALSE)
 #> The following warnings were returned during `bold_p()`:
 #> ! For variable `admission` (`sexe`) and "statistic", "p.value", and "parameter"
 #>   statistics: Chi-squared approximation may be incorrect

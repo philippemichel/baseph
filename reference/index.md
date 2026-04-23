@@ -24,6 +24,8 @@
   variable numérique (utilisé par barconfph)
 - [`beaup()`](https://philippemichel.github.io/baseph/reference/beaup.md)
   : Petit p bien presenté
+- [`bicph()`](https://philippemichel.github.io/baseph/reference/bicph.md)
+  : nbic
 - [`bmiph()`](https://philippemichel.github.io/baseph/reference/bmiph.md)
   : Coupe un vecteur BMI ou IMC (numeric) en facteurs avec les limites
   usuelles, en français ou en anglais (les limites sont différentes)
@@ -66,6 +68,8 @@
   ods. Longtable possible
 - [`raincloudph()`](https://philippemichel.github.io/baseph/reference/raincloudph.md)
   : Graphique en "raincloud"
+- [`tab_oo()`](https://philippemichel.github.io/baseph/reference/tab_oo.md)
+  : Tableau Odds-Ratio, Risque Relatif & nb à traiter
 - [`tabph()`](https://philippemichel.github.io/baseph/reference/tabph.md)
   : Réglages pour un tableau généré par gtsummary (avec une variable de
   tri & des tests statistiques).
