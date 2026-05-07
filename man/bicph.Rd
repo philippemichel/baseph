@@ -2,7 +2,7 @@
 % Please edit documentation in R/bicph.R
 \name{bicph}
 \alias{bicph}
-\title{nbic}
+\title{Affiche un nombre avec son intervalle de confiance}
 \usage{
 bicph(nn, bb, hh, pc = 3)
 }
