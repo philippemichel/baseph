@@ -25,7 +25,7 @@
 - [`beaup()`](https://philippemichel.github.io/baseph/reference/beaup.md)
   : Petit p bien presenté
 - [`bicph()`](https://philippemichel.github.io/baseph/reference/bicph.md)
-  : nbic
+  : Affiche un nombre avec son intervalle de confiance
 - [`bmiph()`](https://philippemichel.github.io/baseph/reference/bmiph.md)
   : Coupe un vecteur BMI ou IMC (numeric) en facteurs avec les limites
   usuelles, en français ou en anglais (les limites sont différentes)

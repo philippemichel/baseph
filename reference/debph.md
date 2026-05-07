@@ -27,10 +27,10 @@ debph(param = FALSE)
 #> Setting theme "language: fr"
 #> [[1]]
 #> all_continuous() ~ affpx
-#> <environment: 0x564751424888>
+#> <environment: 0x556508b7af08>
 #> 
 #> [[2]]
 #> all_categorical() ~ "{n} / {N} ({p}%)"
-#> <environment: 0x564751424888>
+#> <environment: 0x556508b7af08>
 #> 
 ```

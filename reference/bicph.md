@@ -1,4 +1,4 @@
-# nbic
+# Affiche un nombre avec son intervalle de confiance
 
 Affiche un nombre avec son intervalle de confiance
 

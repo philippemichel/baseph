@@ -16,6 +16,7 @@
   ```
 
   ``` r
+
   library(baseph)
   library(gtsummary)
   library(tidyverse)
@@ -42,6 +43,7 @@ Nous avons écrit ici une fonction pour les sondages, enquêtes etc. sans
 test principal donc pas de calcul de puissance possible.
 
 ``` r
+
 nbo <- nb.obs.ph(px = 0.5, ex = 0.1, np = 1e5)
 ```
 
@@ -91,6 +93,7 @@ Choix du type de tests utilisés (paramétriques ou non).
   `longtable` (limitation technique).
 
 ``` r
+
 patients |>
   dplyr::select(sexe, age, escarre, lieudevie1) |>
   tbl_summary(by = escarre) |>
@@ -108,6 +111,7 @@ patients |>
 Graphique en barre simple.
 
 ``` r
+
 barsimpleph(dfx = patients, # tableau de données
             varx = admission, # Variable à étudier
             titre = "Mode d'admission",
@@ -128,6 +132,7 @@ Graphique en barre d’une donnée numérique découpée selon une variable
 factorielle avec les intervalles de confiance.
 
 ``` r
+
 barconfph(dfx = patients, # tableau de données
           varnum = igs2, # variable numérique
           vartri = admission, # variable factorielle
@@ -147,6 +152,7 @@ Barplot pour 2 variables factorielles : une variable de tri, une
 variable en % par modalité de tri
 
 ``` r
+
 bardeuxph(patients,
           lieudevie1, # Variable en %
           admission, # variable de tri
@@ -169,6 +175,7 @@ réponse en oui/non où on affiche que les oui) avec les intervalles de
 confiance.
 
 ``` r
+
 barouiph(dfx = patients, varx =escarre, testx =sexe, valx = "oui", titre = "Sexe")
 ```
 
@@ -180,6 +187,7 @@ Graphique en plusieurs histogrammes superposés, pratique pour bien
 visualiser les variations d’une distribution selon une modalité.
 
 ``` r
+
 histmultiph(dfx = patients,
             varx= admission, # bariables de tri, factorielle
             varn = age, # variable numérique
@@ -199,6 +207,7 @@ factorielle avec possibilité de mise en évidence d’un ou plusieurs
 facteurs.
 
 ``` r
+
 lollipph(dfx = patients, #
          nom = lieudevie1, # variable à afficher
          tri = c("EHPAD","Maison de retraite"), # modalités de la variable à mettre en évidence
@@ -214,6 +223,7 @@ lollipph(dfx = patients, #
 Graphique en violon + boxplot
 
 ``` r
+
 vioboxph(dfx = patients, # 
          varx = admission, # Variable de tri, factorielle
          varnum = age, # variable numérique
@@ -231,6 +241,7 @@ Graphique en *raincloud* (densité + boxplot + nuage de points) pour une
 variable numérique & une variable factorielle de tri.
 
 ``` r
+
 raincloudph(df = patients, vcat = admission, vnum = igs2, titre = "IGS2 vs adm", titcat = "Adm", titnum = "IGS 2", adj = 1)
 ```
 
@@ -242,6 +253,7 @@ Ajoute le crochet horizontal & le texte pour une comparaison entre deux
 groupes.
 
 ``` r
+
 fp <- patients |>
  drop_na(typemaladie, igs2) |>
   ggplot(aes(x = typemaladie, y = igs2)) +
@@ -262,6 +274,7 @@ Fonction pour calculer les bornes inférieure et supérieure d’un
 intervalle de confiance à 95 % pour la moyenne d’une variable numérique.
 
 ``` r
+
 bashaut(iris$Sepal.Length)
 #> $binf
 #> [1] 5.709732
@@ -276,6 +289,7 @@ Calcul de l’intervalle de confiance sur une loi binomiale après
 transformation angulaire (utile si on est très proche de 0 ou 1).
 
 ``` r
+
 transangph(nb = 950, total = 1000, pr = 95)
 ```
 
@@ -287,6 +301,7 @@ Fonction pour afficher la moyenne & l’écart-type d’une variable
 numérique.
 
 ``` r
+
   moyciph(patients$age, ci = 95)
 #>                 binf                 bsup                  mic 
 #>   "87.1005081014161"               "88.6" "87.9 [87.1 ; 88.6]"
@@ -298,6 +313,7 @@ Fonction pour afficher la médianes & les quartiles d’une variable
 numérique.
 
 ``` r
+
   meds(patients$age)
 #> [1] "87 (86;90)"
 ```
@@ -308,6 +324,7 @@ Fonction pour afficher un nombre avec son intervalle de confiance (aucun
 calcul, juste de l’affichage propre)
 
 ``` r
+
  bicph(nn = 55, bb = 22, hh = 77, pc = 3)
 #> [1] "55 [22 ; 77]"
 ```
@@ -317,6 +334,7 @@ calcul, juste de l’affichage propre)
 Affichage de la p-value
 
 ``` r
+
   beaup(0.0002, affp = FALSE)
 #> [1] "< 0,001"
   beaup(0.05)
@@ -330,6 +348,7 @@ données : la présence d’une espace en début ou fin d’une variable
 textuelle ou d’espaces multiples. ’
 
 ``` r
+
 nesp("  Bonjour à   vous ")
 #> [1] "Bonjour à vous"
 ```
