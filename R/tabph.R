@@ -11,7 +11,7 @@
 #' @export
 #'
 #'
-#' @examples tabph(gtsummary::tbl_summary(patients[, 1:4], by = sexe), nn = 2, nomv = "Sexe", normx = FALSE)
+#' @examples tabph( gtsummary::tbl_summary(patients[,1:4], by = sexe), nn = 2, nomv = "Sexe", normx = FALSE)
 #'
 tabph <- function(tbx,
                   nn = 2,

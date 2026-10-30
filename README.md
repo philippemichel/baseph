@@ -45,6 +45,7 @@ Les [vignettes](https://philippemichel.github.io/baseph/) pour plus d'informatio
 -   **lollipph** Graphique *lollipop* de distribution d'une donnée factorielle avec éventuelle mise en évidence d'un ou plusieurs niveaux.
 -  **raincloud** Graphique en *raincloud* (densité + boxplot + nuage de points) pour une variable numérique & une variable factorielle de tri.
 - **figp** Trace un *crochet horizontal* & la p-value. pour marquer une comparaison entre deux niveaux. Surtout utile su des boxplot ou violon-box.
+- **multirep** for an item with multiple answers(typically one question, several checkboxes). Summarizes the responses in a vector and a frequency table (gtsummary)
 
 ### Calcul du nombre de sujets nécessaires
 
@@ -66,3 +67,4 @@ Un jeu de données est fourni pour exemple :
 Supprimée pour l'instant. J'avais écrit des fonctions pour gérer créer divers tableaux mais le package `gtsummary` est bien plus simple d'emploi avec de très beaux résultats. J'ai juste gardé les fonctions `pexptabph` & `gexptabph` pour la sortie via kableExtra & l'export en .ods & `tabph` qui met en forme le tableau généré par `gtsummary`.
 
 05/08/2025 : Correction de l'affichage des *p<0.001* dans les tableaux.
+21/10:2026 : Function `multirep`. Start of the English translation.
