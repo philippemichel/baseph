@@ -58,6 +58,9 @@ d’information
 - **figp** Trace un *crochet horizontal* & la p-value. pour marquer une
   comparaison entre deux niveaux. Surtout utile su des boxplot ou
   violon-box.
+- **multirep** for an item with multiple answers(typically one question,
+  several checkboxes). Summarizes the responses in a vector and a
+  frequency table (gtsummary)
 
 ### Calcul du nombre de sujets nécessaires
 
@@ -85,6 +88,7 @@ d’emploi avec de très beaux résultats. J’ai juste gardé les fonctions
 .ods & `tabph` qui met en forme le tableau généré par `gtsummary`.
 
 05/08/2025 : Correction de l’affichage des *p\<0.001* dans les tableaux.
+21/10:2026 : Function `multirep`. Start of the English translation.
 
 # Package index
 

@@ -35,13 +35,5 @@ un tableau fignolé
 
 ``` r
 tabph(gtsummary::tbl_summary(patients[, 1:4], by = sexe), nn = 2, nomv = "Sexe", normx = FALSE)
-#> The following warnings were returned during `bold_p()`:
-#> ! For variable `admission` (`sexe`) and "statistic", "p.value", and "parameter"
-#>   statistics: Chi-squared approximation may be incorrect
-#> ! For variable `lieudevie1` (`sexe`) and "statistic", "p.value", and
-#>   "parameter" statistics: Chi-squared approximation may be incorrect
-
-
-  
-
+#> Error in order(ux, method = "radix", na.last = NA): Character encoding must be UTF-8, Latin-1 or bytes
 ```

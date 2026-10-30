@@ -1,9 +1,9 @@
 pandoc: 3.8.3
-pkgdown: 2.2.0
+pkgdown: 2.2.1
 pkgdown_sha: ~
 articles:
   my-vignette: my-vignette.html
-last_built: 2026-05-07T14:12Z
+last_built: 2026-10-30T20:01Z
 urls:
   reference: https://philippemichel.github.io/baseph/reference
   article: https://philippemichel.github.io/baseph/articles
